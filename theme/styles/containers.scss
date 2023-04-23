@@ -1,0 +1,90 @@
+@mixin block($color, $icon) {
+  border-color: $color;
+
+  .custom-block-title {
+    background-color: rgba($color, 0.1);
+
+    &::before {
+      content: $icon;
+      color: $color;
+    }
+  }
+}
+
+.custom-block {
+  position: relative;
+  border: 4px solid;
+  box-sizing: border-box;
+  border-width: 0.05rem;
+  border-radius: 0.2rem;
+  margin: 1.5em 0;
+  padding: 50px 12px 12px 12px;
+  font-size: 0.95em;
+  box-shadow: 0 0.2rem 0.5rem #0000000d, 0 0 0.05rem #0000001a;
+
+  .custom-block-title {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-weight: 700;
+    padding: 0.4em 0 0.4em 3em;
+
+    &::before {
+      font-weight: 500;
+      font-family: 'Material Design Icons';
+      position: absolute;
+      font-size: 1.4em;
+      left: 0.6em;
+      top: 0.3em;
+    }
+  }
+
+  &.note {
+    @include block(#4481ff, '\F06FF');
+  }
+
+  &.abstract {
+    @include block(#00b0ff, '\F014D');
+  }
+
+  &.info {
+    @include block(#00b8d4, '\F02FC');
+  }
+
+  &.tip {
+    @include block(#00bfa5, '\F0238');
+  }
+
+  &.success {
+    @include block(#00c853, '\F012C');
+  }
+
+  &.question {
+    @include block(#64dd17, '\F02D7');
+  }
+
+  &.warning {
+    @include block(#ff9100, '\F0026');
+  }
+
+  &.failure {
+    @include block(#ff5252, '\F0159');
+  }
+
+  &.danger {
+    @include block(#ff1744, '\F0028');
+  }
+
+  &.bug {
+    @include block(#f50057, '\F00E4');
+  }
+
+  &.example {
+    @include block(#7c4dff, '\F0668');
+  }
+
+  &.quote {
+    @include block(#9e9e9e, '\F0757 ');
+  }
+}

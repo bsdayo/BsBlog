@@ -1,0 +1,105 @@
+.markdown {
+  // Titles
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 16px 0 10px 0;
+  }
+
+  p {
+    line-height: 28px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #1d6db7;
+  }
+
+  del {
+    background-color: #000;
+    transition: background-color 0.1s;
+    border-radius: 2px;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      background-color: initial;
+    }
+  }
+
+  // Images
+  img {
+    max-width: 100%;
+    margin: 1em 0;
+  }
+
+  // Lists
+  ol,
+  ul {
+    margin: 0 0 10px 28px;
+  }
+
+  // Code related
+  code,
+  pre {
+    font-size: 0.875rem;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+  }
+  code {
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    padding: 2px 5px;
+    line-height: 1.7em;
+  }
+  div[class*='language-'] {
+    position: relative;
+
+    span.lang {
+      display: none;
+    }
+
+    button.copy {
+      &::before {
+        font-family: 'Material Design Icons';
+        content: '\F018F';
+        color: rgba(#fff, 0.2);
+        transition: color 0.1s;
+      }
+
+      &.copied::before {
+        content: '\F012C';
+      }
+
+      z-index: 2;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      height: 36px;
+      width: 36px;
+      background-color: transparent;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      button.copy::before {
+        color: #f6f6f6;
+      }
+    }
+  }
+  pre {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #272b2f;
+    overflow-x: auto;
+    color: #abb2bf;
+
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+}

@@ -5,7 +5,13 @@ create: 2022-02-09T19:00:12+08:00
 categories: tech
 tags:
   - pixel-arts
+
+cover: /covers/manually-compile-aseprite.jpg
 ---
+
+::: warning
+本文章已过时。对于最新的编译方式，请参照[官方文档](https://github.com/aseprite/aseprite/blob/main/INSTALL.md)。
+:::
 
 最近学 2D 游戏开发，想自己画点像素画，就去找了找有什么好用的像素画软件。首先就想到了大名鼎鼎的 Aseprite，去 Steam 上搜了下，70RMB。
 

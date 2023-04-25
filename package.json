@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "vitepress dev content",
+    "dev": "vitepress dev content --host",
     "build": "vitepress build content",
     "preview": "vitepress preview content"
   },
@@ -8,11 +8,14 @@
     "@mdi/font": "^7.2.96",
     "@types/markdown-it-container": "^2.0.5",
     "@types/node": "^18.16.0",
+    "@types/webfontloader": "^1.6.35",
     "markdown-it-container": "^3.0.0",
     "sass": "^1.62.0",
+    "simple-icons-font": "^8.11.0",
     "vite-plugin-vuetify": "^1.0.2",
-    "vitepress": "1.0.0-alpha.73",
+    "vitepress": "1.0.0-alpha.74",
     "vue": "^3.2.47",
-    "vuetify": "^3.1.15"
+    "vuetify": "^3.1.15",
+    "webfontloader": "^1.6.28"
   }
 }

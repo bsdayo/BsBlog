@@ -1,3 +1,5 @@
+@import './vars.scss';
+
 .markdown {
   // Titles
   h1,
@@ -7,15 +9,28 @@
   h5,
   h6 {
     margin: 16px 0 10px 0;
+
+    a.header-anchor::before {
+      content: $md-header-anchor-symbol;
+      float: left;
+      margin-right: 0.2em;
+      opacity: 0.5;
+      transition: opacity 0.1s;
+    }
+
+    &:hover a.header-anchor::before {
+      opacity: 1;
+    }
   }
 
   p {
     line-height: 28px;
+    font-size: $md-content-font-size;
   }
 
   a {
     text-decoration: none;
-    color: #1d6db7;
+    color: $md-link-color;
   }
 
   del {
@@ -30,6 +45,28 @@
     }
   }
 
+  blockquote {
+    position: relative;
+    background-color: rgba($md-link-color, 0.1);
+    border-radius: $md-block-border-radius;
+    padding: $md-block-padding;
+    padding-left: $md-block-padding + 6px;
+    margin: $md-block-margin-y 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      background-color: $md-link-color;
+      width: 4px;
+      height: 100%;
+      border-top-left-radius: $md-block-border-radius;
+      border-bottom-left-radius: $md-block-border-radius;
+    }
+  }
+
   // Images
   img {
     max-width: 100%;
@@ -40,17 +77,18 @@
   ol,
   ul {
     margin: 0 0 10px 28px;
+    font-size: $md-content-font-size;
   }
 
   // Code related
   code,
   pre {
-    font-size: 0.875rem;
-    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: $md-code-font-size;
+    font-family: 'JetBrains Mono', Consolas, monospace !important;
   }
   code {
     background-color: #f6f6f6;
-    border-radius: 4px;
+    border-radius: $md-block-border-radius;
     padding: 2px 5px;
     line-height: 1.7em;
   }
@@ -80,7 +118,7 @@
       height: 36px;
       width: 36px;
       background-color: transparent;
-      border-radius: 4px;
+      border-radius: $md-block-border-radius;
     }
 
     &:hover {
@@ -92,7 +130,7 @@
   pre {
     margin: 16px 0;
     padding: 16px;
-    border-radius: 4px;
+    border-radius: $md-block-border-radius;
     background-color: #272b2f;
     overflow-x: auto;
     color: #abb2bf;

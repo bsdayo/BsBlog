@@ -7,6 +7,8 @@ tags:
   - git
   - github
   - gpg
+
+cover: /covers/sign-git-commit-with-gpg.jpg
 ---
 
 ## 前言

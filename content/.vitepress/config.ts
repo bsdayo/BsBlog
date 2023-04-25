@@ -1,7 +1,7 @@
 import { defineConfigWithTheme } from 'vitepress'
 import vuetify from 'vite-plugin-vuetify'
 import { BsBlogThemeConfig } from '../../theme'
-import { createContainer, indexPosts } from './utils'
+import { createContainer } from './utils'
 
 export default defineConfigWithTheme<BsBlogThemeConfig>({
   title: 'BsBlog',
@@ -32,6 +32,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
   themeConfig: {
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
     defaultHeaderImage: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
+    defaultPostCover: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
     navLinks: [
       {
         href: '/',
@@ -59,7 +60,28 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         icon: 'mdi-information',
       },
     ],
-    posts: indexPosts(),
+    socialLinks: [
+      {
+        href: 'https://github.com/bsdayo',
+        icon: 'si:github',
+        desc: 'GitHub'
+      },
+      {
+        href: 'https://wakatime.com/@bsdayo',
+        icon: 'si:wakatime',
+        desc: 'WakaTime'
+      },
+      {
+        href: 'https://space.bilibili.com/33268404',
+        icon: 'si:bilibili',
+        desc: 'BiliBili'
+      },
+      {
+        href: 'mailto:bs@sorabs.cc',
+        icon: 'si:gmail',
+        desc: 'Mail'
+      },
+    ],
   },
 
   vite: {

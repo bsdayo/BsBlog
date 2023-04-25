@@ -2,14 +2,16 @@ import { Theme } from 'vitepress'
 import Layout from './Layout.vue'
 import vuetify from './vuetify'
 
+import './styles/global.scss'
 import './styles/markdown.scss'
 import './styles/containers.scss'
 
 export interface BsBlogThemeConfig {
   avatar: string
   defaultHeaderImage?: string
-  posts: Post[]
-  navLinks: NavLink[]
+  defaultPostCover?: string
+  navLinks?: NavLink[]
+  socialLinks?: SocialLink[]
 }
 
 export interface NavLink {
@@ -18,11 +20,10 @@ export interface NavLink {
   icon: string
 }
 
-export interface Post {
-  id: string
-  title: string
-  create: number
-  cover?: string
+export interface SocialLink {
+  href: string
+  icon: string
+  desc: string
 }
 
 const theme: Theme = {

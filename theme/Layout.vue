@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="bg-transparent">
     <v-navigation-drawer
       v-if="$vuetify.display.mobile"
       v-model="isNavDrawerOpened"
@@ -60,7 +60,7 @@
 
     <PageContainer>
       <template #left>
-        <PostListCard v-if="frontmatter.home" />
+        <PostList v-if="frontmatter.home" />
         <PostContentCard v-else />
       </template>
     </PageContainer>
@@ -75,14 +75,25 @@
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from 'theme'
 import { ref, onMounted, onUnmounted } from 'vue'
+import initRibbonUnder from './scripts/ribbon'
 
 import PageContainer from './components/PageContainer.vue'
 import HomeHeader from './components/headers/HomeHeader.vue'
 import PageHeader from './components/headers/PageHeader.vue'
 import PostContentCard from './components/cards/PostContentCard.vue'
-import PostListCard from './components/cards/PostListCard.vue'
+import PostList from './components/PostList.vue'
 
 const { site, theme, frontmatter } = useData<BsBlogThemeConfig>()
+
+import('webfontloader').then((loader) =>
+  loader.load({
+    google: {
+      families: ['Inter'],
+    },
+  })
+)
+
+initRibbonUnder('#app')
 
 const navBarElevation = ref(0)
 const isNavDrawerOpened = ref(false)

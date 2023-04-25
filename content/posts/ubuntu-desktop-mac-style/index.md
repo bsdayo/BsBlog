@@ -1,5 +1,5 @@
 ---
-title: Mac风格 Ubuntu Desktop 美化教程
+title: Mac 风格 Ubuntu Desktop 美化教程
 create: 2021-07-27T23:25:10+08:00
 
 categories: tech
@@ -8,6 +8,7 @@ tags:
   - linux
 
 description: 将 Ubuntu Desktop 美化为 Mac 风格，基于 Ubuntu Desktop 20.04
+cover: /covers/ubuntu-desktop-mac-style.jpg
 ---
 
 前些天把树莓派 4B 的系统换成了 Ubuntu Desktop 21.04，使用没什么问题，驱动支持也非常好，遂美化之。

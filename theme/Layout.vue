@@ -58,12 +58,14 @@
     <HomeHeader v-if="frontmatter.home" />
     <PageHeader v-else />
 
-    <PageContainer>
-      <template #left>
-        <PostList v-if="frontmatter.home" />
-        <PostContentCard v-else />
-      </template>
-    </PageContainer>
+    <ClientOnly>
+      <PageContainer>
+        <template #left>
+          <PostList v-if="frontmatter.home" />
+          <PostContentCard v-else />
+        </template>
+      </PageContainer>
+    </ClientOnly>
 
     <v-footer class="bg-indigo-lighten-1">
       {{ new Date().getFullYear() }} - {{ site.title }}

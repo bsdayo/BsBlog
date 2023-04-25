@@ -1,4 +1,6 @@
-$containers: (
+$main-font: 'Inter', sans-serif;
+
+$md-containers: (
   note: #4481ff '\F06FF',
   abstract: #00b0ff '\F014D',
   info: #00b8d4 '\F02FC',
@@ -13,12 +15,11 @@ $containers: (
   quote: #9e9e9e '\F0757',
 );
 
-$main-font: 'Inter', sans-serif;
-
 $md-link-color: #1d6db7;
 $md-header-anchor-symbol: '#';
 $md-content-font-size: 1rem;
-$md-code-font-size: 0.86rem;
+$md-container-font-size: 0.9rem;
+$md-code-font-size: 0.9em;
 
 $md-block-margin-y: 16px;
 $md-block-padding: 12px;

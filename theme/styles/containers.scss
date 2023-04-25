@@ -3,14 +3,17 @@
 .custom-block {
   position: relative;
   box-sizing: border-box;
-
+  
   border: 0.05rem solid;
   border-radius: $md-block-border-radius;
   box-shadow: 0 0.2rem 0.5rem #0000000d, 0 0 0.05rem #0000001a;
-  font-size: 0.84rem;
 
   margin: $md-block-margin-y 0;
   padding: 50px 12px 12px 12px;
+
+  * {
+    font-size: $md-container-font-size !important;
+  }
 
   .custom-block-title {
     position: absolute;
@@ -30,7 +33,7 @@
     }
   }
 
-  @each $type, $props in $containers {
+  @each $type, $props in $md-containers {
     $color: nth($props, 1);
     $icon: nth($props, 2);
 

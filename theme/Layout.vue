@@ -85,16 +85,6 @@ import PostList from './components/PostList.vue'
 
 const { site, theme, frontmatter } = useData<BsBlogThemeConfig>()
 
-import('webfontloader').then((loader) =>
-  loader.load({
-    google: {
-      families: ['Inter'],
-    },
-  })
-)
-
-initRibbonUnder('#app')
-
 const navBarElevation = ref(0)
 const isNavDrawerOpened = ref(false)
 const isScrolledToTop = ref(false)
@@ -109,6 +99,14 @@ function handleScroll() {
 }
 
 onMounted(() => {
+  import('webfontloader').then((loader) =>
+    loader.load({
+      google: {
+        families: ['Inter'],
+      },
+    })
+  )
+  initRibbonUnder('#app')
   handleScroll()
   window.addEventListener('scroll', handleScroll)
 })

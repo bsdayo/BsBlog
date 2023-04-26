@@ -11,6 +11,14 @@
   margin: $md-block-margin-y 0;
   padding: 50px 12px 12px 12px;
 
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   * {
     font-size: $md-container-font-size !important;
   }

@@ -28,7 +28,7 @@
     font-size: $md-content-font-size;
   }
 
-  a {
+  a:not([class*='link']):not([class*='btn']) {
     text-decoration: none;
     color: $md-link-color;
   }

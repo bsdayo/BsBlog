@@ -27,6 +27,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
 
   rewrites: {
     'pages/about/index.md': 'about/index.md',
+    'pages/links/index.md': 'links/index.md',
   },
 
   themeConfig: {
@@ -50,11 +51,11 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       //   title: '标签',
       //   icon: 'mdi-tag',
       // },
-      // {
-      //   href: '/links/',
-      //   title: '友链',
-      //   icon: 'mdi-link',
-      // },
+      {
+        href: '/links/',
+        title: '友链',
+        icon: 'mdi-link',
+      },
       {
         href: '/about/',
         title: '关于',

@@ -63,7 +63,7 @@ links:
 ~~（和我熟的话其实写什么都行 xxx）~~
 :::
 
-交换友链可以邮箱联系我，地址是 [bs@sorabs.cc](mailto:bs@sorabs.cc)；或者直接在下面评论，记得带上类似上面的的格式哦~
+交换友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/bsblog/edit/main/content/pages/links/index.md)，并提交 Pull Request；或者直接在下面评论，记得带上类似上面的的格式哦~
 
 拜拜各位大佬们~
 

@@ -1,5 +1,7 @@
 <template>
-  <v-card-subtitle>{{ formatTime(create) }}</v-card-subtitle>
+  <v-card-subtitle>
+    <v-icon icon="mdi-calendar-month" /> {{ formatTime(create) }}
+  </v-card-subtitle>
 </template>
 
 <script lang="ts" setup>

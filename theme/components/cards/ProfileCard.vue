@@ -4,8 +4,8 @@
       <v-avatar size="110">
         <v-img :src="theme.avatar" cover />
       </v-avatar>
-      <v-card-title>{{ site.title }}</v-card-title>
-      <v-card-subtitle>{{ site.description }}</v-card-subtitle>
+      <v-card-title>{{ theme.author }}</v-card-title>
+      <v-card-subtitle>{{ theme.bio }}</v-card-subtitle>
     </div>
     <v-card-actions class="d-flex justify-center">
       <v-btn
@@ -22,7 +22,7 @@
 import { BsBlogThemeConfig } from 'theme'
 import { useData } from 'vitepress'
 
-const { site, theme } = useData<BsBlogThemeConfig>()
+const { theme } = useData<BsBlogThemeConfig>()
 </script>
 
 <style lang="scss" scoped>

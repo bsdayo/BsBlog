@@ -1,7 +1,7 @@
 <template>
   <v-img
     :src="frontmatter.image ?? theme.defaultHeaderImage"
-    class="home-header h-screen d-flex justify-center align-center text-center"
+    class="home-header h-screen d-flex justify-center align-center text-center pa-2"
     cover
   >
     <h1 class="text-h2 font-weight-bold text-white">{{ site.title }}</h1>

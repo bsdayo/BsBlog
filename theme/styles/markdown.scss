@@ -1,4 +1,5 @@
 @import './vars.scss';
+@import './mixins.scss';
 
 .markdown {
   // Titles
@@ -26,6 +27,8 @@
   p {
     line-height: 28px;
     font-size: $md-content-font-size;
+    margin: 10px 0;
+    @include normalizeFirstLast();
   }
 
   a:not([class*='link']):not([class*='btn']) {

@@ -7,6 +7,8 @@ import './styles/markdown.scss'
 import './styles/containers.scss'
 
 export interface BsBlogThemeConfig {
+  author: string
+  bio: string
   avatar: string
   walineUrl: string
   defaultHeaderImage?: string

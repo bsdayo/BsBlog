@@ -8,8 +8,8 @@
       <v-list>
         <v-list-item
           :prepend-avatar="theme.avatar"
-          title="bsdayo"
-          subtitle="♪sakana——\(＞○＜\)♪"
+          :title="theme.author"
+          :subtitle="theme.bio"
         >
           <!-- <template v-slot:append>
           <v-btn size="small" variant="text" icon="mdi-menu-down" />

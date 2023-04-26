@@ -1,9 +1,10 @@
 @import './vars.scss';
+@import './mixins.scss';
 
 .custom-block {
   position: relative;
   box-sizing: border-box;
-  
+
   border: 0.05rem solid;
   border-radius: $md-block-border-radius;
   box-shadow: 0 0.2rem 0.5rem #0000000d, 0 0 0.05rem #0000001a;
@@ -11,16 +12,19 @@
   margin: $md-block-margin-y 0;
   padding: 50px 12px 12px 12px;
 
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include normalizeFirstLast();
 
   * {
     font-size: $md-container-font-size !important;
+  }
+
+  p {
+    line-height: 24px;
+
+    // The first child is container title
+    &:nth-child(2) {
+      margin-top: 0;
+    }
   }
 
   .custom-block-title {
@@ -30,6 +34,7 @@
     left: 0;
     font-weight: 700;
     padding: 0.4rem 0 0.4rem 2.6rem;
+    margin: 0;
 
     &::before {
       font-weight: 500;

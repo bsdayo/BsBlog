@@ -26,6 +26,8 @@ const sortedPosts = posts
   .map((p) => {
     return {
       ...p,
+      url: p.url.replace('index.html', ''),
+      id: /(?<=\/posts\/).*(?=\/)/.exec(p.url)![0],
       title: p.frontmatter.title ?? 'Untitled Post',
       cover: p.frontmatter.cover ?? theme.value.defaultPostCover,
       description: p.frontmatter.description,

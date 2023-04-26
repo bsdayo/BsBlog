@@ -9,6 +9,8 @@ import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from 'theme'
 import { computed } from 'vue'
 import { Waline } from '@waline/client/component'
+import { normalizeRelativePath } from '../../utils'
+
 import '@waline/client/dist/waline.css'
 
 const { page, theme } = useData<BsBlogThemeConfig>()
@@ -19,8 +21,8 @@ const emoji = [
   'https://unpkg.com/@waline/emojis@1.1.0/qq',
 ]
 
-const currentPath = computed(
-  () => '/' + page.value.relativePath.replace('index.md', '')
+const currentPath = computed(() =>
+  normalizeRelativePath(page.value.relativePath)
 )
 </script>
 

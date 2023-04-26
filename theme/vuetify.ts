@@ -1,4 +1,5 @@
 import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
 import { h } from 'vue'
 
 import 'vuetify/styles'
@@ -6,6 +7,7 @@ import '@mdi/font/css/materialdesignicons.css'
 import 'simple-icons-font/font/simple-icons.min.css'
 
 export default createVuetify({
+  components,
   theme: {
     themes: {
       light: {

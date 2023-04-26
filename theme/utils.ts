@@ -11,3 +11,7 @@ export function formatTime(
   const str = `${year}.${month}.${day}`
   return withTime ? str + ` ${hour}:${minute}` : str
 }
+
+export function normalizeRelativePath(path: string) {
+  return '/' + path.replace('index.md', '')
+}

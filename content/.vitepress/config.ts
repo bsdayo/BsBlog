@@ -26,7 +26,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
   },
 
   rewrites: {
-    'pages/about/index.md': 'about.md',
+    'pages/about/index.md': 'about/index.md',
   },
 
   themeConfig: {
@@ -41,22 +41,22 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         icon: 'mdi-home',
       },
       // {
-      //   href: '/categories',
+      //   href: '/categories/',
       //   title: '分类',
       //   icon: 'mdi-shape',
       // },
       // {
-      //   href: '/tags',
+      //   href: '/tags/',
       //   title: '标签',
       //   icon: 'mdi-tag',
       // },
       // {
-      //   href: '/links',
+      //   href: '/links/',
       //   title: '友链',
       //   icon: 'mdi-link',
       // },
       {
-        href: '/about',
+        href: '/about/',
         title: '关于',
         icon: 'mdi-information',
       },

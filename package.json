@@ -9,6 +9,7 @@
     "@types/markdown-it-container": "^2.0.5",
     "@types/node": "^18.16.0",
     "@types/webfontloader": "^1.6.35",
+    "@waline/client": "^2.15.2",
     "markdown-it-container": "^3.0.0",
     "sass": "^1.62.0",
     "simple-icons-font": "^8.11.0",

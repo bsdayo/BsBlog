@@ -9,6 +9,6 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true
   },
-  "include": ["theme", "content", "theme/vue.d.ts"],
+  "include": ["theme", "content", "theme/env.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -13,6 +13,9 @@ devDependencies:
   '@types/webfontloader':
     specifier: ^1.6.35
     version: 1.6.35
+  '@waline/client':
+    specifier: ^2.15.2
+    version: 2.15.2
   markdown-it-container:
     specifier: ^3.0.0
     version: 3.0.0
@@ -586,6 +589,18 @@ packages:
       - vue
     dev: true
 
+  /@waline/client@2.15.2:
+    resolution: {integrity: sha512-a+yqVSPJBGw66PrFdaDoc58iva1V35fDlE/2Iexzzita3/NfxgJ7RAMWJ6J7XDOjXe6FlGJnUGMRflu2+7GUZg==}
+    engines: {node: '>=14'}
+    dependencies:
+      '@vueuse/core': 10.1.0(vue@3.2.47)
+      autosize: 6.0.1
+      marked: 4.3.0
+      vue: 3.2.47
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: true
+
   /algoliasearch@4.17.0:
     resolution: {integrity: sha512-JMRh2Mw6sEnVMiz6+APsi7lx9a2jiDFF+WUtANaUVCv6uSU9UOLdo5h9K3pdP6frRRybaM2fX8b1u0nqICS9aA==}
     dependencies:
@@ -615,6 +630,10 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
+    dev: true
+
+  /autosize@6.0.1:
+    resolution: {integrity: sha512-f86EjiUKE6Xvczc4ioP1JBlWG7FKrE13qe/DxBCpe8GCipCq2nFw73aO8QEBKHfSbYGDN5eB9jXWKen7tspDqQ==}
     dev: true
 
   /binary-extensions@2.2.0:
@@ -799,6 +818,12 @@ packages:
 
   /markdown-it-container@3.0.0:
     resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
+    dev: true
+
+  /marked@4.3.0:
+    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: true
 
   /minisearch@6.0.1:

@@ -8,6 +8,7 @@ import './styles/containers.scss'
 
 export interface BsBlogThemeConfig {
   avatar: string
+  walineUrl: string
   defaultHeaderImage?: string
   defaultPostCover?: string
   navLinks?: NavLink[]

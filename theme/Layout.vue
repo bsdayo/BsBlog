@@ -63,6 +63,11 @@
         <template #left>
           <PostList v-if="frontmatter.home" />
           <PostContentCard v-else />
+          <WalineCommentCard v-if="isInPost || frontmatter.comment" class="my-4" />
+        </template>
+
+        <template #right>
+          <ProfileCard />
         </template>
       </PageContainer>
     </ClientOnly>
@@ -76,7 +81,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from 'theme'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import initRibbonUnder from './scripts/ribbon'
 
 import PageContainer from './components/PageContainer.vue'
@@ -84,8 +89,12 @@ import HomeHeader from './components/headers/HomeHeader.vue'
 import PageHeader from './components/headers/PageHeader.vue'
 import PostContentCard from './components/cards/PostContentCard.vue'
 import PostList from './components/PostList.vue'
+import ProfileCard from './components/cards/ProfileCard.vue'
+import WalineCommentCard from './components/cards/WalineCommentCard.vue'
 
-const { site, theme, frontmatter } = useData<BsBlogThemeConfig>()
+const { site, page, theme, frontmatter } = useData<BsBlogThemeConfig>()
+
+const isInPost = computed(() => page.value.relativePath.includes('posts'))
 
 const navBarElevation = ref(0)
 const isNavDrawerOpened = ref(false)

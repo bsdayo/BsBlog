@@ -31,6 +31,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
 
   themeConfig: {
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
+    walineUrl: 'https://waline.sorabs.cc',
     defaultHeaderImage: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
     defaultPostCover: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
     navLinks: [

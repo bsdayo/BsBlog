@@ -1,5 +1,6 @@
 ---
 title: Test Ground
+cover: /covers/testground.png
 ---
 
 ## Standard Markdown

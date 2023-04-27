@@ -1,15 +1,9 @@
 <template>
-  <v-card
-    class="post-card mb-6"
-    v-for="post in $props.posts"
-    :key="post.url"
-    :href="post.url"
-    v-ripple
-  >
-    <v-img :src="post.cover" height="200px" cover />
-    <v-card-title class="post-card-title">{{ post.title }}</v-card-title>
-    <PostListItemCardInfo :url="post.url" :create="post.create" />
-    <v-card-text>{{ post.description }}</v-card-text>
+  <v-card class="post-card mb-6" :href="$props.url" v-ripple>
+    <v-img :src="$props.cover" height="200px" cover />
+    <v-card-title class="post-card-title">{{ $props.title }}</v-card-title>
+    <PostListItemCardInfo :url="$props.url" :create="$props.create" />
+    <v-card-text>{{ $props.description }}</v-card-text>
   </v-card>
 </template>
 
@@ -17,12 +11,10 @@
 import PostListItemCardInfo from './PostListItemCardInfo.vue'
 
 defineProps<{
-  posts: {
-    url: string
-    title: string
-    cover?: string
-    description?: string
-    create: number
-  }[]
+  url: string
+  title: string
+  cover?: string
+  description?: string
+  create: number
 }>()
 </script>

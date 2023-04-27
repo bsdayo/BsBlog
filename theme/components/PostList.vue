@@ -1,9 +1,8 @@
 <template>
-  <PostListItemCardMobile
-    v-if="$vuetify.display.mobile"
-    :posts="currentPosts"
-  />
-  <PostListItemCardDesktop v-else :posts="currentPosts" />
+  <div v-for="(post, index) in currentPosts">
+    <PostListItemCardMobile v-if="$vuetify.display.mobile" v-bind="post" />
+    <PostListItemCardDesktop v-else v-bind="post" :index="index" />
+  </div>
 
   <v-pagination
     v-model="currentPage"

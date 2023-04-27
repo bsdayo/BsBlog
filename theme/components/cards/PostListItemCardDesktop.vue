@@ -1,24 +1,18 @@
 <template>
-  <v-card
-    class="post-card mb-6"
-    v-for="(post, index) in posts"
-    :key="post.url"
-    :href="post.url"
-    v-ripple
-  >
+  <v-card class="post-card mb-6" :href="$props.url" v-ripple>
     <v-container class="pa-0">
       <v-row class="ma-0">
-        <v-col cols="5" class="pa-0" :order="index % 2 === 0 ? 1 : 3">
-          <v-img height="200px" :src="post.cover" cover />
+        <v-col cols="5" class="pa-0" :order="$props.index % 2 === 0 ? 1 : 3">
+          <v-img height="200px" :src="$props.cover" cover />
         </v-col>
 
         <v-col cols="7" class="px-4 d-flex align-center" order="2">
           <div>
             <v-card-title class="post-card-title">
-              {{ post.title }}
+              {{ $props.title }}
             </v-card-title>
-            <PostListItemCardInfo :url="post.url" :create="post.create" />
-            <v-card-text>{{ post.description }}</v-card-text>
+            <PostListItemCardInfo :url="$props.url" :create="$props.create" />
+            <v-card-text>{{ $props.description }}</v-card-text>
           </div>
         </v-col>
       </v-row>
@@ -30,13 +24,12 @@
 import PostListItemCardInfo from './PostListItemCardInfo.vue'
 
 defineProps<{
-  posts: {
-    url: string
-    title: string
-    cover?: string
-    description?: string
-    create: number
-  }[]
+  index: number
+  url: string
+  title: string
+  cover?: string
+  description?: string
+  create: number
 }>()
 </script>
 

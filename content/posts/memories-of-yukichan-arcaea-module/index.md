@@ -4,7 +4,7 @@ create: 2023-04-27T22:48:38+08:00
 cover: /covers/memories-of-yukichan-arcaea-module.jpg
 ---
 
-随着 lowiro 对 ArcaeaUnlimitedAPI 的彻底封禁，暮雪酱的 Arcaea 查分模块也走到了尽头。在这里，我们一起回顾一下暮雪酱 Arcaea 模块的发展史...
+随着 lowiro 对 ArcaeaUnlimitedAPI 的彻底封禁，暮雪酱 Arcaea 查分模块的生命也走到了尽头。在这里，我们一起回顾一下暮雪酱 Arcaea 模块的发展史...
 
 ## 2021 年 8 月
 
@@ -14,7 +14,7 @@ cover: /covers/memories-of-yukichan-arcaea-module.jpg
 
 ## 2022 年 1 月
 
-作为一名头铁的开发者，当然是选择自己造轮子了（）当时并不清楚这些查分 Bot 的数据都从哪里来，就自己去 GitHub 上翻。翻了半天找到一个叫 [BotArcAPI](https://github.com/Arcaea-Infinity/BotArcAPIs-Memories) 的项目，似乎就是我要找的，但是被我发现的时候已经 Archive 了...不信邪地翻了翻，在 badge 里找到了一个 QQ 群号，加进去发现是一个音游码农群（~~现在已经是白丝贫乳群了~~）。潜了半天水，后来找到一个看起来像关键人物的群友，就去打探了下情报。接着便了解到 BotArcAPI 的续作 ArcaeaUnlimitedAPI 这个项目，并成功要到了 API 的访问权限。
+作为一名头铁的开发者，当然是选择自己造轮子了（）当时并不清楚这些查分 Bot 的数据都从哪里来，就自己去 GitHub 上翻。翻了半天找到一个叫 [BotArcAPI](https://github.com/Arcaea-Infinity/BotArcAPIs-Memories) 的项目，似乎就是我要找的，但是被我发现的时候已经 Archive 了...不信邪地又翻了翻，在 badge 里找到了一个 QQ 群号，加进去发现是一个音游码农群（~~现在已经是白丝贫乳群了~~）。潜了半天水，后来找到一个看起来像关键人物的群友，就去打探了下情报。接着便了解到 BotArcAPI 的续作 ArcaeaUnlimitedAPI 这个项目，并成功要到了 API 的访问权限。
 
 这时候也被拉进了 [Arcaea-Infinity](https://github.com/Arcaea-Infinity)（~~无限玻璃渣子~~）组织，有一种找到家的感觉.jpg
 
@@ -140,7 +140,7 @@ lowiro 正式推出了 Arcaea Online **订阅**，售价 200 源点 / 月。同�
 
 一年多了，收获了很多很多知识，也认识了很多真心的好朋友。开发 Bot，和群友们水群，和 616 各种对线，回想起一路上的经历都很快乐。
 
-暮雪原本就是为 Arcaea 而设计的 Bot，失去了查分，存在的意义也不大了，也许就全线停止服务了吧。暮雪也已经在 GitHub 上全面开源。  
+虽说是 Arcaea 模块的前世今生，可暮雪原本就是为 Arcaea 查分而设计的 Bot，失去了查分功能，存在的意义也不大了，也许就全线停止服务了吧。暮雪也已经在 GitHub 上全面开源。  
 [暮雪酱主仓库](https://github.com/bsdayo/YukiChan)&emsp;[暮雪酱服务端仓库](https://github.com/bsdayo/YukiChan.Server)
 
 这一切值得吗？我认为是值得的。只要我们的服务能为用户带来帮助，产生了价值，那它就是值得的。

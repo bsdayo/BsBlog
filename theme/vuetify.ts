@@ -7,6 +7,7 @@ import '@mdi/font/css/materialdesignicons.css'
 import 'simple-icons-font/font/simple-icons.min.css'
 
 export default createVuetify({
+  ssr: true,
   components,
   theme: {
     themes: {

@@ -58,19 +58,20 @@
     <HomeHeader v-if="frontmatter.home" />
     <PageHeader v-else />
 
-    <ClientOnly>
-      <PageContainer>
-        <template #left>
-          <PostList v-if="frontmatter.home" />
-          <PostContentCard v-else />
-          <WalineCommentCard v-if="isInPost || frontmatter.comment" class="my-4" />
-        </template>
+    <PageContainer>
+      <template #left>
+        <PostList v-if="frontmatter.home" />
+        <PostContentCard v-else />
+        <WalineCommentCard
+          v-if="isInPost || frontmatter.comment"
+          class="my-4"
+        />
+      </template>
 
-        <template #right>
-          <ProfileCard />
-        </template>
-      </PageContainer>
-    </ClientOnly>
+      <template #right>
+        <ProfileCard />
+      </template>
+    </PageContainer>
 
     <v-footer class="bg-indigo-lighten-1">
       {{ new Date().getFullYear() }} - {{ site.title }}

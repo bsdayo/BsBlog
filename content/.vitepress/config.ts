@@ -34,7 +34,6 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     author: 'bsdayo',
     bio: '♪sakana——\\(＞○＜\\)♪',
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
-    walineUrl: 'https://waline.sorabs.cc',
     defaultHeaderImage: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
     defaultPostCover: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
     navLinks: [
@@ -68,24 +67,39 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       {
         href: 'https://github.com/bsdayo',
         icon: 'si:github',
-        desc: 'GitHub'
+        desc: 'GitHub',
       },
       {
         href: 'https://wakatime.com/@bsdayo',
         icon: 'si:wakatime',
-        desc: 'WakaTime'
+        desc: 'WakaTime',
       },
       {
         href: 'https://space.bilibili.com/33268404',
         icon: 'si:bilibili',
-        desc: 'BiliBili'
+        desc: 'BiliBili',
       },
       {
         href: 'mailto:bs@sorabs.cc',
         icon: 'si:gmail',
-        desc: 'Mail'
+        desc: 'Mail',
       },
     ],
+    giscus: {
+      host: 'https://giscus.app',
+      repo: 'bsdayo/bsblog',
+      repoId: 'R_kgDOJab-4g',
+      category: 'Comments',
+      categoryId: 'DIC_kwDOJab-4s4CWGFy',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '0',
+      emitMetadata: '0',
+      inputPosition: 'top',
+      theme: 'light',
+      lang: 'zh-CN',
+      loading: 'lazy',
+    },
   },
 
   vite: {

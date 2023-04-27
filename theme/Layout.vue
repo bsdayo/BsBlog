@@ -62,7 +62,7 @@
       <template #left>
         <PostList v-if="frontmatter.home" />
         <PostContentCard v-else />
-        <WalineCommentCard
+        <GiscusCommentCard
           v-if="isInPost || frontmatter.comment"
           class="my-4"
         />
@@ -91,7 +91,7 @@ import PageHeader from './components/headers/PageHeader.vue'
 import PostContentCard from './components/cards/PostContentCard.vue'
 import PostList from './components/PostList.vue'
 import ProfileCard from './components/cards/ProfileCard.vue'
-import WalineCommentCard from './components/cards/WalineCommentCard.vue'
+import GiscusCommentCard from './components/cards/GiscusCommentCard.vue'
 
 const { site, page, theme, frontmatter } = useData<BsBlogThemeConfig>()
 

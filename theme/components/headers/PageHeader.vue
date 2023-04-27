@@ -1,10 +1,17 @@
 <template>
-    <v-img
-    :src="frontmatter.image ?? theme.defaultHeaderImage"
-    class="page-header d-flex justify-center align-center text-center pa-2"
+  <v-img
+    :src="frontmatter.cover ?? theme.defaultHeaderImage"
+    class="page-header"
+    :height="$vuetify.display.mobile ? '320px' : '400px'"
     cover
   >
-    <h1 class="text-h4 font-weight-bold text-white">{{ frontmatter.title ?? page.title }}</h1>
+    <div
+      class="page-header-overlay d-flex justify-center align-center text-center pa-2"
+    >
+      <h1 class="text-h4 font-weight-bold text-white">
+        {{ frontmatter.title ?? page.title }}
+      </h1>
+    </div>
   </v-img>
 </template>
 
@@ -16,7 +23,9 @@ const { theme, frontmatter, page } = useData<BsBlogThemeConfig>()
 </script>
 
 <style lang="scss" scoped>
-.page-header {
-  height: 400px;
+.page-header div.page-header-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 </style>

@@ -1,6 +1,7 @@
 import { Theme } from 'vitepress'
 import Layout from './Layout.vue'
 import vuetify from './vuetify'
+import type { GiscusProps } from '@giscus/vue'
 
 import './styles/global.scss'
 import './styles/markdown.scss'
@@ -10,11 +11,12 @@ export interface BsBlogThemeConfig {
   author: string
   bio: string
   avatar: string
-  walineUrl: string
   defaultHeaderImage?: string
   defaultPostCover?: string
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]
+
+  giscus: GiscusProps
 }
 
 export interface NavLink {

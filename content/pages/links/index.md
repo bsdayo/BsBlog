@@ -35,7 +35,7 @@ links:
 
   - title: NekoHouse
     desc: Touching Fish
-    avatar: https://blog.amu.moe/usr/AimuBot.webp
+    avatar: https://avatars.githubusercontent.com/u/23737348
     url: https://blog.amu.moe/
 
   - title: 落雪咖啡屋

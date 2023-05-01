@@ -48,10 +48,10 @@ links:
     avatar: https://avatars.githubusercontent.com/u/17957399
     url: https://blog.awa.moe/
 
-  - title: Akula<>Blog
-    desc: 苟利国家生死以 岂因祸福避趋之
-    avatar: https://lolicon.akulak.icu/common/akulakirov.webp
-    url: https://lolicon.akulak.icu
+  - title: Akula::Blog
+    desc: 悟已往之不谏，知来者之可追
+    avatar: https://avatars.githubusercontent.com/u/33571798?v=4
+    url: https://blog.akula.moe
 ---
 
 ::: tip 欢迎交换友链！

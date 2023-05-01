@@ -57,8 +57,8 @@ links:
 ::: tip 欢迎交换友链！
 - 名称：BsBlog
 - 链接：[https://sorabs.cc/](https://sorabs.cc/)
-- 头像/Icon：[https://avatars.githubusercontent.com/u/41754841?v=4](https://avatars.githubusercontent.com/u/41754841?v=4)
-- 简介/desc: bs在摸鱼还是睡觉呢zzz
+- 头像：[https://avatars.githubusercontent.com/u/41754841?v=4](https://avatars.githubusercontent.com/u/41754841?v=4)
+- 简介: bs在摸鱼还是睡觉呢zzz
 
 ~~（和我熟的话其实写什么都行 xxx）~~
 :::

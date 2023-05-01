@@ -31,8 +31,7 @@
     @include normalizeFirstLast();
   }
 
-  // Markdown generated a tags don't have class attribute set
-  a:not([class]) {
+  a:not([class]), a.header-anchor {
     text-decoration: none;
     color: $md-link-color-light;
   }
@@ -147,7 +146,7 @@
 }
 
 html.dark .markdown {
-  a:not([class]) {
+  a:not([class]), a.header-anchor {
     color: $md-link-color-dark;
   }
 

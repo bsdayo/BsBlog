@@ -71,7 +71,7 @@
   }
 
   // Images
-  img {
+  img:not([class]) {
     max-width: 100%;
     margin: 1em 0;
   }
@@ -90,7 +90,7 @@
     font-family: 'JetBrains Mono', Consolas, monospace !important;
   }
   code {
-    background-color: #f6f6f6;
+    background-color: $md-code-bg-color-light;
     border-radius: $md-block-border-radius;
     padding: 2px 5px;
     line-height: 1.7em;
@@ -134,7 +134,7 @@
     margin: 16px 0;
     padding: 16px;
     border-radius: $md-block-border-radius;
-    background-color: #272b2f;
+    background-color: $md-code-bg-color-dark;
     overflow-x: auto;
     color: #abb2bf;
 
@@ -151,6 +151,6 @@ html.dark .markdown {
   }
 
   code {
-    background-color: #313136;
+    background-color: $md-code-bg-color-dark;
   }
 }

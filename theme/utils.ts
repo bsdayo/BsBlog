@@ -1,5 +1,5 @@
 import { BsBlogThemeConfig } from 'theme'
-import { useData } from 'vitepress'
+import { ContentData, useData } from 'vitepress'
 
 export function formatTime(
   timestamp: number,
@@ -17,6 +17,22 @@ export function formatTime(
 
 export function normalizeRelativePath(path: string) {
   return '/' + path.replace('index.md', '')
+}
+
+export function expandPostData(post: ContentData) {
+  return {
+    ...post,
+    url: post.url.replace('index.html', ''),
+    id: /(?<=\/posts\/).*(?=\/)/.exec(post.url)![0],
+    title: post.frontmatter.title ?? 'Untitled Post',
+    cover: post.frontmatter.cover,
+    description: post.frontmatter.description,
+    create: post.frontmatter.create
+      ? new Date(post.frontmatter.create).getTime()
+      : Date.now(),
+    tags: post.frontmatter.tags ?? [],
+    categories: post.frontmatter.categories ?? [],
+  }
 }
 
 export async function getRandomMoe(

@@ -24,7 +24,6 @@
           :prepend-icon="link.icon"
           :href="link.href"
           :title="link.title"
-          exact
         />
       </v-list>
     </v-navigation-drawer>

@@ -11,7 +11,7 @@
             <v-card-title class="post-card-title">
               {{ $props.title }}
             </v-card-title>
-            <PostListItemCardInfo :url="$props.url" :create="$props.create" />
+              <slot />
             <v-card-text>{{ $props.description }}</v-card-text>
           </div>
         </v-col>
@@ -23,7 +23,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { getRandomMoe } from '../../utils'
-import PostListItemCardInfo from './PostListItemCardInfo.vue'
 
 const props = defineProps<{
   index: number
@@ -31,7 +30,6 @@ const props = defineProps<{
   title: string
   cover?: string
   description?: string
-  create: number
 }>()
 
 const imgUrl = ref(props.cover)

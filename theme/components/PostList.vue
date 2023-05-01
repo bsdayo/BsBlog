@@ -1,7 +1,11 @@
 <template>
   <div v-for="(post, index) in currentPosts" :key="post.url">
-    <PostListItemCardMobile v-if="$vuetify.display.mobile" v-bind="post" />
-    <PostListItemCardDesktop v-else v-bind="post" :index="index" />
+    <PostListItemCardMobile v-if="$vuetify.display.mobile" v-bind="post">
+      <PostListItemCardInfo v-bind="post" />
+    </PostListItemCardMobile>
+    <PostListItemCardDesktop v-else v-bind="post" :index="index">
+      <PostListItemCardInfo v-bind="post" />
+    </PostListItemCardDesktop>
   </div>
 
   <v-pagination
@@ -13,24 +17,14 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { data as posts } from '../scripts/posts.data'
+import { expandPostData } from '../utils'
 
 import PostListItemCardDesktop from './cards/PostListItemCardDesktop.vue'
 import PostListItemCardMobile from './cards/PostListItemCardMobile.vue'
+import PostListItemCardInfo from './cards/PostListItemCardInfo.vue'
 
 const sortedPosts = posts
-  .map((p) => {
-    return {
-      ...p,
-      url: p.url.replace('index.html', ''),
-      id: /(?<=\/posts\/).*(?=\/)/.exec(p.url)![0],
-      title: p.frontmatter.title ?? 'Untitled Post',
-      cover: p.frontmatter.cover,
-      description: p.frontmatter.description,
-      create: p.frontmatter.create
-        ? new Date(p.frontmatter.create).getTime()
-        : Date.now(),
-    }
-  })
+  .map((p) => expandPostData(p))
   .sort((a, b) => b.create - a.create)
 
 const currentPage = ref(1)

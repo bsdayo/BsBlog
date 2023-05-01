@@ -1,7 +1,6 @@
 <template>
   <v-img
     :src="imgUrl"
-    :key="page.relativePath"
     class="page-header"
     :height="$vuetify.display.mobile ? '320px' : '400px'"
     cover

@@ -62,7 +62,7 @@
     </v-app-bar>
 
     <HomeHeader v-if="frontmatter.home" />
-    <PageHeader v-else />
+    <PageHeader v-else :key="page.relativePath" />
 
     <PageContainer>
       <template #left>

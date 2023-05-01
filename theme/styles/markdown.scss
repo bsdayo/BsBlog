@@ -31,9 +31,10 @@
     @include normalizeFirstLast();
   }
 
-  a:not([class*='link']):not([class*='btn']) {
+  // Markdown generated a tags don't have class attribute set
+  a:not([class]) {
     text-decoration: none;
-    color: $md-link-color;
+    color: $md-link-color-light;
   }
 
   del {
@@ -50,7 +51,7 @@
 
   blockquote {
     position: relative;
-    background-color: rgba($md-link-color, 0.1);
+    background-color: rgba($md-blockquote-color, 0.1);
     border-radius: $md-block-border-radius;
     padding: $md-block-padding;
     padding-left: $md-block-padding + 6px;
@@ -62,7 +63,7 @@
       top: 0;
       left: 0;
       display: block;
-      background-color: $md-link-color;
+      background-color: $md-blockquote-color;
       width: 4px;
       height: 100%;
       border-top-left-radius: $md-block-border-radius;
@@ -142,5 +143,15 @@
       background-color: transparent;
       padding: 0;
     }
+  }
+}
+
+html.dark .markdown {
+  a:not([class]) {
+    color: $md-link-color-dark;
+  }
+
+  code {
+    background-color: #313136;
   }
 }

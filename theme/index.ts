@@ -11,11 +11,9 @@ export interface BsBlogThemeConfig {
   author: string
   bio: string
   avatar: string
-  defaultHeaderImage?: string
-  defaultPostCover?: string
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]
-
+  loliconHost?: string
   giscus: GiscusProps
 }
 

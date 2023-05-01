@@ -42,7 +42,7 @@
         <v-btn class="text-h6" :href="site.base">{{ site.title }}</v-btn>
       </v-toolbar-title>
 
-      <div class="nav-links mr-4" v-if="!$vuetify.display.mobile">
+      <div class="nav-btns mr-2" v-if="!$vuetify.display.mobile">
         <v-btn
           class="ml-2"
           v-for="link in theme.navLinks"
@@ -53,6 +53,12 @@
           >{{ link.title }}
         </v-btn>
       </div>
+
+      <v-btn
+        icon="mdi-brightness-6"
+        :size="$vuetify.display.mobile ? undefined : 'small'"
+        @click="toggleTheme()"
+      />
     </v-app-bar>
 
     <HomeHeader v-if="frontmatter.home" />
@@ -83,6 +89,7 @@
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from 'theme'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useTheme } from 'vuetify'
 import initRibbonUnder from './scripts/ribbon'
 
 import PageContainer from './components/PageContainer.vue'
@@ -94,6 +101,7 @@ import ProfileCard from './components/cards/ProfileCard.vue'
 import GiscusCommentCard from './components/cards/GiscusCommentCard.vue'
 
 const { site, page, theme, frontmatter } = useData<BsBlogThemeConfig>()
+const vuetifyTheme = useTheme()
 
 const isInPost = computed(() => page.value.relativePath.includes('posts'))
 
@@ -110,6 +118,14 @@ function handleScroll() {
   lastScrollY = window.scrollY
 }
 
+function toggleTheme(themeName?: string) {
+  vuetifyTheme.global.name.value =
+    themeName ?? (vuetifyTheme.global.current.value.dark ? 'light' : 'dark')
+  if (vuetifyTheme.global.name.value === 'dark')
+    document.getElementsByTagName('html')[0].classList.add('dark')
+  else document.getElementsByTagName('html')[0].classList.remove('dark')
+}
+
 onMounted(() => {
   import('webfontloader').then((loader) =>
     loader.load({
@@ -118,7 +134,15 @@ onMounted(() => {
       },
     })
   )
+
+  const darkMatch = matchMedia('(prefers-color-scheme: dark)')
+  toggleTheme(darkMatch.matches ? 'dark' : 'light')
+  darkMatch.addEventListener('change', (event) =>
+    toggleTheme(event.matches ? 'dark' : 'light')
+  )
+
   initRibbonUnder('#app')
+
   handleScroll()
   window.addEventListener('scroll', handleScroll)
 })
@@ -131,7 +155,6 @@ onUnmounted(() => {
 .nav-bar {
   position: fixed;
   transition: all 0.5s, color 0.1s;
-  background-color: rgba(255, 255, 255, 0.8) !important;
 
   &.collapsed {
     top: -64px !important;

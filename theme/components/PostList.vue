@@ -1,5 +1,5 @@
 <template>
-  <div v-for="(post, index) in currentPosts">
+  <div v-for="(post, index) in currentPosts" :key="post.url">
     <PostListItemCardMobile v-if="$vuetify.display.mobile" v-bind="post" />
     <PostListItemCardDesktop v-else v-bind="post" :index="index" />
   </div>
@@ -11,15 +11,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useData } from 'vitepress'
 import { ref, computed } from 'vue'
-import { BsBlogThemeConfig } from 'theme'
 import { data as posts } from '../scripts/posts.data'
 
 import PostListItemCardDesktop from './cards/PostListItemCardDesktop.vue'
 import PostListItemCardMobile from './cards/PostListItemCardMobile.vue'
-
-const { theme } = useData<BsBlogThemeConfig>()
 
 const sortedPosts = posts
   .map((p) => {
@@ -28,7 +24,7 @@ const sortedPosts = posts
       url: p.url.replace('index.html', ''),
       id: /(?<=\/posts\/).*(?=\/)/.exec(p.url)![0],
       title: p.frontmatter.title ?? 'Untitled Post',
-      cover: p.frontmatter.cover ?? theme.value.defaultPostCover,
+      cover: p.frontmatter.cover,
       description: p.frontmatter.description,
       create: p.frontmatter.create
         ? new Date(p.frontmatter.create).getTime()

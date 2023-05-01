@@ -1,10 +1,12 @@
 <template>
   <v-img
-    :src="frontmatter.image ?? theme.defaultHeaderImage"
+    :src="imgUrl"
     class="home-header h-screen d-flex justify-center align-center text-center pa-2"
     cover
   >
-    <h1 class="text-h2 font-weight-bold text-white">{{ site.title }}</h1>
+    <h1 class="page-header-title text-h2 font-weight-bold text-white">
+      {{ site.title }}
+    </h1>
 
     <v-btn
       class="text-white scroll-btn bg-transparent"
@@ -17,8 +19,14 @@
 
 <script lang="ts" setup>
 import { useData } from 'vitepress'
+import { ref } from 'vue'
+import { getRandomMoe } from '../../utils'
 
-const { theme, site, frontmatter } = useData()
+const { site, frontmatter } = useData()
+
+const imgUrl = ref(frontmatter.value.cover)
+if (!imgUrl.value)
+  getRandomMoe('regular').then((moeUrl) => (imgUrl.value = moeUrl))
 
 function scrollToContent() {
   window.scrollTo({

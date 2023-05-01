@@ -3,7 +3,7 @@
     <v-container class="pa-0">
       <v-row class="ma-0">
         <v-col cols="5" class="pa-0" :order="$props.index % 2 === 0 ? 1 : 3">
-          <v-img height="200px" :src="$props.cover" cover />
+          <v-img height="200px" :src="imgUrl" cover />
         </v-col>
 
         <v-col cols="7" class="px-4 d-flex align-center" order="2">
@@ -21,9 +21,11 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+import { getRandomMoe } from '../../utils'
 import PostListItemCardInfo from './PostListItemCardInfo.vue'
 
-defineProps<{
+const props = defineProps<{
   index: number
   url: string
   title: string
@@ -31,6 +33,10 @@ defineProps<{
   description?: string
   create: number
 }>()
+
+const imgUrl = ref(props.cover)
+if (!imgUrl.value)
+  getRandomMoe('small').then(moeUrl => imgUrl.value = moeUrl)
 </script>
 
 <style lang="scss" scoped>

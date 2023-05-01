@@ -34,8 +34,6 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     author: 'bsdayo',
     bio: '♪sakana——\\(＞○＜\\)♪',
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
-    defaultHeaderImage: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
-    defaultPostCover: 'https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg',
     navLinks: [
       {
         href: '/',
@@ -85,6 +83,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         desc: 'Mail',
       },
     ],
+    loliconHost: 'lolicon-proxy.sorabs.cc',
     giscus: {
       host: 'https://giscus.app',
       repo: 'bsdayo/bsblog',
@@ -96,7 +95,6 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       reactionsEnabled: '0',
       emitMetadata: '0',
       inputPosition: 'top',
-      theme: 'light',
       lang: 'zh-CN',
       loading: 'lazy',
     },

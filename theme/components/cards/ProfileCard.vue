@@ -13,6 +13,7 @@
         :key="social.href"
         size="small"
         :icon="social.icon"
+        :href="social.href"
       />
     </v-card-actions>
   </v-card>

@@ -30,6 +30,8 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     'pages/links/index.md': 'links/index.md',
   },
 
+  ignoreDeadLinks: 'localhostLinks',
+
   themeConfig: {
     author: 'bsdayo',
     bio: '♪sakana——\\(＞○＜\\)♪',

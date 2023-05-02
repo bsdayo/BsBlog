@@ -143,6 +143,36 @@
       padding: 0;
     }
   }
+
+  *[class*=language-] code .diff {
+    margin: 0 -16px;
+    padding: 0 16px;
+    width: calc(100% + 32px);
+    display: inline-block;
+
+    &.add {
+      background-color: rgba(16, 185, 129, 0.2);
+      
+      &::before {
+        content: '+';
+        color: #10b981;
+        position: absolute;
+        left: 5px;
+      }
+    }
+
+    &.remove {
+      background-color: rgba(244, 63, 94, 0.2);
+      opacity: 0.7;
+      
+      &::before {
+        content: '-';
+        color: #f43f5e;
+        position: absolute;
+        left: 5px;
+      }
+    }
+  }
 }
 
 html.dark .markdown {

@@ -3,6 +3,11 @@ title: 友链
 comment: true
 
 links:
+  - title: LY 的博客
+    desc: 自疏濯淖污泥之中，蝉蜕于浊秽，以浮游尘埃之外。
+    avatar: https://avatars.githubusercontent.com/u/51789698?v=4
+    url: https://Young-Lord.github.io
+
   - title: MBRjun-Blog
     desc: MBRjun-Blog
     avatar: https://cos.mbrjun.cn/PICS/LG4v3avatar144px.jpg

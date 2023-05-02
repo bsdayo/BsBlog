@@ -14,6 +14,7 @@
         size="small"
         :icon="social.icon"
         :href="social.href"
+        target="_blank"
       />
     </v-card-actions>
   </v-card>

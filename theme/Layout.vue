@@ -8,7 +8,7 @@
     <PageContainer>
       <template #left>
         <PostList v-if="frontmatter.home" />
-        <PostContentCard v-else />
+        <MarkdownContentCard v-else />
         <GiscusCommentCard
           v-if="isInPost || frontmatter.comment"
           class="my-4"
@@ -40,7 +40,7 @@ import PostList from './components/PostList.vue'
 import HomeHeader from './components/headers/HomeHeader.vue'
 import PageHeader from './components/headers/PageHeader.vue'
 
-import PostContentCard from './components/cards/PostContentCard.vue'
+import MarkdownContentCard from './components/cards/MarkdownContentCard.vue'
 import ProfileCard from './components/cards/ProfileCard.vue'
 import GiscusCommentCard from './components/cards/GiscusCommentCard.vue'
 

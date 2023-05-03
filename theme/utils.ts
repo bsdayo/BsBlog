@@ -19,19 +19,25 @@ export function normalizeRelativePath(path: string) {
   return '/' + path.replace('index.md', '')
 }
 
-export function expandPostData(post: ContentData) {
+export function getPostFromFrontmatter(frontmatter: Record<string, any>) {
+  return {
+    title: frontmatter.title ?? 'Untitled Post',
+    cover: frontmatter.cover,
+    description: frontmatter.description,
+    create: frontmatter.create
+      ? new Date(frontmatter.create).getTime()
+      : Date.now(),
+    tags: frontmatter.tags ?? [],
+    categories: frontmatter.categories ?? [],
+  }
+}
+
+export function getPostFromData(post: ContentData) {
   return {
     ...post,
+    ...getPostFromFrontmatter(post.frontmatter),
     url: post.url.replace('index.html', ''),
     id: /(?<=\/posts\/).*(?=\/)/.exec(post.url)![0],
-    title: post.frontmatter.title ?? 'Untitled Post',
-    cover: post.frontmatter.cover,
-    description: post.frontmatter.description,
-    create: post.frontmatter.create
-      ? new Date(post.frontmatter.create).getTime()
-      : Date.now(),
-    tags: post.frontmatter.tags ?? [],
-    categories: post.frontmatter.categories ?? [],
   }
 }
 

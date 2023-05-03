@@ -31,7 +31,7 @@ const { frontmatter, page } = useData<BsBlogThemeConfig>()
 const post = posts.find((p) =>
   p.url.includes(page.value.relativePath.replace('index.md', ''))
 )
-const postData = post ? utils.expandPostData(post) : null
+const postData = post ? utils.getPostFromData(post) : null
 
 const imgUrl = ref(frontmatter.value.cover)
 if (!imgUrl.value)

@@ -17,14 +17,14 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { data as posts } from '../scripts/posts.data'
-import { expandPostData } from '../utils'
+import { getPostFromData } from '../utils'
 
 import PostListItemCardDesktop from './cards/PostListItemCardDesktop.vue'
 import PostListItemCardMobile from './cards/PostListItemCardMobile.vue'
 import PostListItemCardInfo from './cards/PostListItemCardInfo.vue'
 
 const sortedPosts = posts
-  .map((p) => expandPostData(p))
+  .map((p) => getPostFromData(p))
   .sort((a, b) => b.create - a.create)
 
 const currentPage = ref(1)

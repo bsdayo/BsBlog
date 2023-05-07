@@ -2,6 +2,8 @@
 @import './mixins.scss';
 
 .markdown {
+  line-height: 28px;
+
   // Titles
   h1,
   h2,
@@ -9,7 +11,8 @@
   h4,
   h5,
   h6 {
-    margin: 16px 0 10px 0;
+    @include normalizeFirstLast();
+    margin: 32px 0 12px 0;
 
     a.header-anchor::before {
       content: $md-header-anchor-symbol;
@@ -25,13 +28,13 @@
   }
 
   p {
-    line-height: 28px;
     font-size: $md-content-font-size;
     margin: 10px 0;
     @include normalizeFirstLast();
   }
 
-  a:not([class]), a.header-anchor {
+  a:not([class]),
+  a.header-anchor {
     text-decoration: none;
     color: $md-link-color-light;
   }
@@ -56,6 +59,8 @@
     padding-left: $md-block-padding + 6px;
     margin: $md-block-margin-y 0;
 
+    @include normalizeFirstLast();
+
     &::before {
       content: '';
       position: absolute;
@@ -73,7 +78,6 @@
   // Images
   img:not([class]) {
     max-width: 100%;
-    margin: 1em 0;
   }
 
   // Lists
@@ -81,6 +85,10 @@
   ul {
     margin: 0 0 10px 28px;
     font-size: $md-content-font-size;
+
+    li + li {
+      margin-top: 8px;
+    }
   }
 
   // Code related
@@ -95,11 +103,17 @@
     padding: 2px 5px;
     line-height: 1.7em;
   }
+
   div[class*='language-'] {
     position: relative;
+    margin: 16px 0;
+    border-radius: $md-block-border-radius;
+    background-color: $md-code-bg-color-dark;
+    color: #abb2bf;
 
-    span.lang {
-      display: none;
+    pre {
+      padding: 20px;
+      overflow-x: auto;
     }
 
     button.copy {
@@ -129,54 +143,54 @@
         color: #f6f6f6;
       }
     }
-  }
-  pre {
-    margin: 16px 0;
-    padding: 16px;
-    border-radius: $md-block-border-radius;
-    background-color: $md-code-bg-color-dark;
-    overflow-x: auto;
-    color: #abb2bf;
 
     code {
+      display: block;
       background-color: transparent;
       padding: 0;
-    }
-  }
+      width: fit-content;
+      min-width: 100%;
 
-  *[class*=language-] code .diff {
-    margin: 0 -16px;
-    padding: 0 16px;
-    width: calc(100% + 32px);
-    display: inline-block;
+      .diff {
+        margin: 0 -20px;
+        padding: 0 20px;
+        width: calc(100% + 40px);
+        display: inline-block;
 
-    &.add {
-      background-color: rgba(16, 185, 129, 0.2);
-      
-      &::before {
-        content: '+';
-        color: #10b981;
-        position: absolute;
-        left: 5px;
+        &.add {
+          background-color: rgba(16, 185, 129, 0.2);
+
+          &::before {
+            content: '+';
+            color: #10b981;
+            position: absolute;
+            left: 7px;
+          }
+        }
+
+        &.remove {
+          background-color: rgba(244, 63, 94, 0.2);
+          opacity: 0.7;
+
+          &::before {
+            content: '-';
+            color: #f43f5e;
+            position: absolute;
+            left: 7px;
+          }
+        }
       }
     }
 
-    &.remove {
-      background-color: rgba(244, 63, 94, 0.2);
-      opacity: 0.7;
-      
-      &::before {
-        content: '-';
-        color: #f43f5e;
-        position: absolute;
-        left: 5px;
-      }
+    span.lang {
+      display: none;
     }
   }
 }
 
 html.dark .markdown {
-  a:not([class]), a.header-anchor {
+  a:not([class]),
+  a.header-anchor {
     color: $md-link-color-dark;
   }
 

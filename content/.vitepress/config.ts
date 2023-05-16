@@ -70,9 +70,9 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         desc: 'GitHub',
       },
       {
-        href: 'https://wakatime.com/@bsdayo',
-        icon: 'si:wakatime',
-        desc: 'WakaTime',
+        href: 'https://steamcommunity.com/id/bsdayo/',
+        icon: 'si:steam',
+        desc: 'Steam',
       },
       {
         href: 'https://space.bilibili.com/33268404',
@@ -81,7 +81,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       },
       {
         href: 'mailto:bs@sorabs.cc',
-        icon: 'si:gmail',
+        icon: 'si:microsoftoutlook',
         desc: 'Mail',
       },
     ],

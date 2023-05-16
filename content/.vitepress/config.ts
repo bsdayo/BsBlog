@@ -36,6 +36,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     author: 'bsdayo',
     bio: '♪sakana——\\(＞○＜\\)♪',
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
+    postPerPage: 8,
     navLinks: [
       {
         href: '/',

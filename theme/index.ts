@@ -11,6 +11,7 @@ export interface BsBlogThemeConfig {
   author: string
   bio: string
   avatar: string
+  postPerPage?: number
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]
   loliconHost?: string

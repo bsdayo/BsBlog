@@ -10,18 +10,23 @@
 
   <v-pagination
     v-model="currentPage"
-    :length="Math.ceil(sortedPosts.length / 5)"
+    :length="Math.ceil(sortedPosts.length / postPerPage)"
   />
 </template>
 
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
+import { useData } from 'vitepress'
 import { data as posts } from '../scripts/posts.data'
 import { getPostFromData } from '../utils'
+import { BsBlogThemeConfig } from 'theme'
 
 import PostListItemCardDesktop from './cards/PostListItemCardDesktop.vue'
 import PostListItemCardMobile from './cards/PostListItemCardMobile.vue'
 import PostListItemCardInfo from './cards/PostListItemCardInfo.vue'
+
+const { theme } = useData<BsBlogThemeConfig>()
+const postPerPage = theme.value.postPerPage ?? 5
 
 const sortedPosts = posts
   .map((p) => getPostFromData(p))
@@ -29,7 +34,7 @@ const sortedPosts = posts
 
 const currentPage = ref(1)
 const currentPosts = computed(() =>
-  sortedPosts.slice(5 * (currentPage.value - 1), 5 * currentPage.value)
+  sortedPosts.slice(postPerPage * (currentPage.value - 1), postPerPage * currentPage.value)
 )
 </script>
 

@@ -1,8 +1,8 @@
 <template>
-  <v-card class="post-card mb-6" :href="$props.url" v-ripple>
+  <v-card class="post-card mb-6 elevation-4" :href="$props.url" v-ripple>
     <v-img :src="imgUrl" height="200px" cover />
     <v-card-title class="post-card-title">{{ $props.title }}</v-card-title>
-      <slot />
+    <slot />
     <v-card-text>{{ $props.description }}</v-card-text>
   </v-card>
 </template>
@@ -18,4 +18,5 @@ const props = defineProps<{
 }>()
 
 const imgUrl = ref(props.cover)
+if (!imgUrl.value) imgUrl.value = '/home.jpg'
 </script>

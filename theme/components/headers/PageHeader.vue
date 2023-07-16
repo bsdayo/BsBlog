@@ -34,6 +34,7 @@ const post = posts.find((p) =>
 const postData = post ? utils.getPostFromData(post) : null
 
 const imgUrl = ref(frontmatter.value.cover)
+if (!imgUrl.value) imgUrl.value = '/home.jpg'
 </script>
 
 <style lang="scss" scoped>

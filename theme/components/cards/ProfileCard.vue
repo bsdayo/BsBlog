@@ -1,5 +1,5 @@
 <template>
-  <v-card class="profile-card" v-ripple>
+  <v-card class="profile-card elevation-4" v-ripple>
     <div width="100%" class="my-5 d-flex flex-column align-center">
       <v-avatar size="110">
         <v-img :src="theme.avatar" cover />

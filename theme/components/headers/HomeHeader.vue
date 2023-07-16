@@ -1,6 +1,6 @@
 <template>
   <v-img
-    :src="imgUrl"
+    src="/home.jpg"
     class="home-header h-screen d-flex justify-center align-center text-center pa-2"
     cover
   >
@@ -19,11 +19,8 @@
 
 <script lang="ts" setup>
 import { useData } from 'vitepress'
-import { ref } from 'vue'
 
-const { site, frontmatter } = useData()
-
-const imgUrl = ref(frontmatter.value.cover)
+const { site } = useData()
 
 function scrollToContent() {
   window.scrollTo({

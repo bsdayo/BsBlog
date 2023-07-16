@@ -1,5 +1,5 @@
 <template>
-  <v-card :key="page.relativePath" class="giscus-comment-card pa-6">
+  <v-card :key="page.relativePath" class="giscus-comment-card pa-6 elevation-4">
     <Giscus
       v-bind="theme.giscus"
       :theme="$vuetify.theme.current.dark ? 'transparent_dark' : 'light'"

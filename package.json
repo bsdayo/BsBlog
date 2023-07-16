@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "vitepress dev content --host",
     "build": "vitepress build content",
-    "preview": "vitepress preview content"
+    "preview": "vitepress preview content",
+    "new": "node tools/new-post.js"
   },
   "devDependencies": {
     "@giscus/vue": "^2.2.8",

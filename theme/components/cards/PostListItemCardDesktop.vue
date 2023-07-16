@@ -1,5 +1,5 @@
 <template>
-  <v-card class="post-card mb-6" :href="$props.url" v-ripple>
+  <v-card class="post-card mb-6 elevation-4" :href="$props.url" v-ripple>
     <v-container class="pa-0">
       <v-row class="ma-0">
         <v-col cols="5" class="pa-0" :order="$props.index % 2 === 0 ? 1 : 3">
@@ -32,6 +32,7 @@ const props = defineProps<{
 }>()
 
 const imgUrl = ref(props.cover)
+if (!imgUrl.value) imgUrl.value = '/home.jpg'
 </script>
 
 <style lang="scss" scoped>

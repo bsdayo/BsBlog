@@ -80,11 +80,11 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         icon: 'si:bilibili',
         desc: 'BiliBili',
       },
-      {
-        href: 'mailto:bs@sorabs.cc',
-        icon: 'si:microsoftoutlook',
-        desc: 'Mail',
-      },
+      // {
+      //   href: 'mailto:bs@sorabs.cc',
+      //   icon: 'si:microsoftoutlook',
+      //   desc: 'Mail',
+      // },
     ],
     giscus: {
       host: 'https://giscus.app',

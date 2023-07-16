@@ -86,7 +86,6 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         desc: 'Mail',
       },
     ],
-    loliconHost: 'lolicon-proxy.sorabs.cc',
     giscus: {
       host: 'https://giscus.app',
       repo: 'bsdayo/bsblog',

@@ -20,13 +20,10 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
 import { ref } from 'vue'
-import { getRandomMoe } from '../../utils'
 
 const { site, frontmatter } = useData()
 
 const imgUrl = ref(frontmatter.value.cover)
-if (!imgUrl.value)
-  getRandomMoe('regular').then((moeUrl) => (imgUrl.value = moeUrl))
 
 function scrollToContent() {
   window.scrollTo({

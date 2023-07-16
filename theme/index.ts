@@ -14,7 +14,6 @@ export interface BsBlogThemeConfig {
   postPerPage?: number
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]
-  loliconHost?: string
   giscus: GiscusProps
 }
 

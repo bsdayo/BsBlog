@@ -34,8 +34,6 @@ VitePress 的好处还是很多的，比如直接在 Markdown 中使用 Vue 组�
 ♪sakana——\\(＞○＜\\)♪ &emsp; :fish: ← Emoji 支持
 :::
 
-一些随机的背景图来自于 [Lolicon API](https://api.lolicon.app/)，虽然加了 `r18=0` 参数但是还是会有一些比较涩的跑出来，看到请~~节制一些~~赶快划走（（
-
 最后还是希望自己能坚持写下去（跑
 
 底下的评论区就当个留言板叭

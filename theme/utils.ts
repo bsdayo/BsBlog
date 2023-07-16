@@ -40,21 +40,3 @@ export function getPostFromData(post: ContentData) {
     id: /(?<=\/posts\/).*(?=\/)/.exec(post.url)![0],
   }
 }
-
-export async function getRandomMoe(
-  size: 'original' | 'regular' | 'small' | 'thumb' | 'mini'
-) {
-  const {
-    theme: {
-      value: { loliconHost },
-    },
-  } = useData<BsBlogThemeConfig>()
-  const host = loliconHost ?? 'api.lolicon.app'
-
-  // 就不开 r18，给你一拳
-  // 就要萝莉！就要萝莉！
-  const resp = await fetch(
-    `https://${host}/setu/v2?r18=0&tag=萝莉&size=${size}`
-  )
-  return (await resp.json()).data[0].urls[size]
-}

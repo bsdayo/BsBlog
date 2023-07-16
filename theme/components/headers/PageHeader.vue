@@ -34,8 +34,6 @@ const post = posts.find((p) =>
 const postData = post ? utils.getPostFromData(post) : null
 
 const imgUrl = ref(frontmatter.value.cover)
-if (!imgUrl.value)
-  utils.getRandomMoe('regular').then((moeUrl) => (imgUrl.value = moeUrl))
 </script>
 
 <style lang="scss" scoped>

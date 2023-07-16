@@ -22,7 +22,6 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { getRandomMoe } from '../../utils'
 
 const props = defineProps<{
   index: number
@@ -33,8 +32,6 @@ const props = defineProps<{
 }>()
 
 const imgUrl = ref(props.cover)
-if (!imgUrl.value)
-  getRandomMoe('small').then(moeUrl => imgUrl.value = moeUrl)
 </script>
 
 <style lang="scss" scoped>

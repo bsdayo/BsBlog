@@ -107,6 +107,7 @@
   div[class*='language-'] {
     position: relative;
     margin: 16px 0;
+    border: #444 1px solid;
     border-radius: $md-block-border-radius;
     background-color: $md-code-bg-color-dark;
     color: #abb2bf;
@@ -118,7 +119,7 @@
 
     button.copy {
       &::before {
-        font-family: 'Material Design Icons';
+        font-family: 'Material Design Icons', sans-serif;
         content: '\F018F';
         color: rgba(#fff, 0.2);
         transition: color 0.1s;
@@ -150,6 +151,7 @@
       padding: 0;
       width: fit-content;
       min-width: 100%;
+      font-size: unset;
 
       .diff {
         margin: 0 -20px;

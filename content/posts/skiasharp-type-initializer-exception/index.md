@@ -2,7 +2,6 @@
 title: SkiaSharp 的 Type Initializer Exception 解决记录
 create: 2022-10-02T14:46:48+08:00
 
-categories: tech
 tags:
   - skiasharp
   - csharp
@@ -16,7 +15,9 @@ TypeInitializationException: The type initializer for 'SkiaSharp.SKImageInfo' th
    ...
 ```
 
-查询一番后，大多都是说是 SkiaSharp 的版本问题，升级就好，但是我已经在使用最新版本了）最后在[这里](https://github.com/mono/SkiaSharp/issues/964#issuecomment-541399218)找到了解决方案。
+查询一番后，大多都是说是 SkiaSharp
+的版本问题，升级就好，但是我已经在使用最新版本了）最后在[这里](https://github.com/mono/SkiaSharp/issues/964#issuecomment-541399218)
+找到了解决方案。
 
 **报错的原因是：系统缺少了 `libfontconfig`，导致字体相关操作无法完成。**
 

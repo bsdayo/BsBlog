@@ -2,7 +2,6 @@
 title: Mac 风格 Ubuntu Desktop 美化教程
 create: 2021-07-27T23:25:10+08:00
 
-categories: tech
 tags:
   - ubuntu
   - linux
@@ -44,11 +43,13 @@ $ sudo apt update
 $ sudo apt install gnome-tweaks chrome-gnome-shell -y
 ```
 
-随后打开 [https://extensions.gnome.org/](https://extensions.gnome.org/) ，点击 `Click here to install browser extension` 安装浏览器插件
+随后打开 [https://extensions.gnome.org/](https://extensions.gnome.org/) ，点击 `Click here to install browser extension`
+安装浏览器插件
 
 ![安装浏览器插件](install-browser-extension.png)
 
-随后搜索 [User Themes](https://extensions.gnome.org/extension/19/user-themes/) 插件安装，点击页面右上角的开关，把`OFF`改成`ON`就可以了，如果弹出确认窗口就点确认
+随后搜索 [User Themes](https://extensions.gnome.org/extension/19/user-themes/) 插件安装，点击页面右上角的开关，把`OFF`
+改成`ON`就可以了，如果弹出确认窗口就点确认
 
 ![安装插件](user-theme-extension.png)
 
@@ -56,7 +57,8 @@ $ sudo apt install gnome-tweaks chrome-gnome-shell -y
 
 Ubuntu Desktop 自带的 Dock 栏并不是很好用，可定制性也不强，这里使用 `Dash to Dock` 插件增强。
 
-向上面安装 `User Theme` 插件一样，在 [https://extensions.gnome.org/](https://extensions.gnome.org/) 中搜索 [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) 并安装。
+向上面安装 `User Theme` 插件一样，在 [https://extensions.gnome.org/](https://extensions.gnome.org/)
+中搜索 [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) 并安装。
 
 然后去 Gnome Tweaks 里启用：
 
@@ -243,7 +245,8 @@ $ ./install.sh
 
 ### 应用主题
 
-有时主题不会自动应用至系统，这时需要手动打开一开始安装的美化管理工具。应用列表里找到 `优化` 应用或者终端输入 `gnome-tweaks`
+有时主题不会自动应用至系统，这时需要手动打开一开始安装的美化管理工具。应用列表里找到 `优化`
+应用或者终端输入 `gnome-tweaks`
 
 ![Gnome Tweaks 工具](gnome-tweaks.png)
 

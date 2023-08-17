@@ -2,7 +2,6 @@
 title: 在树莓派 4B 上安装 Arch Linux ARM
 create: 2022-10-02T10:51:14+08:00
 
-categories: tech
 tags:
   - raspberrypi
   - archlinux
@@ -11,13 +10,15 @@ tags:
 
 ## 前言
 
-自从在虚拟机、[WSL2](../wsl2-arch/) 上相继安装过 Arch Linux 之后，我将目光投向了家里仅剩的一个还运行着 Ubuntu 的 Linux 设备 —— 树莓派 4B。
+自从在虚拟机、[WSL2](../wsl2-arch/index.md) 上相继安装过 Arch Linux 之后，我将目光投向了家里仅剩的一个还运行着 Ubuntu 的 Linux
+设备 —— 树莓派 4B。
 
 话不多说，直接开搞（
 
 ## 准备
 
-首先由于启动方式的不同，Arch Linux ARM for Raspberry Pi 并不能使用我们一般用的 RPi Imager 烧录。要安装 Arch，首先得准备一台已经装好了的 Linux 设备。可以使用虚拟机，这里我直接用树莓派的备用系统（一张烧好了官方系统的 SD 卡，作为后备还原系统）安装。
+首先由于启动方式的不同，Arch Linux ARM for Raspberry Pi 并不能使用我们一般用的 RPi Imager 烧录。要安装 Arch，首先得准备一台已经装好了的
+Linux 设备。可以使用虚拟机，这里我直接用树莓派的备用系统（一张烧好了官方系统的 SD 卡，作为后备还原系统）安装。
 
 随便 pick 一张适合做系统的 SD 卡插入电脑，开始我们的安装。
 
@@ -59,7 +60,8 @@ $ sync
 ```
 
 ::: note 下载太慢...
-如果下载太慢，也可以使用国内源下载，将 url 换为 [https://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/os/ArchLinuxARM-rpi-aarch64-latest.tar.gz](https://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/os/ArchLinuxARM-rpi-aarch64-latest.tar.gz)
+如果下载太慢，也可以使用国内源下载，将 url
+换为 [https://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/os/ArchLinuxARM-rpi-aarch64-latest.tar.gz](https://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/os/ArchLinuxARM-rpi-aarch64-latest.tar.gz)
 :::
 
 将启动文件复制到 `boot` 目录下：
@@ -80,7 +82,8 @@ $ sed -i 's/mmcblk0/mmcblk1/g' root/etc/fstab
 $ umount boot root
 ```
 
-接下来把 SD 卡插入树莓派，连上网线，在路由器查看树莓派的 IP 地址，然后使用 SSH 链接。默认用户名称和密码都为 `alarm`。登录上后切换到 `root` 用户（默认密码为 `root`），编辑 `/etc/pacman.d/mirrorlist` 换源：
+接下来把 SD 卡插入树莓派，连上网线，在路由器查看树莓派的 IP 地址，然后使用 SSH 链接。默认用户名称和密码都为 `alarm`
+。登录上后切换到 `root` 用户（默认密码为 `root`），编辑 `/etc/pacman.d/mirrorlist` 换源：
 
 ```
 $ su root

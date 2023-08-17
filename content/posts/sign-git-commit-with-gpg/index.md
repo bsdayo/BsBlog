@@ -2,7 +2,6 @@
 title: 使用 GPG 签名你的 Git Commit
 create: 2022-10-01T15:52:24+08:00
 
-categories: tech
 tags:
   - git
   - github
@@ -13,15 +12,22 @@ cover: /covers/sign-git-commit-with-gpg.jpg
 
 ## 前言
 
-在 GitHub 上浏览许多大仓库时，常常能见到在 commit 信息旁边有一个绿色的标识，里面写着 Verified。这种一看就令人安心的标志，自己也想搞一个（）上网查了查资料，发现只要对提交到 GitHub 的 commit 使用 GPG 进行签名即可，步骤也不麻烦，遂进行一个记录。
+在 GitHub 上浏览许多大仓库时，常常能见到在 commit 信息旁边有一个绿色的标识，里面写着
+Verified。这种一看就令人安心的标志，自己也想搞一个（）上网查了查资料，发现只要对提交到 GitHub 的 commit 使用 GPG
+进行签名即可，步骤也不麻烦，遂进行一个记录。
 
 ## 什么是 GPG
 
 ::: quote 摘自 [GPG 官网](https://gnupg.org/)
-GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. GnuPG also provides support for S/MIME and Secure Shell (ssh).
+GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG
+allows you to encrypt and sign your data and communications; it features a versatile key management system, along with
+access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features
+for easy integration with other applications. A wealth of frontend applications and libraries are available. GnuPG also
+provides support for S/MIME and Secure Shell (ssh).
 :::
 
-简单来说，GPG (GNU Privacy Guard) 是由 GNU 组织提供的一款加密工具，并且是目前世界上最好用的加密工具之一。GPG 的用途十分广泛，而我们今天只是用它进行 git commit 的签名认证。
+简单来说，GPG (GNU Privacy Guard) 是由 GNU 组织提供的一款加密工具，并且是目前世界上最好用的加密工具之一。GPG
+的用途十分广泛，而我们今天只是用它进行 git commit 的签名认证。
 
 ## 生成 GPG Key
 
@@ -92,7 +98,8 @@ $ git commit -m -S "test gpg key"
 
 这里提交时的 `-S` 选项，表示我们使用 GPG 签名这次提交。
 
-不同于以往直接提交成功，git 弹出一个窗口要求你输入密码，也就是我们设置的密钥密码。正确输入后便会完成提交，也就完成了我们第一次由 GPG 验证过的 commit。
+不同于以往直接提交成功，git 弹出一个窗口要求你输入密码，也就是我们设置的密钥密码。正确输入后便会完成提交，也就完成了我们第一次由
+GPG 验证过的 commit。
 
 ![输入密码](enter-passphrase.png)
 
@@ -120,17 +127,20 @@ $ git commit -m -S "test gpg key"
 
 ![往下翻到这里](add-gpg-key-on-github.png)
 
-点击 New GPG key，输入想要的名称，然后把上面获取的公钥完整地（包括 `-----BEGIN PGP PUBLIC KEY BLOCK-----` 和 `-----END PGP PUBLIC KEY BLOCK-----`）复制到下面的文本框内，然后点击 Add GPG key 按钮完成。
+点击 New GPG key，输入想要的名称，然后把上面获取的公钥完整地（包括 `-----BEGIN PGP PUBLIC KEY BLOCK-----`
+和 `-----END PGP PUBLIC KEY BLOCK-----`）复制到下面的文本框内，然后点击 Add GPG key 按钮完成。
 
 ![输入页面](edit-gpg-key.png)
 
-这时我们就成功地让 GitHub “认识” 了我们的密钥了。本地执行一个提交并 push 到 GitHub 上，你会看到提交信息旁边有一个闪亮的 Verified 标识。
+这时我们就成功地让 GitHub “认识” 了我们的密钥了。本地执行一个提交并 push 到 GitHub 上，你会看到提交信息旁边有一个闪亮的
+Verified 标识。
 
 ![Verified!](github-verified.png)
 
 ## 附加：信任 GitHub 的 GPG 公钥
 
-虽然我们本地的 commit 已经是签名过的了，但不在本地的，例如直接在 GitHub 网页端执行的提交，则是由 GitHub 代为签名，这导致我们无法验证这些签名的真实性。
+虽然我们本地的 commit 已经是签名过的了，但不在本地的，例如直接在 GitHub 网页端执行的提交，则是由 GitHub
+代为签名，这导致我们无法验证这些签名的真实性。
 
 信任 GitHub 的公钥即可解决这个问题：
 

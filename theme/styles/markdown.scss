@@ -1,9 +1,7 @@
-@import './vars.scss';
-@import './mixins.scss';
+@import './variables';
+@import './mixins';
 
 .markdown {
-  line-height: 28px;
-
   // Titles
   h1,
   h2,
@@ -28,6 +26,7 @@
   }
 
   p {
+    line-height: 1.6em;
     font-size: $md-content-font-size;
     margin: 10px 0;
     @include normalizeFirstLast();
@@ -55,7 +54,9 @@
     position: relative;
     background-color: rgba($md-blockquote-color, 0.1);
     border-radius: $md-block-border-radius;
+    //noinspection CssReplaceWithShorthandSafely
     padding: $md-block-padding;
+    //noinspection CssReplaceWithShorthandSafely
     padding-left: $md-block-padding + 6px;
     margin: $md-block-margin-y 0;
 
@@ -83,6 +84,7 @@
   // Lists
   ol,
   ul {
+    line-height: 1.6em;
     margin: 0 0 10px 28px;
     font-size: $md-content-font-size;
 
@@ -97,6 +99,7 @@
     font-size: $md-code-font-size;
     font-family: 'JetBrains Mono', Consolas, monospace !important;
   }
+
   code {
     background-color: $md-code-bg-color-light;
     border-radius: $md-block-border-radius;
@@ -188,15 +191,15 @@
       display: none;
     }
   }
-}
 
-html.dark .markdown {
-  a:not([class]),
-  a.header-anchor {
-    color: $md-link-color-dark;
-  }
+  &.dark {
+    a:not([class]),
+    a.header-anchor {
+      color: $md-link-color-dark;
+    }
 
-  code {
-    background-color: $md-code-bg-color-dark;
+    code {
+      background-color: $md-code-bg-color-dark;
+    }
   }
 }

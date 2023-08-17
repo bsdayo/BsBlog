@@ -2,7 +2,6 @@
 title: 使用 WSL2 部署 Arch Linux 环境
 create: 2022-10-01T09:38:08+08:00
 
-categories: tech
 tags:
   - wsl
   - archlinux
@@ -13,7 +12,8 @@ cover: /covers/wsl2-arch.jpg
 
 最近入了 Arch Linux 的坑，手上没有空闲的机子可以装着玩，虚拟机又有点膈应的感觉，就找了找资料在 WSL2 上装了体验一下。
 
-关于 WSL1 和 WSL2 的区别，不在本文的讨论范围内，可以前往[微软的官方说明](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)查看。
+关于 WSL1 和 WSL2
+的区别，不在本文的讨论范围内，可以前往[微软的官方说明](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)查看。
 
 本文中，以 `>` 开头的命令为 Powershell 命令，`#` 开头为 Arch 中的 `root` 用户命令，`$` 开头为 Arch 中的普通用户命令。
 
@@ -25,13 +25,16 @@ cover: /covers/wsl2-arch.jpg
 首先前往 [**这里**](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) 下载 WSL 的内核更新包，不然没法安装。
 
 安装后将 WSL 的默认版本设置为 WSL2：
+
 ```powershell
 > wsl --set-default-version 2
 ```
 
 ## 安装 Arch
 
-前往 [项目仓库 (yuk7/ArchWSL)](https://github.com/yuk7/ArchWSL) 的 [Releases](https://github.com/yuk7/ArchWSL/releases) 页面下载最新的 `Arch.zip`，并解压到具有写权限的空文件夹里。留意 `Arch.exe` 的名称，`.exe` 前的部分会作为稍后在 WSL 内注册的发行版名称，例如改名成 `ArchLinux.exe`，稍后的实例就叫 `ArchLinux`。
+前往 [项目仓库 (yuk7/ArchWSL)](https://github.com/yuk7/ArchWSL) 的 [Releases](https://github.com/yuk7/ArchWSL/releases)
+页面下载最新的 `Arch.zip`，并解压到具有写权限的空文件夹里。留意 `Arch.exe` 的名称，`.exe` 前的部分会作为稍后在 WSL
+内注册的发行版名称，例如改名成 `ArchLinux.exe`，稍后的实例就叫 `ArchLinux`。
 
 ::: note 多个 Arch 共存
 由于这里的 Arch 是通过文件安装，只要将 `exe` 文件复制并改名即可。注意改名后的文件不要和已有的实例名称重复。
@@ -53,7 +56,9 @@ cover: /covers/wsl2-arch.jpg
 # passwd bs
 ```
 
-为了使新用户可以使用 `sudo` 权限，编辑 `/etc/sudoers` 文件，找到 `root ALL=(ALL:ALL) ALL`，在其下添加一行 `bs ALL=(ALL:ALL) ALL` （`bs` 同样换成刚刚的用户名）；并找到 `#%wheel ALL=(ALL:ALL) ALL`，将其取消注释（去掉最前面的 `#`）
+为了使新用户可以使用 `sudo` 权限，编辑 `/etc/sudoers` 文件，找到 `root ALL=(ALL:ALL) ALL`
+，在其下添加一行 `bs ALL=(ALL:ALL) ALL` （`bs` 同样换成刚刚的用户名）；并找到 `#%wheel ALL=(ALL:ALL) ALL`
+，将其取消注释（去掉最前面的 `#`）
 
 ::: note 找不到编辑器
 如果没有自己常用的编辑器（如 vim），可以先跳到下面的 Pacman 配置小节，然后自行安装。
@@ -78,9 +83,11 @@ bs ALL=(ALL:ALL) ALL
 
 打开 Arch.exe 进入命令行。
 
-由于众所周知的原因，国内访问 Arch 的软件源十分缓慢，这里将源换为[清华大学开源镜像站的源](https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/)。
+由于众所周知的原因，国内访问 Arch
+的软件源十分缓慢，这里将源换为[清华大学开源镜像站的源](https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/)。
 
-编辑 `/etc/pacman.d/mirrorlist`，往下翻找到 China 一栏，将 `https://mirrors.tuna.tsinghua.edu.cn` 行取消注释。也可以多取消几个注释作为后备。如果懒得找也可以直接在文件开头添加：
+编辑 `/etc/pacman.d/mirrorlist`，往下翻找到 China 一栏，将 `https://mirrors.tuna.tsinghua.edu.cn`
+行取消注释。也可以多取消几个注释作为后备。如果懒得找也可以直接在文件开头添加：
 
 ```
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch

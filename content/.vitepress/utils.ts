@@ -2,6 +2,7 @@ import container from 'markdown-it-container'
 
 // https://github.com/vuejs/vitepress/blob/main/src/node/markdown/plugins/containers.ts
 type ContainerArgs = [typeof container, string, { render: Function }]
+
 export function createContainer(
   klass: string,
   defaultTitle: string,
@@ -11,7 +12,7 @@ export function createContainer(
     container,
     klass,
     {
-      render(tokens, idx) {
+      render(tokens: any, idx: any) {
         const token = tokens[idx]
         const info = token.info.trim().slice(klass.length).trim()
         if (token.nesting === 1) {

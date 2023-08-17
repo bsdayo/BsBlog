@@ -1,5 +1,5 @@
-import { BsBlogThemeConfig } from 'theme'
-import { ContentData, useData } from 'vitepress'
+import { ContentData } from 'vitepress'
+import { Post } from "./types/common"
 
 export function formatTime(
   timestamp: number,
@@ -15,28 +15,33 @@ export function formatTime(
   return withTime ? str + ` ${hour}:${minute}` : str
 }
 
-export function normalizeRelativePath(path: string) {
-  return '/' + path.replace('index.md', '')
-}
-
-export function getPostFromFrontmatter(frontmatter: Record<string, any>) {
+export function getPostFromContentData(post: ContentData): Post {
   return {
-    title: frontmatter.title ?? 'Untitled Post',
-    cover: frontmatter.cover,
-    description: frontmatter.description,
-    create: frontmatter.create
-      ? new Date(frontmatter.create).getTime()
-      : Date.now(),
-    tags: frontmatter.tags ?? [],
-    categories: frontmatter.categories ?? [],
-  }
-}
-
-export function getPostFromData(post: ContentData) {
-  return {
-    ...post,
-    ...getPostFromFrontmatter(post.frontmatter),
-    url: post.url.replace('index.html', ''),
+    frontmatter: post.frontmatter,
     id: /(?<=\/posts\/).*(?=\/)/.exec(post.url)![0],
+    title: post.frontmatter.title ?? 'Untitled Post',
+    cover: post.frontmatter.cover,
+    description: post.frontmatter.description,
+    create: post.frontmatter.create ? new Date(post.frontmatter.create).getTime() : Date.now(),
+    category: post.frontmatter.category,
+    tags: post.frontmatter.tags ?? [],
+    url: post.url.replace('index.html', ''),
+    comment: !!(post.frontmatter.comment ?? true),
   }
+}
+
+const primaryColors = [
+  'red', 'pink', 'purple',
+  'deep-purple', 'indigo', 'blue',
+  'light-blue', 'cyan', 'teal',
+  'green', 'light-green', 'lime',
+  'yellow', 'amber', 'orange',
+  'deep-orange', 'brown', 'blue-grey', 'grey'
+]
+
+export function getTagColor(tagName: string): string {
+  let n = 0
+  for (let i = 0; i < tagName.length; i++)
+    n += tagName.charCodeAt(i)
+  return `${primaryColors[n % primaryColors.length]}-darken-${n % 4 + 1}`
 }

@@ -14,7 +14,8 @@ $ pnpm add -D vitepress
 ```
 
 ::: note 关于包管理器
-这里我使用了 pnpm 作为项目的包管理器。你可以根据自己的习惯替换成 npm 或 yarn，具体可参见[官方文档](https://vitepress.dev/guide/getting-started)。
+这里我使用了 pnpm 作为项目的包管理器。你可以根据自己的习惯替换成 npm 或
+yarn，具体可参见[官方文档](https://vitepress.dev/guide/getting-started)。
 :::
 
 使用 [Setup Wizard](https://vitepress.dev/guide/getting-started#setup-wizard) 初始化项目：
@@ -77,7 +78,8 @@ export default {
 }
 ```
 
-其中 `enhanceApp` 函数就是我们的目标，参数解构出来的 `app`、`router` 分别就是 VitePress 使用的 Vue、Vue Router 实例，我们可以在上面加入自己的修改。
+其中 `enhanceApp` 函数就是我们的目标，参数解构出来的 `app`、`router` 分别就是 VitePress 使用的 Vue、Vue Router
+实例，我们可以在上面加入自己的修改。
 
 ## 将 Vuetify 安装到项目中
 
@@ -87,7 +89,8 @@ export default {
 $ pnpm add -D vuetify @mdi/font
 ```
 
-在 `.vitepress/theme/index.ts` 旁边新建一个 `vuetify.ts`，用于存放 Vuetify 相关的配置。这里我直接从 Vuetify 脚手架里扒出来一个默认的配置文件，如下所示：
+在 `.vitepress/theme/index.ts` 旁边新建一个 `vuetify.ts`，用于存放 Vuetify 相关的配置。这里我直接从 Vuetify
+脚手架里扒出来一个默认的配置文件，如下所示：
 
 ```typescript
 import { createVuetify } from 'vuetify'
@@ -189,7 +192,8 @@ TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".css" for C:\Use
 
 ¿
 
-参考[这个 Issue](https://github.com/vuetifyjs/vuetify/issues/15700)，这是由于在 SSR 构建中，需要针对 Vuetify 进行特殊配置，才能使其正常工作。
+参考[这个 Issue](https://github.com/vuetifyjs/vuetify/issues/15700)，这是由于在 SSR 构建中，需要针对 Vuetify
+进行特殊配置，才能使其正常工作。
 
 打开 `.vitepress/config.ts`，在底下加入这一项：
 
@@ -222,7 +226,8 @@ Hydration completed but contains mismatches.
 
 这个问题其实是指，客户端渲染出来的 HTML 结构和服务器发送的不匹配，通常在一些不能使用 SSR 渲染的动态组件上发生。
 
-没加 Vuetify 啥事没有，加了就出问题，那肯定就出在 Vuetify 上。[查阅文档](https://vuetifyjs.com/en/getting-started/installation/#ssr)可以发现，在 SSR 构建中，需要给 Vuetify 配置这样一句：
+没加 Vuetify 啥事没有，加了就出问题，那肯定就出在 Vuetify
+上。[查阅文档](https://vuetifyjs.com/en/getting-started/installation/#ssr)可以发现，在 SSR 构建中，需要给 Vuetify 配置这样一句：
 
 ```typescript
 export default createVuetify({

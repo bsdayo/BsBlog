@@ -1,4 +1,4 @@
-@import './vars.scss';
+@import './variables.scss';
 @import './mixins.scss';
 
 .custom-block {
@@ -38,7 +38,7 @@
 
     &::before {
       font-weight: 500;
-      font-family: 'Material Design Icons';
+      font-family: 'Material Design Icons', monospace;
       position: absolute;
       font-size: 1.25rem;
       left: 0.7rem;

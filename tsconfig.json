@@ -6,9 +6,18 @@
     "strict": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "skipLibCheck": true
   },
-  "include": ["theme", "content", "theme/env.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "theme",
+    "content",
+    "theme/env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

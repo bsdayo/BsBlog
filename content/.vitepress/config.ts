@@ -1,11 +1,11 @@
 import { defineConfigWithTheme } from 'vitepress'
 import vuetify from 'vite-plugin-vuetify'
-import { BsBlogThemeConfig } from '../../theme'
+import { BsBlogThemeConfig } from '../../theme/types/config'
 import { createContainer } from './utils'
 
 export default defineConfigWithTheme<BsBlogThemeConfig>({
   title: 'BsBlog',
-  description: 'BsBlog v4 - Built with VitePress',
+  description: 'BsBlog v4 - Powered by VitePress',
 
   markdown: {
     theme: 'one-dark-pro',
@@ -36,7 +36,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     author: 'bsdayo',
     bio: '♪sakana——\\(＞○＜\\)♪',
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
-    postPerPage: 8,
+    defaultPostCover: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
     navLinks: [
       {
         href: '/',
@@ -80,11 +80,6 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         icon: 'si:bilibili',
         desc: 'BiliBili',
       },
-      // {
-      //   href: 'mailto:bs@sorabs.cc',
-      //   icon: 'si:microsoftoutlook',
-      //   desc: 'Mail',
-      // },
     ],
     giscus: {
       host: 'https://giscus.app',

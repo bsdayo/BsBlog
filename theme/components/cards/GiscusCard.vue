@@ -7,7 +7,7 @@ const { page, theme } = useData<BsBlogThemeConfig>()
 </script>
 
 <template>
-  <v-card :key="page.relativePath" class="giscus-card pa-6">
+  <v-card :key="page.relativePath" class="giscus-card pa-4">
     <Giscus v-bind="theme.giscus" :theme="$vuetify.theme.current.dark ? 'transparent_dark' : 'light'"/>
   </v-card>
 </template>

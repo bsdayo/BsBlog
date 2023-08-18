@@ -16,7 +16,6 @@ const vuetifyTheme = useTheme()
 const currentPost = computed(() => posts.find(p => p.title === frontmatter.value.title)!)
 
 function toggleTheme(themeName?: string) {
-  console.log("Toggled!")
   vuetifyTheme.global.name.value = themeName ?? (vuetifyTheme.global.current.value.dark ? 'light' : 'dark')
 }
 
@@ -41,7 +40,7 @@ onMounted(() => {
 
 <template>
   <v-app :class="$vuetify.theme.global.current.dark ? '' : 'bg-grey-lighten-5'">
-    <MainFrame/>
+    <MainFrame @toggle-theme="toggleTheme()"/>
 
     <v-main>
       <v-container>

@@ -6,13 +6,24 @@ import { BsBlogThemeConfig } from '../types/config'
 const drawerOpened = ref(false)
 
 const { theme } = useData<BsBlogThemeConfig>()
+
+defineEmits<{
+  toggleTheme: []
+}>()
 </script>
 
 <template>
 
   <v-app-bar>
-    <v-app-bar-nav-icon @click="drawerOpened = !drawerOpened"/>
+    <template #prepend>
+      <v-app-bar-nav-icon @click="drawerOpened = !drawerOpened"/>
+    </template>
+
     <v-app-bar-title>BsBlog</v-app-bar-title>
+
+    <template #append>
+      <v-btn icon="mdi-brightness-6" @click="$emit('toggleTheme')"/>
+    </template>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawerOpened">

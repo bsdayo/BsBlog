@@ -27,6 +27,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
 
   rewrites: {
     'pages/about/index.md': 'about/index.md',
+    'pages/timeline/index.md': 'timeline/index.md',
     'pages/links/index.md': 'links/index.md',
   },
 
@@ -43,6 +44,11 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         title: '首页',
         icon: 'mdi-home',
       },
+      {
+        href: '/timeline/',
+        title: '时间线',
+        icon: 'mdi-timeline-text',
+      },
       // {
       //   href: '/categories/',
       //   title: '分类',
@@ -55,13 +61,13 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       // },
       {
         href: '/links/',
-        title: '友链',
-        icon: 'mdi-link',
+        title: '友情链接',
+        icon: 'mdi-link-variant',
       },
       {
         href: '/about/',
         title: '关于',
-        icon: 'mdi-information',
+        icon: 'mdi-heart',
       },
     ],
     socialLinks: [

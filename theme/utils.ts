@@ -3,7 +3,8 @@ import { Post } from "./types/common"
 
 export function formatTime(
   timestamp: number,
-  withTime: boolean = false
+  withTime: boolean = false,
+  withYear: boolean = true
 ): string {
   const date = new Date(timestamp)
   const year = date.getFullYear()
@@ -11,7 +12,7 @@ export function formatTime(
   const day = date.getDate().toString().padStart(2, '0')
   const hour = date.getHours().toString().padStart(2, '0')
   const minute = date.getMinutes().toString().padStart(2, '0')
-  const str = `${year}.${month}.${day}`
+  const str = (withYear ? `${year}.` : '') + `${month}.${day}`
   return withTime ? str + ` ${hour}:${minute}` : str
 }
 

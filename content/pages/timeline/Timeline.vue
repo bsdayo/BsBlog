@@ -41,8 +41,8 @@ for (const post of posts) {
         </v-timeline-item>
 
         <v-timeline-item v-for="post in month.posts" :key="post.id" size="x-small">
-          <template #opposite>{{ formatTime(post.create, false, false) }}</template>
-          <v-card :href="post.url">
+          <template #opposite>{{ formatTime(post.create, false).substring(2) }}</template>
+          <v-card :href="post.url" variant="flat">
             <v-card-text>{{ post.title }}</v-card-text>
           </v-card>
         </v-timeline-item>
@@ -50,7 +50,3 @@ for (const post of posts) {
     </template>
   </v-timeline>
 </template>
-
-<style scoped lang="scss">
-
-</style>

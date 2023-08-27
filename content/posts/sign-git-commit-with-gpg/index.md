@@ -1,5 +1,5 @@
 ---
-title: 使用 GPG 签名你的 Git Commit
+title: 使用 GPG 为你的 Git Commit 签名
 create: 2022-10-01T15:52:24+08:00
 
 tags:

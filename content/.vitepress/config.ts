@@ -47,7 +47,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       {
         href: '/timeline/',
         title: '时间线',
-        icon: 'mdi-timeline-text',
+        icon: 'mdi-clock',
       },
       // {
       //   href: '/categories/',
@@ -101,6 +101,22 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       lang: 'zh-CN',
       loading: 'lazy',
     },
+
+    tags: {
+      'archlinux': ['Arch Linux', '#1793D1'],
+      'csharp': ['C#', '#239120'],
+      'git': ['Git', '#F05032'],
+      'github': ['GitHub', '#181717'],
+      'gpg': ['GPG'],
+      'leetcode': ['LeetCode', '#FFA116'],
+      'linux': ['Linux', '#FCC624'],
+      'pixel-arts': ['像素画'],
+      'raspberrypi': ['Raspberry Pi', '#A22846'],
+      'skiasharp': ['SkiaSharp'],
+      'ubuntu': ['Ubuntu', '#E95420'],
+      'vscode': ['Visual Studio Code', '#007ACC'],
+      'wsl': ['Windows Subsystem for Linux', '#0078D4']
+    }
   },
 
   vite: {

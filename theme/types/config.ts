@@ -8,6 +8,7 @@ export interface BsBlogThemeConfig {
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]
   giscus: GiscusProps
+  tags?: Record<string, Tag>
 }
 
 export interface NavLink {
@@ -21,3 +22,5 @@ export interface SocialLink {
   icon: string
   desc: string
 }
+
+export type Tag = [name: string, color?: string]

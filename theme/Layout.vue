@@ -43,7 +43,7 @@ onMounted(() => {
     <MainFrame @toggle-theme="toggleTheme()"/>
 
     <v-main>
-      <v-container>
+      <v-container class="main-container">
         <HomePage v-if="frontmatter.type === 'home'"/>
         <ContentPage v-else :post="currentPost"/>
       </v-container>
@@ -53,3 +53,9 @@ onMounted(() => {
     <!--    </v-footer>-->
   </v-app>
 </template>
+
+<style lang="scss" scoped>
+.main-container {
+  max-width: 1032px;
+}
+</style>

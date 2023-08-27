@@ -2,7 +2,7 @@
 import { Post } from '../../types/common'
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from '../../types/config'
-import { formatTime } from '../../utils'
+import { formatTime, getTag } from '../../utils'
 
 defineProps<{ post?: Post }>()
 
@@ -15,20 +15,23 @@ const { theme, frontmatter } = useData<BsBlogThemeConfig>()
            :src="$props.post?.cover ?? theme.defaultPostCover"
            max-height="300px"
            :cover="true">
-      <div class="content-card-title-overlay" :class="{'pt-4 pb-2': !$vuetify.display.mobile}">
-        <v-card-title class="content-card-title" :class="{'text-h4': !$vuetify.display.mobile}">
-          {{ $props.post?.title ?? frontmatter.title }}
-        </v-card-title>
-        <v-card-subtitle v-if="$props.post"
-                         class="content-card-info py-2"
-                         :class="{'text-subtitle-1':  !$vuetify.display.mobile}">
-          <span v-if="$props.post.create">
-            <v-icon icon="mdi-calendar-month"/>
-            {{ formatTime($props.post.create) }}
-          </span>
-        </v-card-subtitle>
-      </div>
+      <v-card-title class="content-card-title pt-6 pb-4">
+        {{ $props.post?.title ?? frontmatter.title }}
+      </v-card-title>
     </v-img>
+
+    <v-card-text class="content-card-chips" v-if="$props.post">
+      <v-chip prepend-icon="mdi-calendar-month" variant="text">{{ formatTime($props.post.create) }}</v-chip>
+      <v-spacer/>
+      <v-chip v-for="tag in $props.post.tags.map(t => getTag(t, theme))"
+              :key="tag"
+              variant="flat"
+              :color="tag[1]!">
+        {{ tag[0] }}
+      </v-chip>
+    </v-card-text>
+
+    <v-divider v-if="$props.post"/>
 
     <v-card-text class="markdown" :class="{dark: $vuetify.theme.current.dark}">
       <Content/>
@@ -40,17 +43,17 @@ const { theme, frontmatter } = useData<BsBlogThemeConfig>()
 @import "../../styles/variables";
 
 .content-card {
-  .content-card-cover {
+  .content-card-title {
     color: white;
     text-shadow: 0 0 4px #000;
+    background: $content-card-title-overlay-bg;
+    white-space: normal;
+  }
 
-    .content-card-title-overlay {
-      background-color: $content-card-title-overlay-color;
-
-      * {
-        white-space: normal;
-      }
-    }
+  .content-card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
 </style>

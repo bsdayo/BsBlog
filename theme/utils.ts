@@ -1,10 +1,10 @@
 import { ContentData } from 'vitepress'
 import { Post } from "./types/common"
+import { BsBlogThemeConfig, Tag } from './types/config'
 
 export function formatTime(
   timestamp: number,
-  withTime: boolean = false,
-  withYear: boolean = true
+  withTime: boolean = false
 ): string {
   const date = new Date(timestamp)
   const year = date.getFullYear()
@@ -12,7 +12,7 @@ export function formatTime(
   const day = date.getDate().toString().padStart(2, '0')
   const hour = date.getHours().toString().padStart(2, '0')
   const minute = date.getMinutes().toString().padStart(2, '0')
-  const str = (withYear ? `${year}.` : '') + `${month}.${day}`
+  const str = `${year}-${month}-${day}`
   return withTime ? str + ` ${hour}:${minute}` : str
 }
 
@@ -40,9 +40,14 @@ const primaryColors = [
   'deep-orange', 'brown', 'blue-grey', 'grey'
 ]
 
-export function getTagColor(tagName: string): string {
+export function getTagColor(tagId: string): string {
   let n = 0
-  for (let i = 0; i < tagName.length; i++)
-    n += tagName.charCodeAt(i)
+  for (let i = 0; i < tagId.length; i++)
+    n += tagId.charCodeAt(i)
   return `${primaryColors[n % primaryColors.length]}-darken-${n % 4 + 1}`
+}
+
+export function getTag(tagId: string, themeConfig: BsBlogThemeConfig): Tag {
+  const item = themeConfig.tags?.[tagId]
+  return [item?.[0] ?? tagId, item?.[1] ?? getTagColor(tagId)]
 }

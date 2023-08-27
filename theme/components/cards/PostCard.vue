@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Post } from '../../types/common'
-import { formatTime, getTagColor } from '../../utils'
+import { formatTime, getTag } from '../../utils'
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from '../../types/config'
 
@@ -14,25 +14,27 @@ const { theme } = useData<BsBlogThemeConfig>()
     <v-img class="post-card-cover d-flex align-end"
            :src="$props.post.cover ?? theme.defaultPostCover"
            :cover="true"
+           aspect-ratio="1.7778"
            max-height="300px">
-      <div class="post-card-title-overlay">
-        <v-card-title class="post-card-title">{{ $props.post.title }}</v-card-title>
-        <v-card-subtitle class="post-card-info pb-2">
-          <v-icon icon="mdi-calendar-month"/>
-          {{ formatTime($props.post.create) }}
-        </v-card-subtitle>
-      </div>
+      <v-card-title class="post-card-title pt-6 pb-4">{{ $props.post.title }}</v-card-title>
     </v-img>
-    <!--  :src="$props.post.cover"  -->
-
 
     <v-card-text class="post-card-description" v-if="$props.post.description">
       {{ $props.post.description }}
     </v-card-text>
 
-    <v-card-actions v-if="$props.post.tags && $props.post.tags.length > 0">
-      <v-btn v-for="tag in $props.post.tags" :key="tag" variant="flat" :color="getTagColor(tag)">{{ tag }}</v-btn>
-    </v-card-actions>
+    <v-divider/>
+
+    <v-card-text class="post-card-chips">
+      <v-chip prepend-icon="mdi-calendar-month" variant="text">{{ formatTime($props.post.create) }}</v-chip>
+      <v-spacer />
+      <v-chip v-for="tag in $props.post.tags.map(t => getTag(t, theme))"
+              :key="tag"
+              variant="flat"
+              :color="tag[1]!">
+        {{ tag[0] }}
+      </v-chip>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -40,16 +42,17 @@ const { theme } = useData<BsBlogThemeConfig>()
 @import "../../styles/variables";
 
 .post-card {
-  .post-card-cover {
-    .post-card-title-overlay {
-      background-color: $content-card-title-overlay-color;
+  .post-card-title {
+    background: $content-card-title-overlay-bg;
+    color: white;
+    text-shadow: 0 0 4px #000;
+    white-space: normal;
+  }
 
-      * {
-        color: white;
-        text-shadow: 0 0 4px #000;
-        white-space: normal;
-      }
-    }
+  .post-card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
 </style>

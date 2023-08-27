@@ -10,7 +10,7 @@
   h5,
   h6 {
     @include normalizeFirstLast();
-    margin: 32px 0 12px 0;
+    margin: 24px 0 12px 0;
 
     a.header-anchor::before {
       content: $md-header-anchor-symbol;

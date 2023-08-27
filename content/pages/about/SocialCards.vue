@@ -43,6 +43,13 @@ const cards: SocialCardProp[] = [
     href: 'https://www.coolapk.com/u/2352972',
     textColor: 'white'
   },
+  {
+    color: '#000000',
+    icon: 'si:x',
+    title: 'X / Twitter',
+    href: 'https://twitter.com/konobsdayo',
+    textColor: 'white'
+  },
 ]
 </script>
 

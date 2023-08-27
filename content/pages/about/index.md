@@ -84,6 +84,26 @@ VitePress 好用的功能还是挺多的，比如直接在 Markdown 中使用 Vu
 import SocialCards from './SocialCards.vue'
 </script>
 
+## PGP 公钥
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEZOo7cRYJKwYBBAHaRw8BAQdABhgFhzsAe5ZWELwJZQC5ZW6mKpKnc19I/lE9
+Sx8q9oK0G2JzZGF5byA8YnNkYXlvQG91dGxvb2suY29tPoiTBBMWCgA7FiEE9Aw3
+FJMAyhFf/6ksSIn3505VXKIFAmTqO3ECGwEFCwkIBwICIgIGFQoJCAsCBBYCAwEC
+HgcCF4AACgkQSIn3505VXKKhmQD9ERhKXVXa5be7g9YX/SQD+mNwfTlSt3iXLK6o
++L4LoTUBAPp9J1u1WqnnGPfqnoH97mhzPoZXdqqgeRGiPjSA9sMKuDMEZOo/sRYJ
+KwYBBAHaRw8BAQdAsxDbBuD+fwHoRdikUvc8yfWcHVWYd6ZDqReKvFfe3saI7wQY
+FgoAIBYhBPQMNxSTAMoRX/+pLEiJ9+dOVVyiBQJk6j+xAhsCAIEJEEiJ9+dOVVyi
+diAEGRYKAB0WIQQFHShJOKqbC3e2lmxYAQJymnVvdQUCZOo/sQAKCRBYAQJymnVv
+dYdQAQD4sB1ngBkLu6a64QgsrrSjZLJX2gYZDr5nc0iqVrDYDQD+Ix3QVVfitROi
+KdCufgw3QSK/nRKH//x6dCTKUT6SQAadWwD/eZwR22HonloYMmdxvZFg6tgsB+SV
+qcLLEny5ABdzm1oA/jDzid9T9giWo2/0e6a/xQYj4Jqt6JONvruKg027x3sA
+=r2MB
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
 ## 碎碎念
 
 折腾这么多年，博客写写停停，时间都花在折腾博客框架本身去了...自己写博客的初衷又是什么呢？

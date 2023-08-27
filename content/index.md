@@ -1,7 +1,6 @@
 ---
 type: home
-#title: BsBlog
+title: 首页
 description: 欢迎！
-# cover: https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg
 ---
 

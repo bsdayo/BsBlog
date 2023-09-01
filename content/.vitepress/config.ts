@@ -35,8 +35,9 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
 
   themeConfig: {
     author: 'bsdayo',
-    bio: '♪sakana——\\(＞○＜\\)♪',
+    bio: '怎么会是呢？',
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
+    avatarBg: '/img/avatarBg.jpg',
     defaultPostCover: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
     navLinks: [
       {

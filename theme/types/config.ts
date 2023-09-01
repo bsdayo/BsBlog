@@ -4,6 +4,7 @@ export interface BsBlogThemeConfig {
   author: string
   bio: string
   avatar: string
+  avatarBg: string
   defaultPostCover: string
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]

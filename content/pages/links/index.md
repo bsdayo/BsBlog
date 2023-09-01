@@ -83,4 +83,5 @@ Pull Request；或是直接在下面评论。记得带上类似上面的的格�
 </v-container>
 
 <script setup>
+import LinkCard from './LinkCard.vue'
 </script>

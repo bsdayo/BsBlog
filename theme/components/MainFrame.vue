@@ -13,6 +13,30 @@ defineEmits<{
 </script>
 
 <template>
+  <v-navigation-drawer v-model="drawerOpened">
+    <v-img class="d-flex align-end text-white" :src="theme.avatarBg" height="150px" :cover="true">
+      <v-list-item>
+        <template #prepend>
+          <v-avatar size="56">
+            <v-img :src="theme.avatar"/>
+          </v-avatar>
+        </template>
+
+        <v-list-item-title>{{ theme.author }}</v-list-item-title>
+        <v-list-item-subtitle>{{ theme.bio }}</v-list-item-subtitle>
+      </v-list-item>
+    </v-img>
+
+    <v-list :nav="true">
+      <v-list-item v-for="link in theme.navLinks"
+                   :key="link.href"
+                   @click="drawerOpened = $vuetify.display.mobile ? false : drawerOpened"
+                   :prepend-icon="link.icon"
+                   :title="link.title"
+                   :value="link.title"
+                   :href="link.href"/>
+    </v-list>
+  </v-navigation-drawer>
 
   <v-app-bar>
     <template #prepend>
@@ -25,18 +49,6 @@ defineEmits<{
       <v-btn icon="mdi-brightness-6" @click="$emit('toggleTheme')"/>
     </template>
   </v-app-bar>
-
-  <v-navigation-drawer v-model="drawerOpened">
-    <v-list :nav="true">
-      <v-list-item v-for="link in theme.navLinks"
-                   :key="link.href"
-                   @click="drawerOpened = $vuetify.display.mobile ? false : drawerOpened"
-                   :prepend-icon="link.icon"
-                   :title="link.title"
-                   :value="link.title"
-                   :href="link.href"/>
-    </v-list>
-  </v-navigation-drawer>
 </template>
 
 <style scoped lang="scss">

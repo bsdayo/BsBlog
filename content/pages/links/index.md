@@ -63,27 +63,24 @@ links:
 
 - 名称：BsBlog
 - 链接：[https://blog.bsdayo.moe/](https://blog.bsdayo.moe/)
-- 头像：[https://avatars.githubusercontent.com/u/41754841?v=4](https://avatars.githubusercontent.com/u/41754841?v=4)
-- 简介: bs在摸鱼还是睡觉呢zzz
+- 头像：[https://avatars.githubusercontent.com/u/41754841](https://avatars.githubusercontent.com/u/41754841?v=4)
+- 简介: 怎么会是呢？
 
 ~~（和我熟的话其实写什么都行 xxx）~~
 :::
 
-交换友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/bsblog/edit/main/content/pages/links/index.md)，并提交
-Pull Request；或者直接在下面评论，记得带上类似上面的的格式哦~
-
-拜拜各位大佬们~
+添加友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/bsblog/edit/main/content/pages/links/index.md)，并提交
+Pull Request；或是直接在下面评论。记得带上类似上面的的格式哦~
 
 排序不分先后，最近加的会放在列表顶部 qwq
 
 <v-container class="page-container" :fluid="true">
   <v-row>
-    <v-col :cols="$vuetify.display.mobile ? 12 : 6" v-for="link in $frontmatter.links">
+    <v-col cols="12" md="6" v-for="link in $frontmatter.links">
       <LinkCard :key="link.url" v-bind="link" />
     </v-col>
   </v-row>
 </v-container>
 
 <script setup>
-import LinkCard from './LinkCard.vue'
 </script>

@@ -7,7 +7,7 @@ tags:
   - archlinux
   - linux
 
-cover: /covers/wsl2-arch.jpg
+cover: /posts/wsl2-arch/cover.webp
 ---
 
 最近入了 Arch Linux 的坑，手上没有空闲的机子可以装着玩，虚拟机又有点膈应的感觉，就找了找资料在 WSL2 上装了体验一下。

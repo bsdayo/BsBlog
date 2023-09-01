@@ -1,6 +1,6 @@
 import { ContentData } from 'vitepress'
-import { Post } from "./types/common"
-import { BsBlogThemeConfig, Tag } from './types/config'
+import { Post } from './types/common'
+import { BsBlogThemeConfig } from './types/config'
 
 export function formatTime(
   timestamp: number,
@@ -40,14 +40,16 @@ const primaryColors = [
   'deep-orange', 'brown', 'blue-grey', 'grey'
 ]
 
-export function getTagColor(tagId: string): string {
-  let n = 0
-  for (let i = 0; i < tagId.length; i++)
-    n += tagId.charCodeAt(i)
-  return `${primaryColors[n % primaryColors.length]}-darken-${n % 4 + 1}`
-}
+export function getTag(id: string, theme: BsBlogThemeConfig) {
+  const item = theme.tags?.[id]
 
-export function getTag(tagId: string, themeConfig: BsBlogThemeConfig): Tag {
-  const item = themeConfig.tags?.[tagId]
-  return [item?.[0] ?? tagId, item?.[1] ?? getTagColor(tagId)]
+  let n = 0
+  for (let i = 0; i < id.length; i++)
+    n += id.charCodeAt(i)
+
+  return {
+    id,
+    name: item?.[0] ?? id,
+    color: item?.[1] ?? `${primaryColors[n % primaryColors.length]}-darken-${n % 4 + 1}`,
+  }
 }

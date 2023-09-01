@@ -10,7 +10,7 @@
     "@giscus/vue": "^2.3.0",
     "@mdi/font": "^7.2.96",
     "@types/markdown-it-container": "^2.0.6",
-    "@types/node": "^18.17.11",
+    "@types/node": "^18.17.12",
     "@types/webfontloader": "^1.6.35",
     "markdown-it-container": "^3.0.0",
     "sass": "^1.66.1",
@@ -18,8 +18,9 @@
     "vite-plugin-vuetify": "^1.0.2",
     "vitepress": "1.0.0-rc.4",
     "vue": "^3.3.4",
-    "vuetify": "^3.3.14",
-    "webfontloader": "^1.6.28"
+    "vuetify": "^3.3.15",
+    "webfontloader": "^1.6.28",
+    "yaml": "^2.3.2"
   },
   "dependencies": {
     "medium-zoom": "^1.0.8"

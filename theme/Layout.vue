@@ -3,13 +3,13 @@ import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from './types/config'
 import { computed, onMounted } from 'vue'
 import { useTheme } from 'vuetify'
-import mediumZoom from 'medium-zoom'
 
 import { data as posts } from './posts.data'
 
 import MainFrame from './components/MainFrame.vue'
 import HomePage from './components/pages/HomePage.vue'
 import ContentPage from './components/pages/ContentPage.vue'
+import TagPage from './components/pages/TagPage.vue'
 
 const { page, frontmatter } = useData<BsBlogThemeConfig>()
 const vuetifyTheme = useTheme()
@@ -46,6 +46,7 @@ onMounted(() => {
     <v-main>
       <v-container class="main-container">
         <HomePage v-if="frontmatter.type === 'home'"/>
+        <TagPage v-else-if="frontmatter.type === 'tag'"/>
         <ContentPage v-else :post="currentPost"/>
       </v-container>
     </v-main>

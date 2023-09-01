@@ -5,7 +5,7 @@ import { BsBlogThemeConfig } from '../types/config'
 
 const drawerOpened = ref(false)
 
-const { theme } = useData<BsBlogThemeConfig>()
+const { theme, title, site } = useData<BsBlogThemeConfig>()
 
 defineEmits<{
   toggleTheme: []
@@ -43,7 +43,7 @@ defineEmits<{
       <v-app-bar-nav-icon @click="drawerOpened = !drawerOpened"/>
     </template>
 
-    <v-app-bar-title>BsBlog</v-app-bar-title>
+    <v-app-bar-title>{{ title.replace(` | ${site.title}`, '') }}</v-app-bar-title>
 
     <template #append>
       <v-btn icon="mdi-brightness-6" @click="$emit('toggleTheme')"/>

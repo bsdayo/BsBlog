@@ -29,9 +29,24 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     'pages/about/index.md': 'about/index.md',
     'pages/timeline/index.md': 'timeline/index.md',
     'pages/links/index.md': 'links/index.md',
+    'pages/tags/index.md': 'tags/index.md',
+    'pages/tags/:tag.md': 'tags/:tag.md',
   },
 
   ignoreDeadLinks: 'localhostLinks',
+
+  transformPageData(pageData, { siteConfig }) {
+    console.log(pageData.relativePath)
+
+    if (!pageData.params?.tag)
+      return
+
+    const tagId = pageData.params.tag
+    const tag = (siteConfig.site.themeConfig as BsBlogThemeConfig).tags[tagId]
+
+    pageData.title = `${pageData.title} - ${tag?.[0] ?? tagId}`
+    pageData.frontmatter.title = pageData.title
+  },
 
   themeConfig: {
     author: 'bsdayo',
@@ -55,11 +70,11 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       //   title: '分类',
       //   icon: 'mdi-shape',
       // },
-      // {
-      //   href: '/tags/',
-      //   title: '标签',
-      //   icon: 'mdi-tag',
-      // },
+      {
+        href: '/tags/',
+        title: '标签',
+        icon: 'mdi-tag',
+      },
       {
         href: '/links/',
         title: '友情链接',

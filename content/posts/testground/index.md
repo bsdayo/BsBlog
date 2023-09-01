@@ -2,7 +2,7 @@
 title: Test Ground
 description: 测试一些 Markdown 功能
 create: 2023-04-25T11:45:14+08:00
-cover: /covers/testground.png
+cover: /posts/testground/cover.webp
 ---
 
 ## Standard Markdown

@@ -4,8 +4,6 @@ create: 2022-09-14T20:34:14+08:00
 
 tags:
   - raspberrypi
-
-cover: /covers/raspberrypi-ftp-server.jpg
 ---
 
 ## 起因

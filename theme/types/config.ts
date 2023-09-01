@@ -9,7 +9,7 @@ export interface BsBlogThemeConfig {
   navLinks?: NavLink[]
   socialLinks?: SocialLink[]
   giscus: GiscusProps
-  tags?: Record<string, Tag>
+  tags: Record<string, Tag>
 }
 
 export interface NavLink {

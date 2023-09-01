@@ -7,7 +7,7 @@ tags:
   - leetcode
   - csharp
 
-cover: /posts/vscode-leetcode-with-csharp/cover.webp
+cover: /img/covers/vscode-leetcode-with-csharp.webp
 ---
 
 最近终于接触了大名鼎鼎的 LeetCode 刷题平台，开始苦痛之路（x

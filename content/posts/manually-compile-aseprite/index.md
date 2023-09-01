@@ -5,7 +5,7 @@ create: 2022-02-09T19:00:12+08:00
 tags:
   - pixel-arts
 
-cover: /posts/manually-compile-aseprite/cover.jpg
+cover: /img/covers/manually-compile-aseprite.jpg
 ---
 
 ::: warning

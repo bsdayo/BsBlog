@@ -7,7 +7,7 @@ tags:
   - github
   - gpg
 
-cover: /posts/sign-git-commit-with-gpg/cover.webp
+cover: /img/covers/sign-git-commit-with-gpg.webp
 ---
 
 ## 前言

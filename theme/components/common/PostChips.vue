@@ -5,9 +5,11 @@ import { formatTime, getTag } from '../../utils'
 import { Post } from '../../types/common'
 import ChipContainer from './ChipContainer.vue'
 
-defineProps<{ post: Post }>()
+const props = defineProps<{ post: Post }>()
 
 const { theme } = useData<BsBlogThemeConfig>()
+
+const tags = props.post.tags.map(t => getTag(t, theme.value))
 </script>
 
 <template>
@@ -18,13 +20,16 @@ const { theme } = useData<BsBlogThemeConfig>()
       </template>
 
       <template #append>
-        <v-chip v-for="tag in $props.post.tags.map(t => getTag(t, theme))"
-                :key="tag.id"
-                variant="flat"
-                :href="`/tags/${tag.id}`"
-                :color="tag.color">
-          {{ tag.name }}
-        </v-chip>
+        <!-- Seems the v-chip component with href attribute set is not SSR friendly -->
+        <ClientOnly>
+          <v-chip v-for="tag in tags"
+                  :key="tag.id"
+                  variant="flat"
+                  :href="`/tags/${tag.id}`"
+                  :color="tag.color">
+            {{ tag.name }}
+          </v-chip>
+        </ClientOnly>
       </template>
     </ChipContainer>
   </v-card-text>

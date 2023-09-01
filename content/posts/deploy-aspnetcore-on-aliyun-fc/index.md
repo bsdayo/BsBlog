@@ -1,7 +1,7 @@
 ---
 title: 超低成本使用阿里云函数计算部署 ASP.NET Core 应用
 create: 2023-05-07T20:40:31+08:00
-cover: /posts/deploy-aspnetcore-on-aliyun-fc/cover.webp
+cover: /img/covers/deploy-aspnetcore-on-aliyun-fc.webp
 description: |
   Serverless 是前几年提出的一种新的云服务架构，迅速得到了业界的广泛关注和使用。
   对于用户来说，直接能够体验到的就是各大云计算厂商的云函数产品，例如阿里云函数计算，腾讯云云函数，Azure Functions，AWS Lambda 等等。

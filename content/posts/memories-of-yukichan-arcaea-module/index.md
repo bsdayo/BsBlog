@@ -2,7 +2,7 @@
 title: 一路走来，感谢有你 —— 暮雪酱 Arcaea 模块的前世今生
 create: 2023-04-27T22:48:38+08:00
 category: 分享
-cover: /posts/memories-of-yukichan-arcaea-module/cover.webp
+cover: /img/covers/memories-of-yukichan-arcaea-module.webp
 description: 随着 lowiro 对 ArcaeaUnlimitedAPI 的彻底封禁，暮雪酱 Arcaea 查分模块的生命也走到了尽头。在这里，我们一起回顾一下暮雪酱 Arcaea 模块的发展史...
 ---
 

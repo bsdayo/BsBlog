@@ -3,10 +3,34 @@ import { Post } from '../../types/common'
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from '../../types/config'
 import { formatTime, getTag } from '../../utils'
+import { onMounted } from 'vue'
+import mediumZoom from 'medium-zoom'
 
 defineProps<{ post?: Post }>()
 
 const { theme, frontmatter } = useData<BsBlogThemeConfig>()
+const mdImgSelector = '.content-card .markdown img'
+
+onMounted(() => {
+  mediumZoom(mdImgSelector, {
+    background: 'rgba(0, 0, 0, 0.5)'
+  })
+
+  document.querySelectorAll(mdImgSelector).forEach((img) => {
+    const alt = img.attributes.getNamedItem('alt')
+    if (!alt) return
+
+    const node = document.createElement('div')
+    node.classList.add('img-alt')
+    node.innerText = alt.value
+
+    const parent = img.parentNode!
+    if (parent.lastChild === img)
+      parent.appendChild(node)
+    else
+      parent.insertBefore(node, img.nextSibling)
+  })
+})
 </script>
 
 <template>

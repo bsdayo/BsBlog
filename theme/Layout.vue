@@ -3,6 +3,7 @@ import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from './types/config'
 import { computed, onMounted } from 'vue'
 import { useTheme } from 'vuetify'
+import mediumZoom from 'medium-zoom'
 
 import { data as posts } from './posts.data'
 

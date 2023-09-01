@@ -20,5 +20,8 @@
     "vue": "^3.3.4",
     "vuetify": "^3.3.14",
     "webfontloader": "^1.6.28"
+  },
+  "dependencies": {
+    "medium-zoom": "^1.0.8"
   }
 }

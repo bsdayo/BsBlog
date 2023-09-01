@@ -10,23 +10,22 @@
   h5,
   h6 {
     @include normalizeFirstLast();
-    margin: 24px 0 12px 0;
+    margin: 20px 0;
 
-    a.header-anchor::before {
+    a.header-anchor::after {
       content: $md-header-anchor-symbol;
-      float: left;
-      margin-right: 0.2em;
+      margin-left: 0.2em;
       opacity: 0.5;
-      transition: opacity 0.1s;
+      transition: opacity 0.1s
     }
 
-    &:hover a.header-anchor::before {
+    &:hover a.header-anchor::after {
       opacity: 1;
     }
   }
 
-  p {
-    line-height: 1.6em;
+  p, ul, ol {
+    line-height: 1.8em;
     font-size: $md-content-font-size;
     margin: 10px 0;
     @include normalizeFirstLast();
@@ -77,14 +76,21 @@
   }
 
   // Images
-  img:not([class]) {
+  img {
+    display: block;
     max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .img-alt {
+    text-align: center;
+    color: grey;
+    margin-top: 8px;
   }
 
   // Lists
   ol,
   ul {
-    line-height: 1.6em;
     margin: 0 0 10px 28px;
     font-size: $md-content-font-size;
 

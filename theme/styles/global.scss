@@ -24,3 +24,8 @@ html {
 .page-header-title {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 99999;
+}

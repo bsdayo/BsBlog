@@ -68,11 +68,11 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       //   title: '分类',
       //   icon: 'mdi-shape',
       // },
-      // {
-      //   href: '/tags/',
-      //   title: '标签',
-      //   icon: 'mdi-tag',
-      // },
+      {
+        href: '/tags/',
+        title: '标签',
+        icon: 'mdi-tag',
+      },
       {
         href: '/links/',
         title: '友情链接',

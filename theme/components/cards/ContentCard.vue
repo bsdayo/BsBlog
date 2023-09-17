@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Post } from '../../types/common'
 import { useData } from 'vitepress'
-import { BsBlogThemeConfig } from '../../types/config'
 import { onMounted } from 'vue'
+import { BsBlogThemeConfig } from '../../types/config'
 import mediumZoom from 'medium-zoom'
 import PostChips from '../common/PostChips.vue'
 import PostCover from '../common/PostCover.vue'
@@ -13,10 +13,6 @@ const { theme, frontmatter } = useData<BsBlogThemeConfig>()
 const mdImgSelector = '.content-card .markdown img'
 
 onMounted(() => {
-  mediumZoom(mdImgSelector, {
-    background: 'rgba(0, 0, 0, 0.5)'
-  })
-
   document.querySelectorAll(mdImgSelector).forEach((img) => {
     const alt = img.attributes.getNamedItem('alt')
     if (!alt) return
@@ -31,6 +27,10 @@ onMounted(() => {
     else
       parent.insertBefore(node, img.nextSibling)
   })
+
+  mediumZoom(mdImgSelector, {
+    background: 'rgba(0, 0, 0, 0.5)'
+  })
 })
 </script>
 
@@ -38,6 +38,12 @@ onMounted(() => {
   <v-card class="content-card">
     <template v-if="$props.post">
       <PostCover :post="$props.post"/>
+
+      <v-card-text v-if="$props.post.description">
+        {{ $props.post.description }}
+      </v-card-text>
+      <v-divider/>
+
       <PostChips :post="$props.post"/>
       <v-divider/>
     </template>

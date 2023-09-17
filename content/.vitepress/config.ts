@@ -27,7 +27,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
 
   rewrites: {
     'pages/about/index.md': 'about/index.md',
-    'pages/timeline/index.md': 'timeline/index.md',
+    'pages/archives/index.md': 'archives/index.md',
     'pages/links/index.md': 'links/index.md',
     'pages/tags/index.md': 'tags/index.md',
     'pages/tags/:tag.md': 'tags/:tag.md',
@@ -48,7 +48,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
 
   themeConfig: {
     author: 'bsdayo',
-    bio: '怎么会是呢？',
+    bio: '分享技术，记录生活',
     avatar: 'https://avatars.githubusercontent.com/u/41754841',
     avatarBg: '/img/avatarBg.jpg',
     defaultPostCover: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
@@ -59,8 +59,8 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
         icon: 'mdi-home',
       },
       {
-        href: '/timeline/',
-        title: '时间线',
+        href: '/archives/',
+        title: '归档',
         icon: 'mdi-clock',
       },
       // {
@@ -75,7 +75,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       },
       {
         href: '/links/',
-        title: '友情链接',
+        title: '友链',
         icon: 'mdi-link-variant',
       },
       {

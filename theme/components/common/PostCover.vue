@@ -3,7 +3,7 @@ import { Post } from '../../types/common'
 import { useData } from 'vitepress'
 import { BsBlogThemeConfig } from '../../types/config'
 
-defineProps<{ post: Post }>()
+defineProps<{ post: Post, height?: number }>()
 
 const { theme } = useData<BsBlogThemeConfig>()
 </script>
@@ -12,7 +12,7 @@ const { theme } = useData<BsBlogThemeConfig>()
   <v-img class="post-card-cover d-flex align-end"
          :src="$props.post.cover ?? theme.defaultPostCover"
          :cover="true"
-         max-height="300px">
+         :max-height="height ?? 300">
     <v-card-title class="post-card-title pt-6 pb-4">{{ $props.post.title }}</v-card-title>
   </v-img>
 </template>

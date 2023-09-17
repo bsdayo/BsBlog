@@ -25,7 +25,7 @@ onMounted(() => {
   import('webfontloader').then((loader) =>
     loader.load({
       google: {
-        families: ['Roboto'],
+        families: ['Lato'],
       },
     })
   )

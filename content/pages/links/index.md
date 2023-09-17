@@ -64,7 +64,7 @@ links:
 - 名称：BsBlog
 - 链接：[https://blog.bsdayo.moe/](https://blog.bsdayo.moe/)
 - 头像：[https://avatars.githubusercontent.com/u/41754841](https://avatars.githubusercontent.com/u/41754841?v=4)
-- 简介: 怎么会是呢？
+- 简介：怎么会是呢？
 
 ~~（和我熟的话其实写什么都行 xxx）~~
 :::

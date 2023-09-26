@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'fs'
 
 if (process.argv.length < 3) {
   console.error('Please specify post name!')

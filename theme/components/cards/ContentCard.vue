@@ -48,7 +48,7 @@ onMounted(() => {
       <v-divider/>
     </template>
 
-    <v-card-text class="markdown" :class="{dark: $vuetify.theme.current.dark}">
+    <v-card-text class="markdown" :class="{dark: $vuetify.theme.current.dark, 'pa-8': !$vuetify.display.mobile}">
       <Content/>
     </v-card-text>
   </v-card>

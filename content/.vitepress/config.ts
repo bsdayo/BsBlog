@@ -2,13 +2,17 @@ import { defineConfigWithTheme } from 'vitepress'
 import vuetify from 'vite-plugin-vuetify'
 import { BsBlogThemeConfig } from '../../theme/types/config'
 import { createContainer } from './utils'
+import tags from './tags'
 
 export default defineConfigWithTheme<BsBlogThemeConfig>({
   title: 'BsBlog',
   description: 'BsBlog v4 - Powered by VitePress',
 
   markdown: {
-    theme: 'one-dark-pro',
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
     config(md) {
       md.use(...createContainer('note', 'NOTE', md))
         .use(...createContainer('abstract', 'ABSTRACT', md))
@@ -36,8 +40,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
   ignoreDeadLinks: 'localhostLinks',
 
   transformPageData(pageData, { siteConfig }) {
-    if (!pageData.params?.tag)
-      return
+    if (!pageData.params?.tag) return
 
     const tagId = pageData.params.tag
     const tag = (siteConfig.site.themeConfig as BsBlogThemeConfig).tags[tagId]
@@ -116,21 +119,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
       loading: 'lazy',
     },
 
-    tags: {
-      'archlinux': ['Arch Linux', '#1793D1'],
-      'csharp': ['C#', '#239120'],
-      'git': ['Git', '#F05032'],
-      'github': ['GitHub', '#181717'],
-      'gpg': ['GPG'],
-      'leetcode': ['LeetCode', '#FFA116'],
-      'linux': ['Linux', '#FCC624'],
-      'pixel-arts': ['像素画'],
-      'raspberrypi': ['Raspberry Pi', '#A22846'],
-      'skiasharp': ['SkiaSharp'],
-      'ubuntu': ['Ubuntu', '#E95420'],
-      'vscode': ['Visual Studio Code', '#007ACC'],
-      'wsl': ['Windows Subsystem for Linux', '#0078D4']
-    }
+    tags,
   },
 
   vite: {

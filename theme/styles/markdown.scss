@@ -16,7 +16,7 @@
       content: $md-header-anchor-symbol;
       margin-left: 0.2em;
       opacity: 0;
-      transition: opacity 0.1s
+      transition: opacity 0.1s;
     }
 
     &:hover a.header-anchor::after {
@@ -24,7 +24,9 @@
     }
   }
 
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     line-height: 1.8em;
     font-size: $md-content-font-size;
     margin: 10px 0;
@@ -113,17 +115,22 @@
     line-height: 1.7em;
   }
 
+  // Code Blocks
   div[class*='language-'] {
     position: relative;
     margin: 16px 0;
-    border: #444 1px solid;
+    border: #bbb 1px solid;
     border-radius: $md-block-border-radius;
-    background-color: $md-code-bg-color-dark;
+    background-color: $md-code-bg-color-light;
     color: #abb2bf;
 
     pre {
       padding: 20px;
       overflow-x: auto;
+
+      &.vp-code-dark {
+        display: none;
+      }
     }
 
     button.copy {
@@ -206,6 +213,19 @@
 
     code {
       background-color: $md-code-bg-color-dark;
+    }
+
+    div[class*='language-'] {
+      background-color: $md-code-bg-color-dark;
+      border: #444 1px solid;
+
+      pre.vp-code-dark {
+        display: block;
+      }
+
+      pre.vp-code-light {
+        display: none;
+      }
     }
   }
 }

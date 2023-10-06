@@ -37,7 +37,7 @@ for (var i = 0; i < 100; i++)
 
 ## Custom Containers
 
-Style borrowed from [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
+Style borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
 
 ::: note 备注 Note
 Lorem ipsum dolor sit amet...

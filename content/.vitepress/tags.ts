@@ -4,6 +4,7 @@ const tags: Record<string, Tag> = {
   archlinux: ['Arch Linux', '#1793D1'],
   cpp: ['C++', '#00599C'],
   csharp: ['C#', '#239120'],
+  game: ['游戏', '#ECBD3A'],
   git: ['Git', '#F05032'],
   github: ['GitHub', '#181717'],
   gpg: ['GPG'],

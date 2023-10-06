@@ -17,7 +17,7 @@ if (fs.existsSync(dir)) {
 const content = `---
 title: ${name}
 create: ${new Date().toISOString()}
-cover: 
+# cover: /img/covers/${name}.webp
 ---
 
 `

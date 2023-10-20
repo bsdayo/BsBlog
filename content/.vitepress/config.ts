@@ -106,7 +106,7 @@ export default defineConfigWithTheme<BsBlogThemeConfig>({
     ],
     giscus: {
       host: 'https://giscus.app',
-      repo: 'bsdayo/bsblog',
+      repo: 'bsdayo/blog',
       repoId: 'R_kgDOJab-4g',
       category: 'Comments',
       categoryId: 'DIC_kwDOJab-4s4CWGFy',

@@ -71,7 +71,7 @@ VitePress 好用的功能还是挺多的，比如直接在 Markdown 中使用 Vu
 ♪sakana——\\(＞○＜\\)♪ &emsp; `:fish:` → :fish: Emoji 支持
 :::
 
-整个博客，包括文章、界面主题都[开源在了 GitHub 上](https://github.com/bsdayo/bsblog)
+整个博客，包括文章、界面主题都[开源在了 GitHub 上](https://github.com/bsdayo/blog)
 
 ## 其他平台
 

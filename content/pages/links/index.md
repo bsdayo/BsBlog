@@ -69,7 +69,7 @@ links:
 ~~（和我熟的话其实写什么都行 xxx）~~
 :::
 
-添加友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/bsblog/edit/main/content/pages/links/index.md)，并提交
+添加友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/blog/edit/main/content/pages/links/index.md)，并提交
 Pull Request；或是直接在下面评论。记得带上类似上面的的格式哦~
 
 排序不分先后，最近加的会放在列表顶部 qwq

@@ -35,6 +35,11 @@ for (var i = 0; i < 100; i++)
 }
 ```
 
+| Header 1  | Header 2  | Header 3  |
+|:---------:|:---------:|:---------:|
+| Content 1 | Content 2 | Content 3 |
+| Content 4 | Content 5 | Content 6 |
+
 ## Custom Containers
 
 Style borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).

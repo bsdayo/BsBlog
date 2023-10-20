@@ -74,14 +74,8 @@ Pull Request；或是直接在下面评论。记得带上类似上面的的格�
 
 排序不分先后，最近加的会放在列表顶部 qwq
 
-<v-container class="page-container" :fluid="true">
-  <v-row>
-    <v-col cols="12" md="6" v-for="link in $frontmatter.links">
-      <LinkCard :key="link.url" v-bind="link" />
-    </v-col>
-  </v-row>
-</v-container>
+<LinkList :links="$frontmatter.links" />
 
 <script setup>
-import LinkCard from './LinkCard.vue'
+import LinkList from './LinkList.vue'
 </script>

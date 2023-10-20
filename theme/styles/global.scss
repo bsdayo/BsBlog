@@ -1,6 +1,8 @@
 @import './variables.scss';
 
 html {
+  scroll-behavior: smooth;
+
   &,
   .text-h1,
   .text-h2,

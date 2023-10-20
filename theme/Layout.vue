@@ -41,7 +41,7 @@ onMounted(() => {
 
 <template>
   <v-app :class="$vuetify.theme.global.current.dark ? '' : 'bg-grey-lighten-5'">
-    <MainFrame @toggle-theme="toggleTheme()"/>
+    <MainFrame @toggle-theme="toggleTheme()" :in-post="!!currentPost"/>
 
     <v-main>
       <v-container class="main-container">

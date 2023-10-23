@@ -104,11 +104,11 @@
   // Code related
   code,
   pre {
-    font-size: $md-code-font-size;
     font-family: 'JetBrains Mono', Consolas, monospace !important;
   }
 
   code {
+    font-size: $md-code-inline-font-size;
     background-color: $md-code-bg-color-light;
     border-radius: $md-block-border-radius;
     padding: 2px 5px;
@@ -125,6 +125,7 @@
     color: #abb2bf;
 
     pre {
+      font-size: $md-code-block-font-size;
       padding: 20px;
       overflow-x: auto;
 

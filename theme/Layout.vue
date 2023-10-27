@@ -27,7 +27,7 @@ onMounted(() => {
   import('webfontloader').then((loader) =>
     loader.load({
       google: {
-        families: ['Lato'],
+        families: ['Inter'],
       },
     })
   )

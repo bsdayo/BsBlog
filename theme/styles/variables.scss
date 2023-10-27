@@ -17,23 +17,34 @@ $md-containers: (
   quote: #9e9e9e '\F0757',
 );
 
-$md-link-color-light: #1d6db7;
-$md-link-color-dark: #88c5ff;
+:root {
+  --md-link-color: #1d6db7;
+  --md-code-bg-color: #fafafa;
+  --md-block-border-color: #bbb;
+  --md-divider-color: rgba(0, 0, 0, 0.12);
+}
+
+.dark {
+  --md-link-color: #88c5ff;
+  --md-code-bg-color: #1a1a1a;
+  --md-block-border-color: #444;
+  --md-divider-color: rgba(255, 255, 255, 0.12);
+}
+
+$md-link-color: var(--md-link-color);
 $md-blockquote-color: #3c80c0;
 $md-header-anchor-symbol: '#';
 $md-content-font-size: 1rem;
 $md-container-font-size: 0.9rem;
 $md-code-inline-font-size: 0.9em;
 $md-code-block-font-size: 1em;
-$md-code-bg-color-light: #fafafa;
-$md-code-bg-color-dark: #1a1a1a;
+$md-code-bg-color: var(--md-code-bg-color);
 
 $md-block-margin-y: 16px;
 $md-block-padding: 12px;
 $md-block-border-radius: 4px;
-$md-block-border-color-light: #bbb;
-$md-block-border-color-dark: #444;
-
+$md-block-border-color: var(--md-block-border-color);
+$md-divider-color: var(--md-divider-color);
 
 // Content
 $content-card-title-overlay-bg: linear-gradient(transparent, rgba(0, 0, 0, 0.4));

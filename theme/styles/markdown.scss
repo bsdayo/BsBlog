@@ -2,15 +2,19 @@
 @import './mixins';
 
 .markdown {
-  // Titles
+  // ====================
+  // Headings
+  // ====================
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @include normalizeFirstLast();
-    margin: 20px 0;
+    margin: 0;
+    line-height: 24px;
+    font-weight: 600;
+    outline: none;
 
     a.header-anchor::after {
       content: $md-header-anchor-symbol;
@@ -22,6 +26,28 @@
     &:hover a.header-anchor::after {
       opacity: 1;
     }
+  }
+
+  h1 {
+    //letter-spacing: -0.02em;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  h2 {
+    margin: 48px 0 16px;
+    border-top: 1px solid $md-divider-color;
+    padding-top: 24px;
+    //letter-spacing: -0.02em;
+    line-height: 32px;
+    font-size: 24px;
+  }
+
+  h3 {
+    margin: 32px 0 0;
+    //letter-spacing: -0.01em;
+    line-height: 28px;
+    font-size: 20px;
   }
 
   p,
@@ -36,7 +62,7 @@
   a:not([class]),
   a.header-anchor {
     text-decoration: none;
-    color: $md-link-color-light;
+    color: $md-link-color;
   }
 
   del {
@@ -109,7 +135,7 @@
 
   code {
     font-size: $md-code-inline-font-size;
-    background-color: $md-code-bg-color-light;
+    background-color: $md-code-bg-color;
     border-radius: $md-block-border-radius;
     padding: 2px 5px;
     line-height: 1.7em;
@@ -119,9 +145,9 @@
   div[class*='language-'] {
     position: relative;
     margin: 16px 0;
-    border: $md-block-border-color-light 1px solid;
+    border: $md-block-border-color 1px solid;
     border-radius: $md-block-border-radius;
-    background-color: $md-code-bg-color-light;
+    background-color: $md-code-bg-color;
     color: #abb2bf;
 
     pre {
@@ -220,36 +246,18 @@
 
     th, td {
       padding: 6px 13px;
-      border: 1px solid $md-block-border-color-light;
+      border: 1px solid $md-block-border-color;
     }
   }
 
   &.dark {
-    a:not([class]),
-    a.header-anchor {
-      color: $md-link-color-dark;
-    }
-
-    code {
-      background-color: $md-code-bg-color-dark;
-    }
-
     div[class*='language-'] {
-      background-color: $md-code-bg-color-dark;
-      border: $md-block-border-color-dark 1px solid;
-
       pre.vp-code-dark {
         display: block;
       }
 
       pre.vp-code-light {
         display: none;
-      }
-    }
-
-    table {
-      th, td {
-        border: 1px solid $md-block-border-color-dark;
       }
     }
   }

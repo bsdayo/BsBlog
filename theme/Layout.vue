@@ -21,6 +21,8 @@ function toggleTheme(themeName?: string) {
 }
 
 onMounted(() => {
+  document.getElementsByTagName('html')[0].classList.remove('dark')
+
   // 加载字体
   import('webfontloader').then((loader) =>
     loader.load({

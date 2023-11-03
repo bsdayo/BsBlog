@@ -3,6 +3,11 @@ title: 友情链接
 comment: true
 
 links:
+  - title: Restent Ou
+    desc: 静寂に問う 答えを求めて
+    avatar: https://library.restent.win/images/icons/avatar.webp
+    url: https://www.restent.win
+
   - title: LY 的博客
     desc: 自疏濯淖污泥之中，蝉蜕于浊秽，以浮游尘埃之外。
     avatar: https://avatars.githubusercontent.com/u/51789698?v=4

@@ -1,5 +1,5 @@
 ---
-title: PKU GeekGame 3rd (2023) Writeups
+title: PKU GeekGame 3rd (2023) Writeup
 create: 2023-10-20T11:43:02.685Z
 cover: /img/covers/pku-geekgame-2023-writeup.webp
 description: 第三届北京大学信息安全综合能力竞赛 (PKU GeekGame) 个人记录/纪念向题解

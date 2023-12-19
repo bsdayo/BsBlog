@@ -17,6 +17,7 @@ const tags: Record<string, Tag> = {
   skiasharp: ['SkiaSharp'],
   ubuntu: ['Ubuntu', '#E95420'],
   vscode: ['Visual Studio Code', '#007ACC'],
+  windows: ['Windows', '#0078D4'],
   wsl: ['Windows Subsystem for Linux', '#0078D4'],
 }
 

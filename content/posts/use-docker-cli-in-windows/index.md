@@ -25,14 +25,14 @@ WSL 中根据各自发行版安装 Docker Engine，可以参考[官方文档](ht
 
 编辑 Docker 的 systemd 配置文件（一般在 `/lib/systemd/system/docker.service`）：
 
-```conf
+```ini
 [Service]
 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 ```
 
 加一个 `-H` 选项，指定监听的主机和端口，变成这样：
 
-```conf
+```ini
 [Service]
 ExecStart=/usr/bin/dockerd -H tcp://127.0.0.1:2375 -H fd:// --containerd=/run/containerd/containerd.sock
 ```

@@ -4,7 +4,7 @@
     "dev": "vitepress dev . --host",
     "build": "vitepress build .",
     "preview": "vitepress preview .",
-    "new": "node tools/new-post.js"
+    "new": "node scripts/new-post.js"
   },
   "devDependencies": {
     "@css-render/vue3-ssr": "^0.15.12",
@@ -17,6 +17,7 @@
     "@types/markdown-it-container": "^2.0.10",
     "@types/node": "^20.12.8",
     "@types/webfontloader": "^1.6.38",
+    "js-convert-case": "^4.2.0",
     "markdown-it-container": "^4.0.0",
     "medium-zoom": "^1.1.0",
     "naive-ui": "^2.38.2",

@@ -48,9 +48,14 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     nav: [
       { text: '文章', link: '/posts/' },
+      { text: '工具', link: '/tools/' },
       { text: '友链', link: '/links/' },
       { text: '关于', link: '/about/' },
     ],
+
+    sidebar: {
+      '/tools/': [{ text: '命名风格转换', link: '/tools/case-converter/' }],
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/bsdayo' },

@@ -1,6 +1,7 @@
 ---
 title: 在 Windows 上使用 Docker CLI
 create: 2023-12-19T09:05:03.899Z
+description: 一种直接在 Windows 环境下调用 WSL 中 Docker 的办法
 tags:
   - windows
   - wsl

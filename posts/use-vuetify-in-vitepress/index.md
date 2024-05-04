@@ -1,6 +1,7 @@
 ---
 title: 在 VitePress 中使用 Vuetify 组件库
 create: 2023-05-02T20:12:17+08:00
+description: 不得不说 VitePress 原生支持嵌入 Vue 组件还是挺香的
 ---
 
 ## 创建一个 VitePress 项目

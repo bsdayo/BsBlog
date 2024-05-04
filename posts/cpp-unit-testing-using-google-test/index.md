@@ -1,7 +1,7 @@
 ---
 title: C++ 中使用 GoogleTest 进行单元测试
 create: 2023-10-04T09:27:18.785Z
-
+description: GoogleTest 基础用法
 tags:
   - cpp
 ---

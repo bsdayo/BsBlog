@@ -15,5 +15,5 @@ import { NTag, NIcon, NTime } from 'naive-ui'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 
-defineProps<{ time: number | Date; small: boolean }>()
+defineProps<{ time: number | Date; small?: boolean }>()
 </script>

@@ -43,7 +43,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     tags,
 
     outline: {
-      level: 3,
+      level: [2, 3],
     },
 
     nav: [

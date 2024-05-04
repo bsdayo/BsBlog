@@ -92,7 +92,7 @@ $ mkdir testgpg
 $ cd testgpg
 $ touch abc.txt
 $ git add .
-$ git commit -m -S "test gpg key"
+$ git commit -S -m "test gpg key"
 ```
 
 这里提交时的 `-S` 选项，表示我们使用 GPG 签名这次提交。

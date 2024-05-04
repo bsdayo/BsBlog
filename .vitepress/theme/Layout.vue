@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme="isDark ? darkTheme : lightTheme">
+  <n-config-provider :theme="currentTheme">
     <Layout>
       <template #doc-before v-if="currentPost">
         <n-thing class="post-header">
@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, nextTick, watch, onMounted } from 'vue'
+import { ref, computed, nextTick, watch, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { data as posts } from '../posts.data'
@@ -55,6 +55,8 @@ import DateTag from '../../components/DateTag.vue'
 
 const { Layout } = DefaultTheme
 const { page, theme, isDark } = useData<ThemeConfig>()
+
+const currentTheme = ref(isDark ? darkTheme : lightTheme)
 
 const taglines: string[] = [
   '<code>(() => &lt;bs moe/&gt;)()</code>',
@@ -96,6 +98,14 @@ function addMediumZoom() {
 }
 
 onMounted(() => {
+  watch(
+    () => isDark.value,
+    (dark) => {
+      currentTheme.value = dark ? darkTheme : lightTheme
+    },
+    { immediate: true }
+  )
+
   import('webfontloader').then((webfont) =>
     webfont.load({
       google: {

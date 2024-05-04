@@ -41,6 +41,11 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   themeConfig: {
     tags,
+
+    outline: {
+      level: 3,
+    },
+
     nav: [
       { text: '文章', link: '/posts/' },
       { text: '友链', link: '/links/' },
@@ -78,6 +83,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   vite: {
     ssr: {
       noExternal: ['naive-ui'],
-    }
+    },
   },
 })

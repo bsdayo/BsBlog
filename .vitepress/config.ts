@@ -74,4 +74,10 @@ export default defineConfigWithTheme<ThemeConfig>({
         'Copyright © 2024 bsdayo | <a href="https://github.com/bsdayo/blog" target="_blank">GitHub</a>',
     },
   },
+
+  vite: {
+    ssr: {
+      noExternal: ['naive-ui'],
+    },
+  },
 })

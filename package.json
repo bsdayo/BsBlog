@@ -1,26 +1,27 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev content --host",
-    "build": "vitepress build content",
-    "preview": "vitepress preview content",
+    "dev": "vitepress dev . --host",
+    "build": "vitepress build .",
+    "preview": "vitepress preview .",
     "new": "node tools/new-post.js"
   },
   "devDependencies": {
-    "@giscus/vue": "^2.3.0",
-    "@mdi/font": "^7.3.67",
-    "@types/markdown-it-container": "^2.0.8",
-    "@types/node": "^20.8.7",
-    "@types/webfontloader": "^1.6.36",
-    "markdown-it-container": "^3.0.0",
-    "medium-zoom": "^1.0.8",
-    "sass": "^1.69.4",
-    "simple-icons-font": "^9.18.0",
-    "vite-plugin-vuetify": "^1.0.2",
-    "vitepress": "1.0.0-rc.10",
-    "vue": "^3.3.5",
-    "vuetify": "^3.3.22",
-    "webfontloader": "^1.6.28",
-    "yaml": "^2.3.3"
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@giscus/vue": "^2.4.0",
+    "@mdi/font": "^7.4.47",
+    "@types/markdown-it-container": "^2.0.10",
+    "@types/node": "^20.12.8",
+    "@types/webfontloader": "^1.6.38",
+    "markdown-it-container": "^4.0.0",
+    "medium-zoom": "^1.1.0",
+    "naive-ui": "^2.38.2",
+    "sass": "^1.76.0",
+    "vitepress": "^1.1.4",
+    "vue": "^3.4.26",
+    "webfontloader": "^1.6.28"
   }
 }

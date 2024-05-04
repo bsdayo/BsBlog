@@ -6,7 +6,7 @@ if (process.argv.length < 3) {
 }
 
 const name = process.argv[2]
-const dir = `content/posts/${name}`
+const dir = `posts/${name}`
 const file = `${dir}/index.md`
 
 if (fs.existsSync(dir)) {
@@ -17,7 +17,6 @@ if (fs.existsSync(dir)) {
 const content = `---
 title: ${name}
 create: ${new Date().toISOString()}
-# cover: /img/covers/${name}.webp
 ---
 
 `

@@ -1,0 +1,8 @@
+- title: 站点标题！ # [必须] 站点名称！
+  url: https://your.site.moe # [必须] 站点链接！
+  description: 站点描述！ # [可选] 站点描述！
+  author: 你的名字！ # [可选] 你的名字！（不需要带 @）
+  avatar: https://your.site.moe/avatar.jpg # [可选] 站点/你的头像！
+  socials:
+    github: bsdayo # [可选] GitHub 用户名
+    x: konobsdayo # [可选] X (Twitter) 用户名

@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { NCard, NList, NListItem, NThing, NFlex, NTag, NTime } from 'naive-ui'
 import { data as posts } from '../../.vitepress/posts.data'
@@ -51,9 +51,12 @@ function getPostHref(id: string) {
   return `${site.value.base}posts/${id}/`
 }
 
-const mobile = window.matchMedia('(max-width: 768px)')
-const isMobile = ref(mobile.matches)
-mobile.addEventListener('change', () => (isMobile.value = mobile.matches))
+const isMobile = ref(false)
+onMounted(() => {
+  const mobile = window.matchMedia('(max-width: 768px)')
+  isMobile.value = mobile.matches
+  mobile.addEventListener('change', () => (isMobile.value = mobile.matches))
+})
 </script>
 
 <style lang="scss" scoped>

@@ -49,7 +49,6 @@ import {
 } from 'naive-ui'
 import Giscus from '@giscus/vue'
 import mediumZoom from 'medium-zoom'
-import WebFont from 'webfontloader'
 import { ThemeConfig } from '.'
 import PostTag from '../../components/PostTag.vue'
 import DateTag from '../../components/DateTag.vue'
@@ -66,17 +65,55 @@ const taglines: string[] = [
   '<code>while (true) { eat() }</code>',
   '你是？不能忘记的人，很重要的人',
 ]
-onMounted(() => {
+const mdImgSelector = '.vp-doc img'
+
+function setRandomTagline() {
   const taglineElement = document.querySelector('.tagline')
   if (!taglineElement) return
   taglineElement.innerHTML =
     taglines[Math.floor(Math.random() * taglines.length)]
-})
+}
 
-WebFont.load({
-  google: {
-    families: ['JetBrains Mono:400,500,600,700'],
-  },
+function appendImgAlt() {
+  document.querySelectorAll(mdImgSelector).forEach((img) => {
+    const alt = img.attributes.getNamedItem('alt')
+    if (!alt) return
+
+    const node = document.createElement('div')
+    node.classList.add('img-alt')
+    node.innerText = alt.value
+
+    const parent = img.parentNode!
+    if (parent.lastChild === img) parent.appendChild(node)
+    else parent.insertBefore(node, img.nextSibling)
+  })
+}
+
+function addMediumZoom() {
+  mediumZoom(mdImgSelector, {
+    background: 'rgba(0, 0, 0, 0.5)',
+  })
+}
+
+onMounted(() => {
+  import('webfontloader').then((webfont) =>
+    webfont.load({
+      google: {
+        families: ['JetBrains Mono:400,500,600,700'],
+      },
+    })
+  )
+
+  watch(
+    () => page.value.relativePath,
+    () =>
+      nextTick(() => {
+        setRandomTagline()
+        appendImgAlt()
+        addMediumZoom()
+      }),
+    { immediate: true }
+  )
 })
 
 const currentPost = computed(() => {
@@ -84,31 +121,6 @@ const currentPost = computed(() => {
   if (!postId) return null
   return posts.find((post) => post.id === postId)
 })
-
-const mdImgSelector = '.vp-doc img'
-watch(
-  () => page.value.relativePath,
-  () =>
-    nextTick(() => {
-      document.querySelectorAll(mdImgSelector).forEach((img) => {
-        const alt = img.attributes.getNamedItem('alt')
-        if (!alt) return
-
-        const node = document.createElement('div')
-        node.classList.add('img-alt')
-        node.innerText = alt.value
-
-        const parent = img.parentNode!
-        if (parent.lastChild === img) parent.appendChild(node)
-        else parent.insertBefore(node, img.nextSibling)
-      })
-
-      mediumZoom(mdImgSelector, {
-        background: 'rgba(0, 0, 0, 0.5)',
-      })
-    }),
-  { immediate: true }
-)
 </script>
 
 <style lang="scss">

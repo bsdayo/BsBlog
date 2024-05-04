@@ -7,6 +7,7 @@
     "new": "node tools/new-post.js"
   },
   "devDependencies": {
+    "@css-render/vue3-ssr": "^0.15.12",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",

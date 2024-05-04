@@ -78,6 +78,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   vite: {
     ssr: {
       noExternal: ['naive-ui'],
-    },
+    }
   },
 })

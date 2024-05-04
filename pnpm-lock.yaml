@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@css-render/vue3-ssr':
+        specifier: ^0.15.12
+        version: 0.15.12(vue@3.4.26)
       '@fortawesome/fontawesome-svg-core':
         specifier: ^6.5.2
         version: 6.5.2

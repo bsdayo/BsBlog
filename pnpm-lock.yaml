@@ -38,6 +38,9 @@ importers:
       '@types/webfontloader':
         specifier: ^1.6.38
         version: 1.6.38
+      async-mutex:
+        specifier: ^0.5.0
+        version: 0.5.0
       js-convert-case:
         specifier: ^4.2.0
         version: 4.2.0
@@ -593,6 +596,9 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
+  async-mutex@0.5.0:
+    resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
+
   async-validator@4.2.5:
     resolution: {integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==}
 
@@ -803,6 +809,9 @@ packages:
 
   treemate@0.3.11:
     resolution: {integrity: sha512-M8RGFoKtZ8dF+iwJfAJTOH/SM4KluKOKRJpjCMhI8bG3qB74zrFoArKZ62ll0Fr3mqkMJiQOmWYkdYgDeITYQg==}
+
+  tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -1365,6 +1374,10 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
+  async-mutex@0.5.0:
+    dependencies:
+      tslib: 2.6.2
+
   async-validator@4.2.5: {}
 
   binary-extensions@2.3.0: {}
@@ -1605,6 +1618,8 @@ snapshots:
       is-number: 7.0.0
 
   treemate@0.3.11: {}
+
+  tslib@2.6.2: {}
 
   undici-types@5.26.5: {}
 

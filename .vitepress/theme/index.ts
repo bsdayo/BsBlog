@@ -7,6 +7,11 @@ import './custom.scss'
 const theme: Theme = {
   extends: DefaultTheme,
   Layout,
+  async enhanceApp(ctx) {
+    if (!(globalThis as any).__EnhanceAppContext__) {
+      ;(globalThis as any).__EnhanceAppContext__ = ctx
+    }
+  },
 }
 
 export default theme

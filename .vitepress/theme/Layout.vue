@@ -11,11 +11,7 @@
             <n-flex justify="space-between">
               <DateTag :time="currentPost.create" />
               <n-flex>
-                <PostTag
-                  v-for="tag in currentPost.tags"
-                  :key="tag"
-                  :tag="tag"
-                />
+                <PostTag v-for="tag in currentPost.tags" :key="tag" :tag="tag" />
               </n-flex>
             </n-flex>
           </template>
@@ -39,14 +35,7 @@ import { ref, computed, nextTick, watch, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { data as posts } from '../posts.data'
-import {
-  NConfigProvider,
-  NThing,
-  NDivider,
-  NFlex,
-  lightTheme,
-  darkTheme,
-} from 'naive-ui'
+import { NConfigProvider, NThing, NDivider, NFlex, lightTheme, darkTheme } from 'naive-ui'
 import Giscus from '@giscus/vue'
 import mediumZoom from 'medium-zoom'
 import { ThemeConfig } from '.'
@@ -72,8 +61,7 @@ const mdImgSelector = '.vp-doc img'
 function setRandomTagline() {
   const taglineElement = document.querySelector('.tagline')
   if (!taglineElement) return
-  taglineElement.innerHTML =
-    taglines[Math.floor(Math.random() * taglines.length)]
+  taglineElement.innerHTML = taglines[Math.floor(Math.random() * taglines.length)]
 }
 
 function appendImgAlt() {

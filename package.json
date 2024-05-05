@@ -17,6 +17,7 @@
     "@types/markdown-it-container": "^2.0.10",
     "@types/node": "^20.12.8",
     "@types/webfontloader": "^1.6.38",
+    "async-mutex": "^0.5.0",
     "js-convert-case": "^4.2.0",
     "markdown-it-container": "^4.0.0",
     "medium-zoom": "^1.1.0",

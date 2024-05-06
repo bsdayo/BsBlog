@@ -6,6 +6,8 @@ create: 2024-05-06T11:45:14+08:00
 
 ## Markdown 样式
 
+### 基本元素
+
 *This text will be italic*  
 _This will also be italic_
 
@@ -24,24 +26,29 @@ __This will also be bold__
 
 > Reference `something`
 
-`This is an inline code.`
+### 代码
+
+`./inline-code`
 
 ```csharp
-// This is a code block
+// Code block
 for (var i = 0; i < 100; i++)
 {
-    Console.WriteLine($"Now is {i}");
+    Console.WriteLine($"Count: {i}");
 }
 ```
+
+### 表格
 
 | Header 1  | Header 2  | Header 3  |
 | :-------: | :-------: | :-------: |
 | Content 1 | Content 2 | Content 3 |
 | Content 4 | Content 5 | Content 6 |
+| Content 7 | Content 8 | Content 9 |
 
-### Custom Containers
+### 自定义文本块
 
-Color borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
+Colors borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
 
 ::: note 备注 Note
 Lorem ipsum dolor sit amet...

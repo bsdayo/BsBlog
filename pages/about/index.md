@@ -50,17 +50,19 @@ comment: true
 这一次是基于 [VitePress](https://vitepress.dev/) 的纯前端 SSG 博客，虽然和 v2 一样还是基于 Vue，但是底层（例如 Markdown
 处理、脚手架等等等等）就完全不用自己写了。魔改了一下默认主题，先用着试试
 
-VitePress 好用的功能还是挺多的，比如直接在 Markdown 中使用 Vue 组件库（例如 Naive UI）：
+VitePress 好用的功能还是挺多的，比如直接在 Markdown 中使用 Vue 组件。例如我用 [shadcn-vue](https://www.shadcn-vue.com/) 定制的 Button）：
 
-<!-- <n-flex>
-  <n-button type="primary">这是一个 NButton</n-button>
-  <n-button type="warning">这是另一个</n-button>
-</n-flex> -->
+<div class="space-x-2">
+  <Button>这是一个自定义的 Button</Button>
+  <Button variant="destructive">这是另一个</Button>
+</div>
 
-和一些内置的 [Markdown 扩展](https://vitepress.dev/guide/markdown)（这里我自己加了样式）：
+和一些内置的 [Markdown 扩展](https://vitepress.dev/guide/markdown)（修改了一些样式）：
 
 ::: tip 这是一个自定义的文本块
 ♪sakana——\\(＞○＜\\)♪ &emsp; `:fish:` → :fish: Emoji 支持
+
+更多样式预览可以前往[这里](/posts/blog-style-overview/)查看
 :::
 
 整个博客已经[开源在了 GitHub 上](https://github.com/bsdayo/blog)，内容部分采用 CC BY-NC-SA 4.0 协议，其他部分采用 MIT 协议。
@@ -92,3 +94,7 @@ qcLLEny5ABdzm1oA/jDzid9T9giWo2/0e6a/xQYj4Jqt6JONvruKg027x3sA
 这一次还是希望自己能坚持写下去x
 
 底下的评论区就当个留言板罢
+
+<script setup lang="ts">
+import { Button } from '@/components/ui/button'
+</script>

@@ -113,8 +113,8 @@ Pull Request；或是直接在下面评论~
 
 排序不分先后，最近加的会放在列表顶部 qwq
 
-<LinkCard :links="$frontmatter.links" />
+<LinkList :links="$frontmatter.links" />
 
 <script setup>
-import LinkCard from './LinkCard.vue'
+import LinkList from './LinkList.vue'
 </script>

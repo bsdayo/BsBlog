@@ -19,21 +19,6 @@ export default {
           tags: content.frontmatter.tags ?? [],
         }
         return post
-
-        // return {
-        //   frontmatter: post.frontmatter,
-        //   id: /(?<=\/posts\/).*(?=\/)/.exec(post.url)![0],
-        //   title: post.frontmatter.title ?? 'Untitled Post',
-        //   cover: post.frontmatter.cover,
-        //   description: post.frontmatter.description,
-        //   create: post.frontmatter.create
-        //     ? new Date(post.frontmatter.create).getTime()
-        //     : Date.now(),
-        //   category: post.frontmatter.category,
-        //   tags: post.frontmatter.tags ?? [],
-        //   url: post.url.replace('index.html', ''),
-        //   comment: !!(post.frontmatter.comment ?? true),
-        // }
       })
       .sort((a, b) => b.create - a.create)
   },

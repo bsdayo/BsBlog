@@ -52,10 +52,10 @@ comment: true
 
 VitePress 好用的功能还是挺多的，比如直接在 Markdown 中使用 Vue 组件库（例如 Naive UI）：
 
-<n-flex>
+<!-- <n-flex>
   <n-button type="primary">这是一个 NButton</n-button>
   <n-button type="warning">这是另一个</n-button>
-</n-flex>
+</n-flex> -->
 
 和一些内置的 [Markdown 扩展](https://vitepress.dev/guide/markdown)（这里我自己加了样式）：
 
@@ -92,8 +92,3 @@ qcLLEny5ABdzm1oA/jDzid9T9giWo2/0e6a/xQYj4Jqt6JONvruKg027x3sA
 这一次还是希望自己能坚持写下去x
 
 底下的评论区就当个留言板罢
-
-
-<script setup lang="ts">
-import { NFlex, NButton } from 'naive-ui'
-</script>

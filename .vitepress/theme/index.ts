@@ -2,23 +2,20 @@ import { DefaultTheme as DefaultThemeType, Theme, ContentData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import { GiscusProps } from '@giscus/vue'
+
 import './custom.scss'
+import 'virtual:uno.css'
 
 const theme: Theme = {
   extends: DefaultTheme,
   Layout,
-  async enhanceApp(ctx) {
-    if (!(globalThis as any).__EnhanceAppContext__) {
-      ;(globalThis as any).__EnhanceAppContext__ = ctx
-    }
-  },
 }
 
 export default theme
 
 export interface ThemeConfig extends DefaultThemeType.Config {
   giscus: GiscusProps
-  tags: Record<string, [name: string, color?: string]>
+  taglines: string[]
 }
 
 export interface Post extends ContentData {

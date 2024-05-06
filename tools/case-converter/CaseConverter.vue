@@ -15,7 +15,6 @@
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
-import { NFlex, NInput, NInputGroup, NButton } from 'naive-ui'
 import jsConvert from 'js-convert-case'
 import { copyToClipboard } from '../utils'
 

@@ -1,20 +1,10 @@
 ---
-title: Test Ground
+title: 博客样式总览
 description: 测试一些 Markdown 功能
-create: 2023-04-25T11:45:14+08:00
+create: 2024-05-06T11:45:14+08:00
 ---
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
+## Markdown 样式
 
 *This text will be italic*  
 _This will also be italic_
@@ -45,13 +35,13 @@ for (var i = 0; i < 100; i++)
 ```
 
 | Header 1  | Header 2  | Header 3  |
-|:---------:|:---------:|:---------:|
+| :-------: | :-------: | :-------: |
 | Content 1 | Content 2 | Content 3 |
 | Content 4 | Content 5 | Content 6 |
 
-## Custom Containers
+### Custom Containers
 
-Style borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
+Color borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
 
 ::: note 备注 Note
 Lorem ipsum dolor sit amet...
@@ -120,3 +110,48 @@ for (var i = 0; i < 100; i++)
 ```
 
 :::
+
+## 组件样式
+
+魔改自 [shadcn-vue](https://www.shadcn-vue.com)
+
+### Button
+
+<div class="mt-2 grid grid-cols-3 gap-2">
+  <Button>Primary</Button>
+  <Button variant="destructive">Destructive</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button disabled>Disabled</Button>
+</div>
+
+### Input
+
+<div class="mt-2">
+  <Input placeholder="With placeholder" />
+</div>
+
+### Switch
+
+<div class="mt-2 grid grid-cols-3 gap-2">
+  <div class="flex justify-center items-center space-x-2">
+    <Label>Normal</Label>
+    <Switch />
+  </div>
+  <div class="flex justify-center items-center space-x-2">
+    <Label>Checked</Label>
+    <Switch checked />
+  </div>
+  <div class="flex justify-center items-center space-x-2">
+    <Label>Disabled</Label>
+    <Switch disabled />
+  </div>
+</div>
+
+<script setup lang="ts">
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
+</script>

@@ -29,11 +29,11 @@ Node.js 和 TypeScript 很熟悉，就直接选为 Bot 的开发语言了。框�
 核心的功能，像是 B30、最近成绩、单曲最高分的图查，以及曲目信息和别名的查询，在当时已经完成了。写完之后自己试用了一段时间，也比较满意。
 
 ::: note 一些命名小细节
-lancelot 这个名字，实际上来源于我的手机 Redmi 9 的机型代号 `lancelot`。
+`lancelot` 这个名字，实际上来源于我的手机 Redmi 9 的机型代号。
 
-当时的 lancelot 二号机 latte 名字来源于我的主力开发机 MiPad 2 的机型代号 `latte`。
+当时的 lancelot 二号机 `latte` 名字来源于我当时的主力开发机 MiPad 2 的机型代号。
 
-另外有一个用于测试的 Bot，名字是 blueline，来源于一位好朋友当时用的 Pixel 3 的机型代号 `blueline`。
+另外有一个用于测试的 Bot，名字是 `blueline`，来源于一位好朋友当时用的 Pixel 3 的机型代号。
 :::
 
 ## 2022 年 2 月

@@ -2,8 +2,10 @@
 layout: page
 ---
 
-<PostsPage />
+<div class="mx-auto max-w-768px">
+  <PostList />
+</div>
 
 <script setup lang="ts">
-import PostsPage from './PostsPage.vue'
+import PostList from './PostList.vue'
 </script>

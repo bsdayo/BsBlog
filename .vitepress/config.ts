@@ -1,12 +1,8 @@
-import { EnhanceAppContext, defineConfigWithTheme } from 'vitepress'
-import { setup } from '@css-render/vue3-ssr'
+import { defineConfigWithTheme } from 'vitepress'
+import UnoCSS from 'unocss/vite'
 import { createContainer } from './utils'
 import { ThemeConfig } from './theme'
-import tags from './tags'
-import { renderToString } from 'vue/server-renderer'
-import { Mutex } from 'async-mutex'
-
-const transformHtmlMutex = new Mutex()
+import path from 'path'
 
 export default defineConfigWithTheme<ThemeConfig>({
   title: 'SynBlog',
@@ -44,34 +40,20 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   ignoreDeadLinks: 'localhostLinks',
 
-  async transformHtml(html, id, ctx) {
-    // VitePress 似乎是对所有页面同时进行渲染，但因为限制只能拿到一个固定的 App 实例，所以需要加互斥锁，防止抢 router
-    const release = await transformHtmlMutex.acquire()
-    try {
-      // ./theme/index.ts 中存了一个全局的 App 实例下来
-      const { app, router } = (globalThis as any).__EnhanceAppContext__ as EnhanceAppContext
-      const { collect } = setup(app)
-
-      // 随后仿照 VitePress 走 SSR 渲染流程
-      // https://github.com/vuejs/vitepress/blob/main/src/client/app/ssr.ts
-      const path = (this.base || '/') + ctx.page.replace(/\.md$/, '.html')
-      await router.go(path)
-      await renderToString(app)
-
-      // 此时可以收集到所有的 CSS 了！
-      const styles = collect()
-      return html.replace('<head>', `<head>${styles}`)
-    } finally {
-      // 释放互斥锁
-      release()
-    }
-  },
-
   themeConfig: {
-    tags,
+    taglines: [
+      '<code>(() => &lt;bs moe/&gt;)()</code>',
+      "<code>h('bs', { moe: true })</code>",
+      '<code>[moe.things]::bs</code>',
+      '<code>bs.nyan()</code>',
+      '<code>Start-Sleep -Duration 365d</code>',
+      '<code>while (true) { eat() }</code>',
+      '你是？不能忘记的人，很重要的人',
+    ],
 
     outline: {
-      level: [2, 3],
+      label: '目录',
+      level: 'deep',
     },
 
     nav: [
@@ -86,8 +68,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/bsdayo' },
       { icon: 'x', link: 'https://twitter.com/konobsdayo' },
+      { icon: 'github', link: 'https://github.com/bsdayo' },
     ],
 
     giscus: {
@@ -114,8 +96,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
 
   vite: {
-    ssr: {
-      noExternal: ['naive-ui'],
+    plugins: [UnoCSS()],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '..'),
+      },
     },
   },
 })

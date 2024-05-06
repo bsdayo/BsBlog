@@ -1,99 +1,44 @@
 <template>
-  <n-config-provider :theme="currentTheme">
-    <Layout>
-      <template #doc-before v-if="currentPost">
-        <n-thing class="post-header">
-          <template #header>
-            <h1 class="post-title">{{ currentPost.title }}</h1>
-          </template>
-          <template #description>{{ currentPost.description }}</template>
-          <template #footer>
-            <n-flex justify="space-between">
-              <DateTag :time="currentPost.create" />
-              <n-flex>
-                <PostTag v-for="tag in currentPost.tags" :key="tag" :tag="tag" />
-              </n-flex>
-            </n-flex>
-          </template>
-        </n-thing>
-      </template>
+  <Layout>
+    <template #doc-before v-if="currentPost">
+      <div class="vp-doc">
+        <h1>{{ currentPost.title }}</h1>
+        <p class="mt-2 space-x-2">
+          <Badge type="tip">{{ new Date(currentPost.create).toISOString().split('T')[0] }}</Badge>
+          <Badge type="info" v-for="tag in currentPost.tags" :key="tag">{{ tag }}</Badge>
+        </p>
+      </div>
+    </template>
 
-      <template #doc-after>
-        <n-divider />
-        <Giscus
-          :key="page.relativePath"
-          v-bind="theme.giscus"
-          :theme="isDark ? 'transparent_dark' : 'light'"
-        />
-      </template>
-    </Layout>
-  </n-config-provider>
+    <template #doc-after>
+      <div class="VPDoc vp-doc">
+        <h2 id="giscus">评论</h2>
+      </div>
+      <Giscus
+        id="giscus"
+        :key="page.relativePath"
+        v-bind="theme.giscus"
+        :theme="isDark ? 'transparent_dark' : 'light'"
+      />
+    </template>
+  </Layout>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, nextTick, watch, onMounted } from 'vue'
+import { ref, nextTick, watch, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { data as posts } from '../posts.data'
-import { NConfigProvider, NThing, NDivider, NFlex, lightTheme, darkTheme } from 'naive-ui'
 import Giscus from '@giscus/vue'
 import mediumZoom from 'medium-zoom'
-import { ThemeConfig } from '.'
-import PostTag from '../../components/PostTag.vue'
-import DateTag from '../../components/DateTag.vue'
+
+import { data as posts } from '@/.vitepress/posts.data'
+import type { Post, ThemeConfig } from '.'
 
 const { Layout } = DefaultTheme
 const { page, theme, isDark } = useData<ThemeConfig>()
 
-const currentTheme = ref(isDark ? darkTheme : lightTheme)
-
-const taglines: string[] = [
-  '<code>(() => &lt;bs moe/&gt;)()</code>',
-  "<code>h('bs', { moe: true })</code>",
-  '<code>[moe.things]::bs</code>',
-  '<code>bs.nyan()</code>',
-  '<code>Start-Sleep -Duration 365d</code>',
-  '<code>while (true) { eat() }</code>',
-  '你是？不能忘记的人，很重要的人',
-]
-const mdImgSelector = '.vp-doc img'
-
-function setRandomTagline() {
-  const taglineElement = document.querySelector('.tagline')
-  if (!taglineElement) return
-  taglineElement.innerHTML = taglines[Math.floor(Math.random() * taglines.length)]
-}
-
-function appendImgAlt() {
-  document.querySelectorAll(mdImgSelector).forEach((img) => {
-    const alt = img.attributes.getNamedItem('alt')
-    if (!alt) return
-
-    const node = document.createElement('div')
-    node.classList.add('img-alt')
-    node.innerText = alt.value
-
-    const parent = img.parentNode!
-    if (parent.lastChild === img) parent.appendChild(node)
-    else parent.insertBefore(node, img.nextSibling)
-  })
-}
-
-function addMediumZoom() {
-  mediumZoom(mdImgSelector, {
-    background: 'rgba(0, 0, 0, 0.5)',
-  })
-}
-
-onMounted(() => {
-  watch(
-    () => isDark.value,
-    (dark) => {
-      currentTheme.value = dark ? darkTheme : lightTheme
-    },
-    { immediate: true }
-  )
-
+// Load fonts (client only)
+onMounted(() =>
   import('webfontloader').then((webfont) =>
     webfont.load({
       google: {
@@ -101,24 +46,55 @@ onMounted(() => {
       },
     })
   )
+)
 
-  watch(
-    () => page.value.relativePath,
-    () =>
-      nextTick(() => {
-        setRandomTagline()
-        appendImgAlt()
-        addMediumZoom()
-      }),
-    { immediate: true }
-  )
-})
+// Random taglines
+watch(
+  () => page.value.relativePath,
+  async () => {
+    await nextTick() // Wait for the DOM to update
+    const taglineElement = document.querySelector('.tagline')
+    if (!taglineElement) return
+    taglineElement.innerHTML =
+      theme.value.taglines[Math.floor(Math.random() * theme.value.taglines.length)]
+  },
+  { immediate: true }
+)
 
-const currentPost = computed(() => {
-  const postId = page.value.relativePath.match(/posts\/(.*)\//)?.[1]
-  if (!postId) return null
-  return posts.find((post) => post.id === postId)
-})
+// Post related
+const currentPost = ref<Post | undefined>(undefined)
+const mdImgSelector = '.vp-doc img'
+watch(
+  () => page.value.relativePath,
+  async (newPath) => {
+    await nextTick() // Wait for the DOM to update
+
+    // Find current post
+    const postId = newPath.match(/posts\/(.*)\//)?.[1]
+    if (!postId) return
+    currentPost.value = posts.find((post) => post.id === postId)
+
+    // Append alt text to images
+    document.querySelectorAll(mdImgSelector).forEach((img) => {
+      const alt = img.attributes.getNamedItem('alt')
+      if (!alt) return
+
+      const node = document.createElement('div')
+      node.classList.add('img-alt')
+      node.innerText = alt.value
+
+      const parent = img.parentNode!
+      if (parent.lastChild === img) parent.appendChild(node)
+      else parent.insertBefore(node, img.nextSibling)
+    })
+
+    // Apply medium-zoom
+    mediumZoom(mdImgSelector, {
+      background: 'rgba(0, 0, 0, 0.5)',
+    })
+  },
+  { immediate: true }
+)
 </script>
 
 <style lang="scss">

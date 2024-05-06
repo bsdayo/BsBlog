@@ -7,8 +7,10 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": [".vitepress/**/*"],
   "exclude": ["node_modules"]
 }

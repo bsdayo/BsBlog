@@ -37,7 +37,7 @@ import type { Post, ThemeConfig } from '.'
 const { Layout } = DefaultTheme
 const { page, theme, isDark } = useData<ThemeConfig>()
 
-// Load fonts (client only)
+// Load fonts
 onMounted(() =>
   import('webfontloader').then((webfont) =>
     webfont.load({
@@ -49,52 +49,56 @@ onMounted(() =>
 )
 
 // Random taglines
-watch(
-  () => page.value.relativePath,
-  async () => {
-    await nextTick() // Wait for the DOM to update
-    const taglineElement = document.querySelector('.tagline')
-    if (!taglineElement) return
-    taglineElement.innerHTML =
-      theme.value.taglines[Math.floor(Math.random() * theme.value.taglines.length)]
-  },
-  { immediate: true }
-)
+onMounted(() => {
+  watch(
+    () => page.value.relativePath,
+    async () => {
+      await nextTick() // Wait for the DOM to update
+      const taglineElement = document.querySelector('.tagline')
+      if (!taglineElement) return
+      taglineElement.innerHTML =
+        theme.value.taglines[Math.floor(Math.random() * theme.value.taglines.length)]
+    },
+    { immediate: true }
+  )
+})
 
 // Post related
 const currentPost = ref<Post | undefined>(undefined)
 const mdImgSelector = '.vp-doc img'
-watch(
-  () => page.value.relativePath,
-  async (newPath) => {
-    await nextTick() // Wait for the DOM to update
+onMounted(() => {
+  watch(
+    () => page.value.relativePath,
+    async (newPath) => {
+      await nextTick() // Wait for the DOM to update
 
-    // Find current post
-    const postId = newPath.match(/posts\/(.*)\//)?.[1]
-    if (!postId) return
-    currentPost.value = posts.find((post) => post.id === postId)
+      // Find current post
+      const postId = newPath.match(/posts\/(.*)\//)?.[1]
+      if (!postId) return
+      currentPost.value = posts.find((post) => post.id === postId)
 
-    // Append alt text to images
-    document.querySelectorAll(mdImgSelector).forEach((img) => {
-      const alt = img.attributes.getNamedItem('alt')
-      if (!alt) return
+      // Append alt text to images
+      document.querySelectorAll(mdImgSelector).forEach((img) => {
+        const alt = img.attributes.getNamedItem('alt')
+        if (!alt) return
 
-      const node = document.createElement('div')
-      node.classList.add('img-alt')
-      node.innerText = alt.value
+        const node = document.createElement('div')
+        node.classList.add('img-alt')
+        node.innerText = alt.value
 
-      const parent = img.parentNode!
-      if (parent.lastChild === img) parent.appendChild(node)
-      else parent.insertBefore(node, img.nextSibling)
-    })
+        const parent = img.parentNode!
+        if (parent.lastChild === img) parent.appendChild(node)
+        else parent.insertBefore(node, img.nextSibling)
+      })
 
-    // Apply medium-zoom
-    mediumZoom(mdImgSelector, {
-      background: 'rgba(0, 0, 0, 0.5)',
-    })
-  },
-  { immediate: true }
-)
+      // Apply medium-zoom
+      mediumZoom(mdImgSelector, {
+        background: 'rgba(0, 0, 0, 0.5)',
+      })
+    },
+    { immediate: true }
+  )
+})
 </script>
 
 <style lang="scss">

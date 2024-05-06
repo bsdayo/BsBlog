@@ -25,6 +25,7 @@
     "radix-vue": "^1.7.3",
     "sass": "^1.76.0",
     "tailwind-merge": "^2.3.0",
+    "typescript": "^5.4.5",
     "unocss": "^0.59.4",
     "unocss-preset-animations": "^1.0.2",
     "vitepress": "^1.1.4",

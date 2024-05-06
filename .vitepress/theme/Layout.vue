@@ -63,19 +63,26 @@ onMounted(() => {
   )
 })
 
-// Post related
+// Current post
 const currentPost = ref<Post | undefined>(undefined)
+watch(
+  () => page.value.relativePath,
+  (newPath) => {
+    // Find current post
+    const postId = newPath.match(/posts\/(.*)\//)?.[1]
+    currentPost.value = postId ? posts.find((post) => post.id === postId) : undefined
+  },
+  { immediate: true }
+)
+
+// Process markdown image
 const mdImgSelector = '.vp-doc img'
 onMounted(() => {
   watch(
-    () => page.value.relativePath,
-    async (newPath) => {
+    () => currentPost.value,
+    async (post) => {
+      if (!post) return
       await nextTick() // Wait for the DOM to update
-
-      // Find current post
-      const postId = newPath.match(/posts\/(.*)\//)?.[1]
-      if (!postId) return
-      currentPost.value = posts.find((post) => post.id === postId)
 
       // Append alt text to images
       document.querySelectorAll(mdImgSelector).forEach((img) => {

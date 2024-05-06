@@ -104,14 +104,15 @@ links:
 
 ~~（和我熟的话其实写什么都行 xxx）~~
 
-添加友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/blog/edit/main/content/pages/links/index.md)，并提交
-Pull Request；或是直接在下面评论~
+添加友链可以[在 GitHub 上修改本页面](https://github.com/bsdayo/blog/edit/main/content/pages/links/index.md)，并提交 Pull Request；或是直接在下面评论~
 
 ::: details 提交友链的详细格式！
 <<< ./example.yml{yaml}
 :::
 
-排序不分先后，最近加的会放在列表顶部 qwq
+排序不分先后，最近加的会放在列表顶部
+
+---
 
 <LinkList :links="$frontmatter.links" />
 

@@ -14,44 +14,35 @@
         </div>
       </div>
 
-      <div class="mt-4 flex justify-end space-x-2">
-        <div v-if="link.socials">
-          <Button
-            v-if="link.socials.github"
-            class="important:text-foreground"
-            variant="outline"
-            as="a"
-            target="_blank"
-            :href="`https://github.com/${link.socials.github}`"
+      <div class="mt-4 flex justify-between">
+        <div class="space-x-2">
+          <LinkButton
+            v-if="link.socials?.github"
+            :url="`https://github.com/${link.socials.github}`"
+            :icon="faGithub"
           >
-            <font-awesome-icon :icon="faGithub" />
-          </Button>
-          <Button
-            v-if="link.socials.x"
-            class="important:text-foreground"
-            variant="outline"
-            as="a"
-            target="_blank"
-            :href="`https://twitter.com/${link.socials.x}`"
+            GitHub
+          </LinkButton>
+          <LinkButton
+            v-if="link.socials?.x"
+            :url="`https://twitter.com/${link.socials.x}`"
+            :icon="faXTwitter"
           >
-            <font-awesome-icon :icon="faXTwitter" />
-          </Button>
+            X
+          </LinkButton>
         </div>
 
-        <Button as="a" target="_blank" :href="link.url" class="important:text-white">
-          <font-awesome-icon :icon="faPaperPlane" />
-        </Button>
+        <LinkButton primary :url="link.url" :icon="faPaperPlane">Go!</LinkButton>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Button } from '@/components/ui/button'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons'
-import Link from './link'
+import LinkButton from './LinkButton.vue'
+import type Link from './link'
 
 defineProps<{ links: Link[] }>()
 </script>

@@ -42,6 +42,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   ignoreDeadLinks: 'localhostLinks',
 
   themeConfig: {
+    logo: 'https://avatars.githubusercontent.com/u/41754841',
+
     taglines: [
       '<code>(() => &lt;bs moe/&gt;)()</code>',
       "<code>h('bs', { moe: true })</code>",

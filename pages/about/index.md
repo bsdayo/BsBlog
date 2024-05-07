@@ -1,5 +1,4 @@
 ---
-title: 关于
 comment: true
 ---
 

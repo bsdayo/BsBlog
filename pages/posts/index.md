@@ -1,6 +1,8 @@
 ---
-layout: page
+comment: false
 ---
+
+# 文章
 
 <div class="mx-auto max-w-768px">
   <PostList />

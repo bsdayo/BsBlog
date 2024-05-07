@@ -1,7 +1,8 @@
 <template>
-  <div class="my-4">
+  <div v-for="year in years" :key="year.year">
+    <h2 :id="year.year.toString()">{{ year.year }}</h2>
     <div
-      v-for="post in posts"
+      v-for="post in year.posts"
       :key="post.id"
       class="pa-4 not-last:border-b not-last:border-b-input not-last:border-b-solid"
     >
@@ -21,8 +22,19 @@
 
 <script lang="ts" setup>
 import { useData } from 'vitepress'
-import { data as posts } from '../../.vitepress/posts.data'
-// import { Badge } from '@/components/ui/badge'
+import { data as posts } from '@/.vitepress/posts.data'
+import type { Post } from '@/.vitepress/theme'
+
+const years: { year: number; posts: Post[] }[] = []
+for (const post of posts) {
+  const year = new Date(post.create).getFullYear()
+  let yearData = years.find((y) => y.year === year)
+  if (!yearData) {
+    yearData = { year, posts: [] }
+    years.push(yearData)
+  }
+  yearData.posts.push(post)
+}
 
 const { site } = useData()
 

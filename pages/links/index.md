@@ -1,5 +1,4 @@
 ---
-title: 友情链接
 comment: true
 
 links:

@@ -10,7 +10,7 @@
       </div>
     </template>
 
-    <template #doc-after>
+    <template #doc-after v-if="page.frontmatter.comment ?? true">
       <div class="VPDoc vp-doc">
         <h2 id="giscus">评论</h2>
       </div>

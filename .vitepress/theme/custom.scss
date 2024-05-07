@@ -28,6 +28,11 @@ $custom-blocks: (
   --vp-c-brand-3: #1565c0;
 }
 
+// 移动端目录菜单
+.outline {
+  outline-color: var(--vp-c-divider);
+}
+
 @each $name, $color in $custom-blocks {
   :root {
     --vp-custom-block-#{$name}-border: #{$color};
@@ -61,6 +66,12 @@ $custom-blocks: (
   margin-top: 8px;
 }
 
+// 导航栏的 Logo
+img.VPImage.logo {
+  border-radius: 50%;
+}
+
+// 主页 Logo
 .VPHero .image-container {
   @media (min-width: 960px) {
     transform: none;

@@ -41,9 +41,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      js-convert-case:
-        specifier: ^4.2.0
-        version: 4.2.0
       lucide-vue-next:
         specifier: ^0.378.0
         version: 0.378.0(vue@3.4.26(typescript@5.4.5))
@@ -1098,9 +1095,6 @@ packages:
   jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
-
-  js-convert-case@4.2.0:
-    resolution: {integrity: sha512-i4mHCxiBNj6ajjMnZnC70qAOMA8gb+YgYipy2VR7a+Q5EBgEQ2/SgSAUBdNEyObk++B4AIUiFWeDEX2ggOd8cQ==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -2572,8 +2566,6 @@ snapshots:
   isexe@2.0.0: {}
 
   jiti@1.21.0: {}
-
-  js-convert-case@4.2.0: {}
 
   js-tokens@4.0.0: {}
 

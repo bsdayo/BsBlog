@@ -1,8 +1,9 @@
+import path from 'path'
 import { defineConfigWithTheme } from 'vitepress'
 import UnoCSS from 'unocss/vite'
+
 import { createContainer } from './utils'
 import { ThemeConfig } from './theme'
-import path from 'path'
 
 export default defineConfigWithTheme<ThemeConfig>({
   title: 'SynBlog',
@@ -58,14 +59,9 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     nav: [
       { text: '文章', link: '/posts/' },
-      { text: '工具', link: '/tools/' },
       { text: '友链', link: '/links/' },
       { text: '关于', link: '/about/' },
     ],
-
-    sidebar: {
-      '/tools/': [{ text: '命名风格转换', link: '/tools/case-converter/' }],
-    },
 
     socialLinks: [
       { icon: 'x', link: 'https://twitter.com/konobsdayo' },

@@ -1,6 +1,7 @@
 import path from 'path'
 import { defineConfigWithTheme } from 'vitepress'
 import UnoCSS from 'unocss/vite'
+import footnote from 'markdown-it-footnote'
 
 import { createContainer } from './utils'
 import { ThemeConfig } from './theme'
@@ -15,7 +16,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       dark: 'one-dark-pro',
     },
 
+    math: true,
+
     config(md) {
+      md.use(footnote)
       md.use(...createContainer('note', 'NOTE', md))
         .use(...createContainer('abstract', 'ABSTRACT', md))
         // info already added

@@ -3,8 +3,7 @@
   "scripts": {
     "dev": "vitepress dev . --host",
     "build": "vitepress build .",
-    "preview": "vitepress preview .",
-    "new": "node scripts/new-post.js"
+    "preview": "vitepress preview ."
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
@@ -20,6 +19,8 @@
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.378.0",
     "markdown-it-container": "^4.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
     "medium-zoom": "^1.1.0",
     "radix-vue": "^1.7.3",
     "sass": "^1.76.0",

@@ -46,6 +46,13 @@ for (var i = 0; i < 100; i++)
 | Content 4 | Content 5 | Content 6 |
 | Content 7 | Content 8 | Content 9 |
 
+### 公式
+
+- Inline: $a + \sqrt{b} = c^2$
+- Block:
+
+$$ a + \sqrt{b} = c^2 $$
+
 ### 自定义文本块
 
 Colors borrowed from [Material for MkDocs: Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).

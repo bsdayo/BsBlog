@@ -60,6 +60,10 @@ $custom-blocks: (
   z-index: 99999;
 }
 
+.vp-doc p > img {
+  margin: 0 auto;
+}
+
 .vp-doc .img-alt {
   text-align: center;
   color: var(--vp-c-text-2);

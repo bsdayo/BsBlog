@@ -1,29 +1,20 @@
 <template>
-  <Button
-    :class="[
-      $props.primary ? 'important:text-white' : 'important:text-foreground',
-      'important:decoration-none',
-    ]"
-    :variant="$props.primary ? 'default' : 'outline'"
-    as="a"
+  <ui-button
+    :variant="$props.brand ? 'brand' : 'alt'"
+    :icon="$props.icon"
     target="_blank"
     :href="url"
   >
-    <font-awesome-icon :icon="icon" class="mr-2" />
     <slot />
-  </Button>
+  </ui-button>
 </template>
 
 <script lang="ts" setup>
-import { Button } from '@/components/ui/button'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { type Component } from 'vue'
 
 defineProps<{
-  primary?: boolean
+  brand?: boolean
   url: string
-  icon: IconDefinition
+  icon?: Component
 }>()
 </script>
-
-<style lang="scss" scoped></style>

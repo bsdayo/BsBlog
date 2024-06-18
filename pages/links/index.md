@@ -113,7 +113,7 @@ links:
 
 ---
 
-<LinkList :links="$frontmatter.links" />
+<LinkList class="vp-raw" :links="$frontmatter.links" />
 
 <script setup>
 import LinkList from './LinkList.vue'

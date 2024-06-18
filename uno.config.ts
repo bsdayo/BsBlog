@@ -1,44 +1,63 @@
 import { defineConfig, presetUno } from 'unocss'
-import presetShadcnVitePress from './uno.shadcn'
-import presetAnimations from 'unocss-preset-animations'
 
-function vpColor(name: string) {
-  return {
-    [`${name}-1`]: `var(--vp-c-${name}-1)`,
-    [`${name}-2`]: `var(--vp-c-${name}-2)`,
-    [`${name}-3`]: `var(--vp-c-${name}-3)`,
-    [`${name}-soft`]: `var(--vp-c-${name}-soft)`,
+function withLevels(name: string, levels: any[]) {
+  return levels.map((suffix) => `${name}-${suffix}`)
+}
+
+function vpColors(names: string[]) {
+  const colors: Record<string, string> = {}
+  for (const name of names) {
+    colors[name] = `var(--vp-c-${name})`
   }
+  return colors
 }
 
 export default defineConfig({
-  presets: [presetUno(), presetAnimations(), presetShadcnVitePress()],
-
-  // From https://github.com/fisand/unocss-preset-shadcn?tab=readme-ov-file#quick-start
-  // Should we add these?
-  shortcuts: [
-    {
-      'animate-accordion-up': 'accordion-up',
-      'animate-accordion-down': 'accordion-down',
-    },
-  ],
-  content: {
-    pipeline: {
-      include: [
-        // the default
-        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
-        // include js/ts files
-        '**/*.{js,ts}',
-      ],
-    },
-  },
+  presets: [presetUno()],
   theme: {
-    // TODO: merge uno.shadcn.ts with this file
     colors: {
-      ...vpColor('brand'),
-      ...vpColor('bg'),
+      ...vpColors([
+        // Colors: Solid
+        'white',
+        'black',
+        'neutral',
+        'neutral-inverse',
+
+        // Colors: Palette
+        ...withLevels('gray', [1, 2, 3, 'soft']),
+        ...withLevels('indigo', [1, 2, 3, 'soft']),
+        ...withLevels('purple', [1, 2, 3, 'soft']),
+        ...withLevels('green', [1, 2, 3, 'soft']),
+        ...withLevels('yellow', [1, 2, 3, 'soft']),
+        ...withLevels('red', [1, 2, 3, 'soft']),
+        'sponsor',
+
+        // Colors: Background
+        'bg',
+        ...withLevels('bg', ['alt', 'elv', 'soft']),
+
+        // Colors: Borders
+        'border',
+        'divider',
+        'gutter',
+
+        // Colors: Text
+        ...withLevels('text', [1, 2, 3]),
+
+        // Colors: Function
+        ...withLevels('default', [1, 2, 3, 'soft']),
+        ...withLevels('brand', [1, 2, 3, 'soft']),
+        ...withLevels('tip', [1, 2, 3, 'soft']),
+        ...withLevels('note', [1, 2, 3, 'soft']),
+        ...withLevels('success', [1, 2, 3, 'soft']),
+        ...withLevels('important', [1, 2, 3, 'soft']),
+        ...withLevels('warning', [1, 2, 3, 'soft']),
+        ...withLevels('danger', [1, 2, 3, 'soft']),
+        ...withLevels('caution', [1, 2, 3, 'soft']),
+      ]),
     },
     fontFamily: {
+      base: 'var(--vp-font-family-base)',
       mono: 'var(--vp-font-family-mono)',
     },
   },

@@ -3,12 +3,19 @@ import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import { GiscusProps } from '@giscus/vue'
 
+import UIButton from '@/components/ui/UIButton.vue'
+import UIInput from '@/components/ui/UIInput.vue'
+
 import './custom.scss'
 import 'virtual:uno.css'
 
 const theme: Theme = {
   extends: DefaultTheme,
   Layout,
+  enhanceApp({ app }) {
+    app.component('ui-button', UIButton)
+    app.component('ui-input', UIInput)
+  },
 }
 
 export default theme

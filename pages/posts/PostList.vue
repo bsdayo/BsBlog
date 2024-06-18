@@ -4,11 +4,11 @@
     <div
       v-for="post in year.posts"
       :key="post.id"
-      class="pa-4 not-last:border-b not-last:border-b-input not-last:border-b-solid"
+      class="pa-4 not-last:border-b not-last:border-b-border not-last:border-b-solid"
     >
       <a
         :href="getPostHref(post.id)"
-        class="block important:decoration-none important:text-foreground important:hover:text-brand-1 text-xl"
+        class="block important:decoration-none important:text-text-1 important:hover:text-brand-1 text-xl"
       >
         {{ post.title }}
       </a>

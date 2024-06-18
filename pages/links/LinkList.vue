@@ -19,28 +19,27 @@
           <LinkButton
             v-if="link.socials?.github"
             :url="`https://github.com/${link.socials.github}`"
-            :icon="faGithub"
+            :icon="Link2"
           >
             GitHub
           </LinkButton>
           <LinkButton
             v-if="link.socials?.x"
             :url="`https://twitter.com/${link.socials.x}`"
-            :icon="faXTwitter"
+            :icon="Link2"
           >
-            X
+            Twitter
           </LinkButton>
         </div>
 
-        <LinkButton primary :url="link.url" :icon="faPaperPlane">Go!</LinkButton>
+        <LinkButton brand :url="link.url" :icon="Accessibility">Go!</LinkButton>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { Link2, Accessibility } from 'lucide-vue-next'
 import LinkButton from './LinkButton.vue'
 import type Link from './link'
 

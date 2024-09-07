@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "vitepress dev . --host",
     "build": "vitepress build .",
-    "preview": "vitepress preview ."
+    "preview": "vitepress preview .",
+    "new": "pwsh ./scripts/new-post.ps1"
   },
   "devDependencies": {
     "@giscus/vue": "^2.4.0",

@@ -6,13 +6,13 @@ Powered by VitePress & Vuetify
 
 ---
 
-**[主页](https://blog.bsdayo.moe/)**
+**[主页](https://bsdayo.moe/)**
 **|**
-**[文章](https://blog.bsdayo.moe/posts/)**
+**[文章](https://bsdayo.moe/posts/)**
 **|**
-**[友链](https://blog.bsdayo.moe/links/)**
+**[友链](https://bsdayo.moe/links/)**
 **|**
-**[关于](https://blog.bsdayo.moe/about/)**
+**[关于](https://bsdayo.moe/about/)**
 
 ## 协议
 

@@ -13,7 +13,7 @@ export default interface Link {
 // #region me
 const me: Link = {
   title: 'SynBlog',
-  url: 'https://blog.bsdayo.moe',
+  url: 'https://bsdayo.moe',
   description: '怎么会是呢？',
   author: 'bsdayo',
   avatar: 'https://avatars.githubusercontent.com/u/41754841',

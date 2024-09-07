@@ -16,13 +16,6 @@
       </div>
     </div>
   </div>
-  <div v-else-if="resultIndex === 0">
-    <h2>姓氏比较偏门</h2>
-    <div class="mt-4 flex flex-wrap items-center justify-between">
-      怎么会是呢？
-      <ui-button @click="() => reset()">重置</ui-button>
-    </div>
-  </div>
   <div v-else>
     <h2>你的姓氏是：{{ result }}</h2>
     <div class="mt-4 flex flex-wrap items-center justify-between">

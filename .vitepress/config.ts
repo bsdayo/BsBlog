@@ -5,6 +5,7 @@ import footnote from 'markdown-it-footnote'
 
 import { createContainer } from './utils'
 import { ThemeConfig } from './theme'
+import sidebar from './sidebar'
 
 export default defineConfigWithTheme<ThemeConfig>({
   title: 'SynBlog',
@@ -57,9 +58,12 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     nav: [
       { text: '文章', link: '/posts/' },
+      { text: '工具', link: '/tools/' },
       { text: '友链', link: '/links/' },
       { text: '关于', link: '/about/' },
     ],
+
+    sidebar,
 
     socialLinks: [
       { icon: 'x', link: 'https://twitter.com/konobsdayo' },

@@ -35,14 +35,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
   },
 
-  rewrites: {
-    'pages/about/index.md': 'about/index.md',
-    'pages/posts/index.md': 'posts/index.md',
-    'pages/links/index.md': 'links/index.md',
-    'pages/tags/index.md': 'tags/index.md',
-    'pages/tags/:tag.md': 'tags/:tag.md',
-  },
-
   ignoreDeadLinks: 'localhostLinks',
 
   themeConfig: {

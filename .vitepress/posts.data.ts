@@ -1,7 +1,7 @@
 import { createContentLoader } from 'vitepress'
 import { Post } from './theme'
 
-const loader = createContentLoader('posts/**/index.md')
+const loader = createContentLoader('posts/*/index.md')
 export default {
   ...loader,
   async load(): Promise<Post[]> {

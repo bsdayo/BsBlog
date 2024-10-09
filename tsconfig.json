@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
@@ -12,5 +12,6 @@
       "@/*": ["./*"]
     }
   },
+  "include": [".vitepress/**/*.vue", ".vitepress/**/*.ts"],
   "exclude": ["node_modules"]
 }

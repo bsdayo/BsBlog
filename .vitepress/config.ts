@@ -11,6 +11,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: 'SynBlog',
   description: 'SynBlog v4 - Powered by VitePress',
   lang: 'zh-CN',
+  head: [['link', { rel: 'icon', href: '/favicon.png' }]],
 
   markdown: {
     theme: {

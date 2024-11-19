@@ -28,6 +28,20 @@ $custom-blocks: (
   --vp-c-brand-3: #1565c0;
 }
 
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1);
+  border-radius: 2px;
+}
+
 // 移动端目录菜单
 .outline {
   outline-color: var(--vp-c-divider);

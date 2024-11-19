@@ -1,5 +1,12 @@
 <template>
   <Layout>
+    <!-- <template #nav-bar-content-before>
+      <span class="ml-4 relative flex h-3 w-3">
+        <span class="animate-ping absolute h-full w-full rounded-full bg-green opacity-75" />
+        <span class="h-full w-full rounded-full bg-green" />
+      </span>
+    </template> -->
+
     <template #doc-before v-if="currentPost">
       <div class="vp-doc">
         <h1>{{ currentPost.title }}</h1>
@@ -30,12 +37,14 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Giscus from '@giscus/vue'
 import mediumZoom from 'medium-zoom'
+import { animate, stagger, spring } from 'motion'
 
-import { data as posts } from '@/.vitepress/posts.data'
+import { data as posts } from '../posts.data'
 import type { Post, ThemeConfig } from '.'
+import { springScrollToElement } from './utils'
 
 const { Layout } = DefaultTheme
-const { page, theme, isDark } = useData<ThemeConfig>()
+const { page, theme, frontmatter, isDark } = useData<ThemeConfig>()
 
 // Load fonts
 onMounted(() =>
@@ -48,18 +57,52 @@ onMounted(() =>
   )
 )
 
-// Random taglines
+// Trigger on page change (immediate)
 onMounted(() => {
   watch(
     () => page.value.relativePath,
     async () => {
-      await nextTick() // Wait for the DOM to update
+      // Wait for the DOM to update
+      await nextTick()
+
+      // Random taglines
       const taglineElement = document.querySelector('.tagline')
-      if (!taglineElement) return
-      taglineElement.innerHTML =
-        theme.value.taglines[Math.floor(Math.random() * theme.value.taglines.length)]
+      if (taglineElement)
+        taglineElement.innerHTML =
+          theme.value.taglines[Math.floor(Math.random() * theme.value.taglines.length)]
+
+      // Animate home page elements
+      if (frontmatter.value.layout === 'home') {
+        const homeAnim = { type: spring, bounce: 0.5, duration: 0.5 }
+
+        animate('.main .name', { opacity: 1, x: [-200, 0] }, { ...homeAnim })
+        animate('.main .text', { opacity: 1, x: [200, 0] }, { ...homeAnim })
+        animate('.main .tagline', { y: [50, 0] }, { ...homeAnim })
+        animate('.main .action', { y: [50, 0] }, { ...homeAnim, delay: stagger(0.05) })
+      }
+
+      // Animate outline link scrolls
+      document.querySelectorAll<HTMLLinkElement>('.outline-link').forEach((element) => {
+        const id = decodeURIComponent(element.href.split('#')[1])
+        console.log(id)
+        element.onclick = () => {
+          const target = document.getElementById(id)
+          if (!target) return
+          springScrollToElement(target)
+        }
+      })
     },
     { immediate: true }
+  )
+})
+
+// Trigger on page change (not immediate)
+onMounted(() => {
+  watch(
+    () => page.value.relativePath,
+    async () => {
+      animate('.VPContent', { opacity: [0, 1] }, { ease: 'easeInOut', duration: 0.2 })
+    }
   )
 })
 
